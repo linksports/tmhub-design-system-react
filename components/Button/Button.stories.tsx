@@ -9,17 +9,12 @@ const meta: Meta<typeof Button> = {
     },
     size: {
       control: 'radio',
-      options: ['sm', 'md'],
+      options: ['xs', 'sm', 'md', 'lg', undefined],
     },
   },
 };
 export default meta;
 
-// export default {
-//   title: 'LinkSports/Button',
-//   component: Button,
-// } as Meta<typeof Button>;
-// 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
 
 export const ButtonTest = Template.bind({});

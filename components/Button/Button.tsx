@@ -1,12 +1,12 @@
 import { ButtonProps } from './Button.types';
-import { buttonBase, buttonSizeSm, buttonSizeMd } from './Button.css';
+import { buttonRecipe } from './Button.css';
+// import { buttonBase, buttonSizeSm, buttonSizeMd } from './Button.css';
 
 const Button: React.FC<ButtonProps> = (props) => {
   return (
-    <button className={[
-      buttonBase,
-      props.size == 'sm' ? buttonSizeSm : buttonSizeMd,
-    ].join(' ')}>
+    <button className={buttonRecipe({
+      size: props.size,
+    })}>
       {props.children}
     </button>
   );

@@ -3053,6 +3053,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vanilla-extract/recipes@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "@vanilla-extract/recipes@npm:0.5.3"
+  peerDependencies:
+    "@vanilla-extract/css": ^1.0.0
+  checksum: 10c0/1a8a155c53031efeafd67e0e429bb766049a61ca1dda8dfc6144f09882ccf7058557d6a89c2454cd2726452fedd5110a55a4d89a5f1e2846d815eca095494aea
+  languageName: node
+  linkType: hard
+
 "@vanilla-extract/rollup-plugin@npm:^1.3.7":
   version: 1.3.7
   resolution: "@vanilla-extract/rollup-plugin@npm:1.3.7"
@@ -3949,40 +3958,6 @@ __metadata:
   checksum: 10c0/f98860cdf58b64991ae10205137c0e97d384c3a4edc7f807603887b7c4b850af1224a33d88012009f150861cbee4fa2d322c4cc04b9313bee312e47f6ecaa888
   languageName: node
   linkType: hard
-
-"design-system-react@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "design-system-react@workspace:."
-  dependencies:
-    "@chromatic-com/storybook": "npm:^1.6.1"
-    "@rollup/plugin-commonjs": "npm:^26.0.1"
-    "@rollup/plugin-node-resolve": "npm:^15.2.3"
-    "@rollup/plugin-terser": "npm:^0.4.4"
-    "@rollup/plugin-typescript": "npm:^11.1.6"
-    "@storybook/addon-essentials": "npm:^8.2.6"
-    "@storybook/addon-interactions": "npm:^8.2.6"
-    "@storybook/addon-links": "npm:^8.2.6"
-    "@storybook/addon-onboarding": "npm:^8.2.6"
-    "@storybook/blocks": "npm:^8.2.6"
-    "@storybook/react": "npm:^8.2.6"
-    "@storybook/react-vite": "npm:^8.2.6"
-    "@storybook/test": "npm:^8.2.6"
-    "@types/react": "npm:^18.3.3"
-    "@types/rollup-plugin-peer-deps-external": "npm:^2"
-    "@vanilla-extract/css": "npm:^1.15.3"
-    "@vanilla-extract/rollup-plugin": "npm:^1.3.7"
-    "@vanilla-extract/vite-plugin": "npm:^4.0.13"
-    "@vitejs/plugin-react": "npm:^4.3.1"
-    react: "npm:^18.3.1"
-    rollup: "npm:^4.19.0"
-    rollup-plugin-dts: "npm:^6.1.1"
-    rollup-plugin-peer-deps-external: "npm:^2.2.4"
-    storybook: "npm:^8.2.6"
-    tslib: "npm:^2.6.3"
-    typescript: "npm:^5.5.4"
-    vite: "npm:^5.3.5"
-  languageName: unknown
-  linkType: soft
 
 "destroy@npm:1.2.0":
   version: 1.2.0
@@ -7225,6 +7200,41 @@ __metadata:
   checksum: 10c0/0b4cfd07c09871e12c592dfa7b91528124dc49a4766a0b23350638c62e6a483d5a2a667de7e6282246c0d4f09996482ddaacbd01f0c05b7ed7e0f79d32409bdc
   languageName: node
   linkType: hard
+
+"tmhub-design-system-react@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "tmhub-design-system-react@workspace:."
+  dependencies:
+    "@chromatic-com/storybook": "npm:^1.6.1"
+    "@rollup/plugin-commonjs": "npm:^26.0.1"
+    "@rollup/plugin-node-resolve": "npm:^15.2.3"
+    "@rollup/plugin-terser": "npm:^0.4.4"
+    "@rollup/plugin-typescript": "npm:^11.1.6"
+    "@storybook/addon-essentials": "npm:^8.2.6"
+    "@storybook/addon-interactions": "npm:^8.2.6"
+    "@storybook/addon-links": "npm:^8.2.6"
+    "@storybook/addon-onboarding": "npm:^8.2.6"
+    "@storybook/blocks": "npm:^8.2.6"
+    "@storybook/react": "npm:^8.2.6"
+    "@storybook/react-vite": "npm:^8.2.6"
+    "@storybook/test": "npm:^8.2.6"
+    "@types/react": "npm:^18.3.3"
+    "@types/rollup-plugin-peer-deps-external": "npm:^2"
+    "@vanilla-extract/css": "npm:^1.15.3"
+    "@vanilla-extract/recipes": "npm:^0.5.3"
+    "@vanilla-extract/rollup-plugin": "npm:^1.3.7"
+    "@vanilla-extract/vite-plugin": "npm:^4.0.13"
+    "@vitejs/plugin-react": "npm:^4.3.1"
+    react: "npm:^18.3.1"
+    rollup: "npm:^4.19.0"
+    rollup-plugin-dts: "npm:^6.1.1"
+    rollup-plugin-peer-deps-external: "npm:^2.2.4"
+    storybook: "npm:^8.2.6"
+    tslib: "npm:^2.6.3"
+    typescript: "npm:^5.5.4"
+    vite: "npm:^5.3.5"
+  languageName: unknown
+  linkType: soft
 
 "to-fast-properties@npm:^2.0.0":
   version: 2.0.0
