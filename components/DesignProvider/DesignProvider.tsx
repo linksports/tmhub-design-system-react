@@ -11,7 +11,9 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
   const {
     theme = 'teamhub',
     mode = 'auto',
+    type = 'page',
     children,
+    ...others
   } = props;
 
   const [colorMode, setColorMode] = useState(mode);
@@ -37,7 +39,9 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
 
   return (
     <div className={['tmhub-design-system-root', themeClass].join(' ')}>
-      <div className={designProviderRecipe()}>
+      <div className={designProviderRecipe({
+        type: type,
+      })} {...others}>
         {children}
       </div>
     </div>
