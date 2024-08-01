@@ -18,6 +18,6 @@ export const designProviderRecipe = recipe({
     },
   },
   defaultVariants: {
-    type: 'page',
+    type: 'container',
   },
 });

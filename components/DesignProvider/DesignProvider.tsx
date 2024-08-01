@@ -11,7 +11,7 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
   const {
     theme = 'teamhub',
     mode = 'auto',
-    type = 'page',
+    type = 'container',
     className,
     children,
     ...others
