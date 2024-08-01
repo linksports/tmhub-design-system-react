@@ -1,10 +1,8 @@
 {
-  "name": "design-system-react",
+  "name": "tmhub-design-system-react",
   "version": "0.0.1",
-  "description": "The design system for react",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/index.d.ts",
+  "description": "TeamHub design system for react",
+  "main": "./index.js",
   "license": "MIT",
   "private": true,
   "packageManager": "yarn@4.3.1",
@@ -37,7 +35,6 @@
     "vite": "^5.3.5"
   },
   "scripts": {
-    "rollup": "rollup -c --bundleConfigAsCjs",
     "storybook": "yarn install && storybook dev -p 6006 -h 0.0.0.0",
     "build-storybook": "storybook build"
   },

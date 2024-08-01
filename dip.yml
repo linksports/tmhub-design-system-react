@@ -4,7 +4,7 @@ version: '8.0'
 compose:
   files:
     - docker/docker-compose.yml
-  project_name: tmhub-design-system-web
+  project_name: tmhub-design-system-react
 
 interaction:
   sh:

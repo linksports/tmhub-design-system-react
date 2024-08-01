@@ -4,7 +4,7 @@ services:
     build:
       context: ..
       dockerfile: ./docker/Dockerfile
-    image: tmhub-design-system-web
+    image: tmhub-design-system-react
     tty: true
     working_dir: /app
     command: yarn storybook

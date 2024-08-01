@@ -1,5 +1,5 @@
 import { ButtonProps } from './Button.types';
-import { buttonBase, buttonSizeSm, buttonSizeMd } from '../../styles.css';
+import { buttonBase, buttonSizeSm, buttonSizeMd } from './Button.css';
 
 const Button: React.FC<ButtonProps> = (props) => {
   return (
