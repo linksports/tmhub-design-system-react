@@ -1,0 +1,18 @@
+---
+services:
+  storybook:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    image: tmhub-design-system-web
+    tty: true
+    working_dir: /app
+    command: yarn storybook
+    environment:
+      BROWSER: true
+      WATCHPACK_POLLING: true
+    volumes:
+      - ..:/app
+      - $HOME/.ssh:/root/.ssh
+    ports:
+      - "6006:6006"

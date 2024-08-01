@@ -1,0 +1,16 @@
+---
+version: '8.0'
+
+compose:
+  files:
+    - docker/docker-compose.yml
+  project_name: tmhub-design-system-web
+
+interaction:
+  sh:
+    service: storybook
+    command: sh
+
+  build:
+    service: storybook
+    command: yarn build
