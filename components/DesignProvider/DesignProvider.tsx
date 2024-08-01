@@ -38,7 +38,7 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
   return (
     <div className={['tmhub-design-system-root', themeClass].join(' ')}>
       <div className={designProviderRecipe()}>
-        {props.children}
+        {children}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story, { parameters }) => (
+    (Story) => (
       <>
         <DesignProvider theme="teamhub" mode="light">
           <div style={{ padding: '20px 50px 40px' }}>
