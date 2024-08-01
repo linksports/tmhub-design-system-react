@@ -14,13 +14,28 @@ const preview: Preview = {
     (Story, { parameters }) => (
       <>
         <DesignProvider theme="teamhub" mode="light">
-          <Story />
+          <div style={{ padding: '20px 50px 40px' }}>
+            <h5>TeamHub (Light)</h5>
+            <div style={{ textAlign: 'center' }}>
+              <Story />
+            </div>
+          </div>
         </DesignProvider>
         <DesignProvider theme="teamhub" mode="dark">
-          <Story />
+          <div style={{ padding: '20px 50px 40px' }}>
+            <h5>TeamHub (Dark)</h5>
+            <div style={{ textAlign: 'center' }}>
+              <Story />
+            </div>
+          </div>
         </DesignProvider>
-        <DesignProvider theme="teamhub">
-          <Story />
+        <DesignProvider theme="play" mode="light">
+          <div style={{ padding: '20px 50px 40px' }}>
+            <h5>PLAY</h5>
+            <div style={{ textAlign: 'center' }}>
+              <Story />
+            </div>
+          </div>
         </DesignProvider>
       </>
     ),

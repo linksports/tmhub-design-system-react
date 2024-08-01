@@ -5,6 +5,7 @@ import {
   teamhubDarkTheme,
   playTheme,
 } from '../../tokens/theme.css';
+import { designProviderRecipe } from './DesignProvider.css';
 
 const DesignProvider: React.FC<DesignProviderProps> = (props) => {
   const {
@@ -35,8 +36,10 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
   }, []);
 
   return (
-    <div className={themeClass}>
-      {props.children}
+    <div className={['tmhub-design-system-root', themeClass].join(' ')}>
+      <div className={designProviderRecipe()}>
+        {props.children}
+      </div>
     </div>
   );
 };

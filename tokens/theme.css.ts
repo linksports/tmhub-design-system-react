@@ -1,29 +1,3 @@
-import { createGlobalTheme, createTheme, createThemeContract } from '@vanilla-extract/css';
-
-export const vars = createThemeContract({
-  button: {
-    primaryBackground: 'gray',
-    primaryForeground: 'black',
-  },
-});
-
-export const teamhubLightTheme = createTheme(vars, {
-  button: {
-    primaryBackground: 'red',
-    primaryForeground: 'black',
-  },
-});
-
-export const teamhubDarkTheme = createTheme(vars, {
-  button: {
-    primaryBackground: 'blue',
-    primaryForeground: 'white',
-  },
-});
-
-export const playTheme = createTheme(vars, {
-  button: {
-    primaryBackground: 'green',
-    primaryForeground: 'yellow',
-  },
-});
+export { default as teamhubLightTheme } from './theme/teamhubLight.css';
+export { default as teamhubDarkTheme } from './theme/teamhubDark.css';
+export { default as playTheme } from './theme/play.css';

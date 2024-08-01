@@ -1,43 +1,52 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../../tokens/theme.css';
+import { vars } from '../../tokens/vars.css';
 
 export const buttonRecipe = recipe({
   base: {
-    display: 'flex',
-    padding: '10px 12px',
+    padding: `${vars.spacing.md} ${vars.spacing.lg}`,
+    border: '2px solid transparent',
     borderRadius: '24px',
+    textDecoration: 'none',
+    transition: 'opacity .2s ease-out',
+    '&:hover:not([disabled])': {
+      cursor: 'pointer',
+    },
+    '&:active:not([disabled])': {
+      opacity: 0.2,
+    },
+    ':disabled': {
+      cursor: 'not-allowed',
+      opacity: 0.38,
+    },
   },
   variants: {
     size: {
-      xs: { width: '120px' },
-      sm: { width: '180px' },
-      md: { width: '220px' },
+      xs: { width: '60px' },
+      sm: { width: '80px' },
+      md: { width: '180px' },
       lg: { width: '280px' },
     },
-    color: {
-      primary: {
-        backgroundColor: vars.button.primaryBackground,
-        color: vars.button.primaryForeground,
+    type: {
+      filled: {
+        borderColor: vars.color.brand,
+        backgroundColor: vars.color.brand,
+        color: vars.color.brandInverse,
+      },
+      outlined: {
+        borderColor: vars.color.brand,
+        backgroundColor: 'inherit',
+        color: vars.color.brand,
+      },
+      text: {
+        borderColor: 'transparent',
+        backgroundColor: 'inherit',
+        color: vars.color.text.primary,
       },
     },
   },
   defaultVariants: {
     size: 'md',
-    color: 'primary',
+    type: 'filled',
   },
-});
-
-export const buttonBase = style({
-  display: 'flex',
-  padding: '10px 12px',
-  borderRadius: '24px',
-});
-
-export const buttonSizeSm = style({
-  width: '180px',
-});
-
-export const buttonSizeMd = style({
-  width: '240px',
 });
