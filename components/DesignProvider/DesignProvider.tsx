@@ -12,6 +12,7 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
     theme = 'teamhub',
     mode = 'auto',
     type = 'page',
+    className,
     children,
     ...others
   } = props;
@@ -39,9 +40,9 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
 
   return (
     <div className={['tmhub-design-system-root', themeClass].join(' ')}>
-      <div className={designProviderRecipe({
+      <div className={[designProviderRecipe({
         type: type,
-      })} {...others}>
+      }), className].filter(Boolean).join(' ')} {...others}>
         {children}
       </div>
     </div>

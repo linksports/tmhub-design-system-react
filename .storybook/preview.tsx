@@ -29,7 +29,7 @@ const preview: Preview = {
             </div>
           </div>
         </DesignProvider>
-        <DesignProvider theme="play" mode="light" type="container">
+        <DesignProvider theme="play" mode="light" type="container" className="hoge">
           <div style={{ padding: '20px 50px 40px' }}>
             <h5>PLAY</h5>
             <div style={{ textAlign: 'center' }}>
