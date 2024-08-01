@@ -5,7 +5,6 @@
   "main": "./index.js",
   "license": "MIT",
   "private": true,
-  "packageManager": "yarn@4.3.1",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@eslint/js": "^9.8.0",
