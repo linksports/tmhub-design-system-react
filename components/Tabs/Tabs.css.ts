@@ -36,9 +36,11 @@ export const tabsTriggerRecipe = recipe({
     ':hover': {
       cursor: 'pointer',
     },
-    "&[data-state='active']": {
-      backgroundColor: vars.color.brand,
-      color: vars.color.brandInverse,
+    selectors: {
+      "&[data-state='active']": {
+        backgroundColor: vars.color.brand,
+        color: vars.color.brandInverse,
+      },
     },
   },
 });
