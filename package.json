@@ -41,9 +41,10 @@
     "vite": "^5.3.5"
   },
   "scripts": {
-    "storybook": "yarn install && storybook dev -p 6006 -h 0.0.0.0",
+    "storybook": "storybook dev -p 6006 -h 0.0.0.0",
     "build-storybook": "storybook build",
-    "lint": "yarn run eslint --fix"
+    "lint": "yarn run eslint --fix",
+    "typecheck": "yarn run tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-tabs": "^1.1.0",

@@ -4,7 +4,7 @@ import { buttonRecipe } from './Button.css';
 const Button: React.FC<ButtonProps> = (props) => {
   const {
     size = 'md',
-    type = 'filled',
+    variant = 'filled',
     children,
     ...others
   } = props;
@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button className={buttonRecipe({
       size: size,
-      type: type,
+      variant: variant,
     })} {...others}>
       {children}
     </button>

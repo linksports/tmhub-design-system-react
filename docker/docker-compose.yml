@@ -7,7 +7,7 @@ services:
     image: tmhub-design-system-react
     tty: true
     working_dir: /app
-    command: yarn storybook
+    command: sh -c 'yarn install && yarn storybook'
     environment:
       BROWSER: true
       WATCHPACK_POLLING: true

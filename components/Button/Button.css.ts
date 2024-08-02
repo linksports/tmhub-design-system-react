@@ -28,7 +28,7 @@ export const buttonRecipe = recipe({
       md: { width: '180px' },
       lg: { width: '280px' },
     },
-    type: {
+    variant: {
       filled: {
         borderColor: vars.color.brand,
         backgroundColor: vars.color.brand,
@@ -48,6 +48,6 @@ export const buttonRecipe = recipe({
   },
   defaultVariants: {
     size: 'md',
-    type: 'filled',
+    variant: 'filled',
   },
 });

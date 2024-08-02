@@ -12,7 +12,7 @@ const meta: Meta<typeof Button> = {
       control: 'radio',
       options: ['filled', 'outlined', 'text'],
     },
-    size: {
+    variant: {
       control: 'radio',
       options: ['xs', 'sm', 'md', 'lg', undefined],
     },
@@ -30,21 +30,21 @@ const Template: StoryFn<typeof Button> = (args) => <Button onClick={() => consol
 
 export const FilledButton = Template.bind({});
 FilledButton.args = {
-  type: 'filled',
+  variant: 'filled',
   size: 'md',
   children: 'Click!',
 };
 
 export const OutlinedButton = Template.bind({});
 OutlinedButton.args = {
-  type: 'outlined',
+  variant: 'outlined',
   size: 'md',
   children: 'Click!',
 };
 
 export const TextButton = Template.bind({});
 TextButton.args = {
-  type: 'text',
+  variant: 'text',
   size: 'md',
   children: 'Click!',
 };
