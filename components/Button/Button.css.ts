@@ -8,15 +8,17 @@ export const buttonRecipe = recipe({
     borderRadius: '24px',
     textDecoration: 'none',
     transition: 'opacity .2s ease-out',
-    '&:hover:not([disabled])': {
-      cursor: 'pointer',
-    },
-    '&:active:not([disabled])': {
-      opacity: 0.2,
-    },
     ':disabled': {
       cursor: 'not-allowed',
       opacity: 0.38,
+    },
+    selectors: {
+      '&:hover:not(:disabled)': {
+        cursor: 'pointer',
+      },
+      '&:active:not(:disabled)': {
+        opacity: 0.2,
+      },
     },
   },
   variants: {
