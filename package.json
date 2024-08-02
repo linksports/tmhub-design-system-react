@@ -29,7 +29,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "9.x",
     "eslint-plugin-react": "^7.35.0",
-    "globals": "^15.8.0",
+    "globals": "^15.9.0",
     "react": "^18.3.1",
     "rollup": "^4.19.0",
     "rollup-plugin-dts": "^6.1.1",
@@ -46,6 +46,7 @@
     "lint": "yarn run eslint --fix"
   },
   "dependencies": {
+    "@radix-ui/react-tabs": "^1.1.0",
     "@vanilla-extract/css": "^1.15.3",
     "@vanilla-extract/recipes": "^0.5.3"
   }
