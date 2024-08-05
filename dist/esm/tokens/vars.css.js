@@ -1,2 +1,0 @@
-import"./vars.css.ts.vanilla.css";var a={brand:"var(--brand__1noa3sc4)",brandInverse:"var(--brandInverse__1noa3sc5)",text:{primary:"var(--text-primary__1noa3sc6)",secondary:"var(--text-secondary__1noa3sc7)",hint:"var(--text-hint__1noa3sc8)",link:"var(--text-link__1noa3sc9)"},bg:"var(--bg__1noa3sca)"},n={spacing:{sm:"var(--spacing-sm__1noa3sc0)",md:"var(--spacing-md__1noa3sc1)",lg:"var(--spacing-lg__1noa3sc2)",xl:"var(--spacing-xl__1noa3sc3)"},color:a};export{a as color,n as vars};
-//# sourceMappingURL=vars.css.js.map

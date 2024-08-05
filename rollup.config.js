@@ -16,7 +16,7 @@ export default [
         // file: packageJson.main,
         dir: './dist/cjs',
         format: "cjs",
-        sourcemap: true,
+        sourcemap: 'inline',
         preserveModules: true,
         preserveModulesRoot: 'src',
         assetFileNames({ name }) {
@@ -27,7 +27,7 @@ export default [
         // file: packageJson.module,
         dir: './dist/esm',
         format: "esm",
-        sourcemap: true,
+        sourcemap: 'inline',
         preserveModules: true,
         preserveModulesRoot: 'src',
         assetFileNames({ name }) {
