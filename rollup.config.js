@@ -36,8 +36,8 @@ export default [
       },
     ],
     plugins: [
-      peerDepsExternal(),
       resolve(),
+      peerDepsExternal(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       vanillaExtractPlugin({
@@ -45,7 +45,7 @@ export default [
       }),
       terser(),
     ],
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "@vanilla-extract/css", "@vanilla-extract/recipes"],
   },
   {
     input: "src/index.ts",
