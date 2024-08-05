@@ -1,0 +1,2 @@
+import"./../../tokens/vars.css.ts.vanilla.css";import"./DesignProvider.css.ts.vanilla.css";import{c as s}from"../../node_modules/@vanilla-extract/recipes/dist/createRuntimeFn-62c9670f.esm.js";var a=s({defaultClassName:"DesignProvider_designProviderRecipe__t7rwa10",variantClassNames:{},defaultVariants:{},compoundVariants:[]});export{a as designProviderRecipe};
+//# sourceMappingURL=DesignProvider.css.js.map

@@ -1,0 +1,2 @@
+"use strict";require("./../../tokens/vars.css.ts.vanilla.css"),require("./DesignProvider.css.ts.vanilla.css");var e=require("../../node_modules/@vanilla-extract/recipes/dist/createRuntimeFn-62c9670f.esm.js").c({defaultClassName:"DesignProvider_designProviderRecipe__t7rwa10",variantClassNames:{},defaultVariants:{},compoundVariants:[]});exports.designProviderRecipe=e;
+//# sourceMappingURL=DesignProvider.css.js.map

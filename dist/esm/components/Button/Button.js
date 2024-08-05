@@ -1,0 +1,2 @@
+import{__rest as s,__assign as i}from"../../node_modules/tslib/tslib.es6.js";import{j as o}from"../../node_modules/react/jsx-runtime.js";import{Slot as t}from"../../node_modules/@radix-ui/react-slot/dist/index.js";import{buttonRecipe as r}from"./Button.css.js";var e=function(e){var a=e.asChild,d=void 0!==a&&a,m=s(e,["asChild"]),n=d?t:"button",l=m.size,u=void 0===l?"md":l,v=m.variant,f=void 0===v?"filled":v,j=s(m,["size","variant"]);return o.jsx(n,i({className:r({size:u,variant:f})},j))};export{e as default};
+//# sourceMappingURL=Button.js.map

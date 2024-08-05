@@ -1,0 +1,2 @@
+"use strict";var e=require("../../node_modules/tslib/tslib.es6.js"),s=require("../../node_modules/react/jsx-runtime.js"),i=require("../../node_modules/@radix-ui/react-slot/dist/index.js"),t=require("./Button.css.js");module.exports=function(r){var o=r.asChild,d=void 0!==o&&o,u=e.__rest(r,["asChild"]),a=d?i.Slot:"button",n=u.size,l=void 0===n?"md":n,_=u.variant,m=void 0===_?"filled":_,v=e.__rest(u,["size","variant"]);return s.jsxRuntimeExports.jsx(a,e.__assign({className:t.buttonRecipe({size:l,variant:m})},v))};
+//# sourceMappingURL=Button.js.map
