@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import DesignProvider from '../components/DesignProvider';
+import DesignProvider from '../src/components/DesignProvider';
 
 const preview: Preview = {
   parameters: {

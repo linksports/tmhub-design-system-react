@@ -19,9 +19,9 @@ export default [
         sourcemap: true,
         preserveModules: true,
         preserveModulesRoot: 'src',
-        // assetFileNames({ name }) {
-        //   return name?.replace(/^src\//, '') ?? '';
-        // },
+        assetFileNames({ name }) {
+          return name?.replace(/^src\//, '') ?? '';
+        },
       },
       {
         // file: packageJson.module,
@@ -30,9 +30,9 @@ export default [
         sourcemap: true,
         preserveModules: true,
         preserveModulesRoot: 'src',
-        // assetFileNames({ name }) {
-        //   return name?.replace(/^src\//, '') ?? '';
-        // },
+        assetFileNames({ name }) {
+          return name?.replace(/^src\//, '') ?? '';
+        },
       },
     ],
     plugins: [
