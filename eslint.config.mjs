@@ -3,7 +3,6 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 
-
 export default [
   {
     settings: {
@@ -32,6 +31,8 @@ export default [
   {
     files: [
       "components/**/*.{js,mjs,cjs,ts,jsx,tsx}",
+      "util/**/*.{js,mjs,cjs,ts,jsx,tsx}",
+      "tokens/**/*.{js,mjs,cjs,ts,jsx,tsx}",
     ],
     rules: {
       "react/jsx-uses-react": "off",

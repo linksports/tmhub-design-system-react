@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { AsChildProps } from '../../util/AsChildProps';
 import { DesignProviderProps } from './DesignProvider.types';
 import {
   teamhubLightTheme,
@@ -7,13 +9,16 @@ import {
 } from '../../tokens/theme.css';
 import { designProviderRecipe } from './DesignProvider.css';
 
-const DesignProvider: React.FC<DesignProviderProps> = (props) => {
+const DesignProvider: React.FC<AsChildProps<DesignProviderProps, "body">> = ({
+  asChild = false,
+  ...props
+}) => {
+  const Component = asChild ? Slot : "body";
+
   const {
     theme = 'teamhub',
     mode = 'auto',
-    type = 'container',
     className,
-    children,
     ...others
   } = props;
 
@@ -39,13 +44,12 @@ const DesignProvider: React.FC<DesignProviderProps> = (props) => {
   }, []);
 
   return (
-    <div className={['tmhub-design-system-root', themeClass].join(' ')}>
-      <div className={[designProviderRecipe({
-        type: type,
-      }), className].filter(Boolean).join(' ')} {...others}>
-        {children}
-      </div>
-    </div>
+    <Component className={[
+      'tmhub-design-system-root',
+      themeClass,
+      designProviderRecipe(),
+      className
+    ].filter(Boolean).join(' ')} {...others} />
   );
 };
 

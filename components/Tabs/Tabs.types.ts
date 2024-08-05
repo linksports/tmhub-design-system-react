@@ -6,7 +6,10 @@ import type {
 } from '@radix-ui/react-tabs';
 
 export type TabsProps = {
-  // defaultValue?: string;
+  // orientation?: 'horizontal' | 'vertical',
+  // defaultValue?: string,
+  // children: React.ReactNode,
+// };
 } & OriginalTabsProps;
 
 export type TabsListProps = {

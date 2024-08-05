@@ -11,6 +11,7 @@ services:
     environment:
       BROWSER: true
       WATCHPACK_POLLING: true
+      VITE_CJS_TRACE: true
     volumes:
       - ..:/app
       - $HOME/.ssh:/root/.ssh

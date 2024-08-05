@@ -8,11 +8,11 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    type: {
+    variant: {
       control: 'radio',
       options: ['filled', 'outlined', 'text'],
     },
-    variant: {
+    size: {
       control: 'radio',
       options: ['xs', 'sm', 'md', 'lg', undefined],
     },
@@ -26,7 +26,10 @@ const meta: Meta<typeof Button> = {
 };
 export default meta;
 
-const Template: StoryFn<typeof Button> = (args) => <Button onClick={() => console.log("CLICK!")} {...args} />;
+const Template: StoryFn<typeof Button> = (args) => (
+  <Button {...args}>
+  </Button>
+);
 
 export const FilledButton = Template.bind({});
 FilledButton.args = {
