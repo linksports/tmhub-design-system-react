@@ -19,9 +19,9 @@ export default [
         sourcemap: true,
         preserveModules: true,
         preserveModulesRoot: 'src',
-        assetFileNames({ name }) {
-          return name?.replace(/^src\//, '') ?? '';
-        },
+        // assetFileNames({ name }) {
+        //   return name?.replace(/^src\//, '') ?? '';
+        // },
       },
       {
         // file: packageJson.module,
@@ -30,9 +30,9 @@ export default [
         sourcemap: true,
         preserveModules: true,
         preserveModulesRoot: 'src',
-        assetFileNames({ name }) {
-          return name?.replace(/^src\//, '') ?? '';
-        },
+        // assetFileNames({ name }) {
+        //   return name?.replace(/^src\//, '') ?? '';
+        // },
       },
     ],
     plugins: [
@@ -40,7 +40,9 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      vanillaExtractPlugin(),
+      vanillaExtractPlugin({
+        projectRoot: __dirname,
+      }),
       terser(),
     ],
     external: ["react", "react-dom"],
