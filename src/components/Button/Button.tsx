@@ -1,3 +1,35 @@
+import { addFunctionSerializer } from '@vanilla-extract/css/functionSerializer';
+import { runtimeComponent } from './Button.runtime';
+import { ButtonProps } from './Button.types';
+import { buttonRecipe } from './Button.css';
+
+const Button = (props: ButtonProps) => {
+  const {
+    size = 'md',
+    variant = 'filled',
+    ...others
+  } = props;
+  
+  const className = buttonRecipe({
+    size: size,
+    variant: variant,
+  });
+  const args = [className];
+
+  const Component = runtimeComponent(...args);
+
+  addFunctionSerializer(Component, {
+    importPath: './Button.runtime',
+    importName: 'runtimeComponent',
+    args
+  });
+
+  return Component(others);;
+};
+
+export default Button;
+
+/*
 import { Slot } from '@radix-ui/react-slot';
 import { AsChildProps } from '../../util/AsChildProps';
 import { ButtonProps } from './Button.types';
@@ -24,3 +56,4 @@ const Button: React.FC<AsChildProps<ButtonProps, "button">> = ({
 };
 
 export default Button;
+*/
