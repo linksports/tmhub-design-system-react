@@ -2,8 +2,8 @@ import { __rest, __assign } from '../../node_modules/tslib/tslib.es6.js';
 import { j as jsxRuntimeExports } from '../../node_modules/react/jsx-runtime.js';
 import { useState, useEffect } from 'react';
 import { Slot } from '../../node_modules/@radix-ui/react-slot/dist/index.js';
-import { teamhubLightTheme, teamhubDarkTheme, playTheme } from '../../tokens/theme.css.js';
-import { designProviderRecipe } from './DesignProvider.css.js';
+import { teamhubLightTheme, teamhubDarkTheme, playTheme } from '../../tokens/theme.css.vanilla.js';
+import { designProviderRecipe } from './DesignProvider.css.vanilla.js';
 
 var DesignProvider = function (_a) {
     var _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest(_a, ["asChild"]);

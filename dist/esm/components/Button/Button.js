@@ -1,7 +1,7 @@
 import { __rest, __assign } from '../../node_modules/tslib/tslib.es6.js';
 import { j as jsxRuntimeExports } from '../../node_modules/react/jsx-runtime.js';
 import { Slot } from '../../node_modules/@radix-ui/react-slot/dist/index.js';
-import { button } from './Button.css.js';
+import { button } from './Button.css.vanilla.js';
 
 var Button = function (_a) {
     var _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest(_a, ["asChild"]);
