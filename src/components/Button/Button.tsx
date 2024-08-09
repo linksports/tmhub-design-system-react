@@ -34,7 +34,7 @@ export default Button;
 import { Slot } from '@radix-ui/react-slot';
 import { AsChildProps } from '../../util/AsChildProps';
 import { ButtonProps } from './Button.types';
-import { buttonRecipe } from './Button.css';
+import { button } from './Button.css';
 
 const Button: React.FC<AsChildProps<ButtonProps, "button">> = ({
   asChild = false,
@@ -49,7 +49,7 @@ const Button: React.FC<AsChildProps<ButtonProps, "button">> = ({
   } = props;
 
   return (
-    <Component className={buttonRecipe({
+    <Component className={button({
       size: size,
       variant: variant,
     })} {...others} />

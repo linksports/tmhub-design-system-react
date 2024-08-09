@@ -1,7 +1,7 @@
 import { recipe } from '@vanilla-extract/recipes';
 import { vars } from '../../tokens/vars.css';
 
-export const buttonRecipe = recipe({
+export const button = recipe({
   base: {
     padding: `${vars.spacing.md} ${vars.spacing.lg}`,
     border: '2px solid transparent',
