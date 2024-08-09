@@ -42,6 +42,7 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       vanillaExtractPlugin({
         projectRoot: __dirname,
+        runtime: true,
       }),
       // terser(),
     ],

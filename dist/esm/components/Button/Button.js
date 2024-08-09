@@ -1,6 +1,6 @@
-import { __rest, __assign } from '../../root/.yarn/berry/cache/tslib-npm-2.6.3-0fd136b3be-10c0.zip/node_modules/tslib/tslib.es6.js';
-import { j as jsxRuntimeExports } from '../../root/.yarn/berry/cache/react-npm-18.3.1-af38f3c1ae-10c0.zip/node_modules/react/jsx-runtime.js';
-import { Slot } from '../../app/.yarn/__virtual__/@radix-ui-react-slot-virtual-e593cd9925/2/root/.yarn/berry/cache/@radix-ui-react-slot-npm-1.1.0-f9e1623e18-10c0.zip/node_modules/@radix-ui/react-slot/dist/index.js';
+import { __rest, __assign } from '../../node_modules/tslib/tslib.es6.js';
+import { j as jsxRuntimeExports } from '../../node_modules/react/jsx-runtime.js';
+import { Slot } from '../../node_modules/@radix-ui/react-slot/dist/index.js';
 import { button } from './Button.css.js';
 
 var Button = function (_a) {

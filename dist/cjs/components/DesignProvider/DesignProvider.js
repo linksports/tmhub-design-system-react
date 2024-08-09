@@ -1,9 +1,9 @@
 'use strict';
 
-var tslib_es6 = require('../../root/.yarn/berry/cache/tslib-npm-2.6.3-0fd136b3be-10c0.zip/node_modules/tslib/tslib.es6.js');
-var jsxRuntime = require('../../root/.yarn/berry/cache/react-npm-18.3.1-af38f3c1ae-10c0.zip/node_modules/react/jsx-runtime.js');
+var tslib_es6 = require('../../node_modules/tslib/tslib.es6.js');
+var jsxRuntime = require('../../node_modules/react/jsx-runtime.js');
 var React = require('react');
-var index = require('../../app/.yarn/__virtual__/@radix-ui-react-slot-virtual-e593cd9925/2/root/.yarn/berry/cache/@radix-ui-react-slot-npm-1.1.0-f9e1623e18-10c0.zip/node_modules/@radix-ui/react-slot/dist/index.js');
+var index = require('../../node_modules/@radix-ui/react-slot/dist/index.js');
 var theme_css = require('../../tokens/theme.css.js');
 var DesignProvider_css = require('./DesignProvider.css.js');
 
