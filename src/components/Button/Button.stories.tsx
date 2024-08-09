@@ -1,5 +1,6 @@
 import { StoryFn, Meta } from "@storybook/react";
 import Button from './Button';
+// import { Button } from '../../../dist/esm';
 
 const meta: Meta<typeof Button> = {
   component: Button,
