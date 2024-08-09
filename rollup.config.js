@@ -43,9 +43,10 @@ export default [
       vanillaExtractPlugin({
         projectRoot: __dirname,
       }),
-      terser(),
+      // terser(),
     ],
-    external: ["react", "react-dom", "@vanilla-extract/css", "@vanilla-extract/recipes"],
+    // external: ["react", "react-dom", "@vanilla-extract/css", "@vanilla-extract/recipes"],
+    external: ["react", "react-dom"],
   },
   {
     input: "src/index.ts",
