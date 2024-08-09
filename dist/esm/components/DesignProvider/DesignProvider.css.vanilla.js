@@ -1,5 +1,5 @@
-import './../../tokens/vars.css.ts.vanilla.css';
-import './DesignProvider.css.ts.vanilla.css';
+
+
 import { createRuntimeFn } from '@vanilla-extract/recipes/createRuntimeFn';
 
 var designProviderRecipe = createRuntimeFn({defaultClassName:'DesignProvider_designProviderRecipe__t7rwa10',variantClassNames:{},defaultVariants:{},compoundVariants:[]});

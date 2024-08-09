@@ -83,17 +83,17 @@ export default [
         entryFileNames ({ name }) {
           return `${name.replace(/\.css$/, '.css.vanilla')}.js`;
         },
-        // assetFileNames (assetInfo) {
-        //   const assetPath = assetInfo.name.replace(/^src\//, 'assets/');
-        //   if (assetPath.match(/\.css$/)) {
-        //     emittedCSSFiles.add(assetPath);
-        //   }
-        //   return assetPath;
-        // },
-        exports: 'named',
-        assetFileNames({ name }) {
-          return name?.replace(/^src\//, '') ?? '';
+        assetFileNames (assetInfo) {
+          const assetPath = assetInfo.name.replace(/^src\//, '');
+          if (assetPath.match(/\.css$/)) {
+            emittedCSSFiles.add(assetPath);
+          }
+          return assetPath;
         },
+        exports: 'named',
+        // assetFileNames({ name }) {
+        //   return name?.replace(/^src\//, '') ?? '';
+        // },
       },
     ],
     plugins: [
@@ -101,11 +101,11 @@ export default [
       peerDepsExternal(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      // bundleCssEmits(),
       vanillaExtractPlugin({
         projectRoot: __dirname,
       }),
       // terser(),
+      bundleCssEmits(),
     ],
     // external: ["react", "react-dom", "@vanilla-extract/css", "@vanilla-extract/recipes"],
     external: ["react", "react-dom"],
