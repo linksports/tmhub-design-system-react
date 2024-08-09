@@ -6,7 +6,7 @@ import path from 'path';
 import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin';
-import { vanillaExtractPlugin as veEsbuildPlugin } from '@vanilla-extract/esbuild-plugin';
+import depsExternal from 'rollup-plugin-deps-external';
 
 const packageJson = require("./package.json");
 
@@ -104,6 +104,7 @@ export default [
       vanillaExtractPlugin({
         projectRoot: __dirname,
       }),
+      depsExternal(),
       // terser(),
       bundleCssEmits(),
     ],
