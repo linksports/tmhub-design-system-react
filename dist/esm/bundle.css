@@ -12,80 +12,6 @@
   color: var(--text-primary__1noa3sc6);
 }
 
-/* src/tokens/theme/teamhubLight.css.ts.vanilla.css -> tokens/theme/teamhubLight.css.ts.vanilla.css */
-.teamhubLight_theme__thi3m60 {
-  --brand__1noa3sc4: rgba(70, 165, 135, 1);
-  --brandInverse__1noa3sc5: white;
-  --text-primary__1noa3sc6: rgba(0, 0, 0, 0.87);
-  --text-secondary__1noa3sc7: rgba(0, 0, 0, 0.54);
-  --text-hint__1noa3sc8: rgba(0, 0, 0, 0.38);
-  --text-link__1noa3sc9: rgba(33, 150, 243, 1);
-  --bg__1noa3sca: rgba(236, 239, 241, 1);
-}
-
-/* src/tokens/theme/teamhubDark.css.ts.vanilla.css -> tokens/theme/teamhubDark.css.ts.vanilla.css */
-.teamhubDark_theme__t2uxr0 {
-  --brand__1noa3sc4: rgba(25, 217, 110, 1);
-  --brandInverse__1noa3sc5: white;
-  --text-primary__1noa3sc6: rgba(239, 239, 239, 1);
-  --text-secondary__1noa3sc7: rgba(208, 208, 208, 1);
-  --text-hint__1noa3sc8: rgba(165, 165, 165, 1);
-  --text-link__1noa3sc9: rgba(33, 150, 243, 1);
-  --bg__1noa3sca: rgba(8, 20, 0, 1);
-}
-
-/* src/tokens/theme/play.css.ts.vanilla.css -> tokens/theme/play.css.ts.vanilla.css */
-.play_theme__1sgy94z0 {
-  --brand__1noa3sc4: rgba(191, 4, 7, 1);
-  --brandInverse__1noa3sc5: white;
-  --text-primary__1noa3sc6: rgba(0, 0, 0, 0.87);
-  --text-secondary__1noa3sc7: rgba(0, 0, 0, 0.54);
-  --text-hint__1noa3sc8: rgba(0, 0, 0, 0.38);
-  --text-link__1noa3sc9: rgba(33, 150, 243, 1);
-  --bg__1noa3sca: rgba(236, 239, 241, 1);
-}
-
-/* src/components/Tabs/Tabs.css.ts.vanilla.css -> components/Tabs/Tabs.css.ts.vanilla.css */
-.Tabs_tabsRecipe__1yn9xmn0 {
-  display: flex;
-  flex-direction: column;
-}
-.Tabs_tabsListRecipe__1yn9xmn1 {
-  flex-shrink: 0;
-  display: flex;
-  border: 1px solid var(--brand__1noa3sc4);
-  border-radius: 4px;
-}
-.Tabs_tabsTriggerRecipe__1yn9xmn2 {
-  all: unset;
-  font-family: inherit;
-  padding: 0 20px;
-  height: 32px;
-  border: 1px solid var(--brand__1noa3sc4);
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  background-color: inherit;
-  color: var(--brand__1noa3sc4);
-  user-select: none;
-  font-size: .625rem;
-}
-.Tabs_tabsTriggerRecipe__1yn9xmn2:hover {
-  cursor: pointer;
-}
-.Tabs_tabsTriggerRecipe__1yn9xmn2[data-state='active'] {
-  background-color: var(--brand__1noa3sc4);
-  color: var(--brandInverse__1noa3sc5);
-}
-.Tabs_tabsContentRecipe__1yn9xmn3 {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: inherit;
-  outline: none;
-}
-
 /* src/components/Button/Button.css.ts.vanilla.css -> components/Button/Button.css.ts.vanilla.css */
 .Button_button__19coy7n0 {
   padding: var(--spacing-md__1noa3sc1) var(--spacing-lg__1noa3sc2);
@@ -130,4 +56,78 @@
   border-color: transparent;
   background-color: inherit;
   color: var(--text-primary__1noa3sc6);
+}
+
+/* src/components/Tabs/Tabs.css.ts.vanilla.css -> components/Tabs/Tabs.css.ts.vanilla.css */
+.Tabs_tabsRecipe__1yn9xmn0 {
+  display: flex;
+  flex-direction: column;
+}
+.Tabs_tabsListRecipe__1yn9xmn1 {
+  flex-shrink: 0;
+  display: flex;
+  border: 1px solid var(--brand__1noa3sc4);
+  border-radius: 4px;
+}
+.Tabs_tabsTriggerRecipe__1yn9xmn2 {
+  all: unset;
+  font-family: inherit;
+  padding: 0 20px;
+  height: 32px;
+  border: 1px solid var(--brand__1noa3sc4);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  background-color: inherit;
+  color: var(--brand__1noa3sc4);
+  user-select: none;
+  font-size: .625rem;
+}
+.Tabs_tabsTriggerRecipe__1yn9xmn2:hover {
+  cursor: pointer;
+}
+.Tabs_tabsTriggerRecipe__1yn9xmn2[data-state='active'] {
+  background-color: var(--brand__1noa3sc4);
+  color: var(--brandInverse__1noa3sc5);
+}
+.Tabs_tabsContentRecipe__1yn9xmn3 {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: inherit;
+  outline: none;
+}
+
+/* src/tokens/theme/teamhubLight.css.ts.vanilla.css -> tokens/theme/teamhubLight.css.ts.vanilla.css */
+.teamhubLight_theme__thi3m60 {
+  --brand__1noa3sc4: rgba(70, 165, 135, 1);
+  --brandInverse__1noa3sc5: white;
+  --text-primary__1noa3sc6: rgba(0, 0, 0, 0.87);
+  --text-secondary__1noa3sc7: rgba(0, 0, 0, 0.54);
+  --text-hint__1noa3sc8: rgba(0, 0, 0, 0.38);
+  --text-link__1noa3sc9: rgba(33, 150, 243, 1);
+  --bg__1noa3sca: rgba(236, 239, 241, 1);
+}
+
+/* src/tokens/theme/teamhubDark.css.ts.vanilla.css -> tokens/theme/teamhubDark.css.ts.vanilla.css */
+.teamhubDark_theme__t2uxr0 {
+  --brand__1noa3sc4: rgba(25, 217, 110, 1);
+  --brandInverse__1noa3sc5: white;
+  --text-primary__1noa3sc6: rgba(239, 239, 239, 1);
+  --text-secondary__1noa3sc7: rgba(208, 208, 208, 1);
+  --text-hint__1noa3sc8: rgba(165, 165, 165, 1);
+  --text-link__1noa3sc9: rgba(33, 150, 243, 1);
+  --bg__1noa3sca: rgba(8, 20, 0, 1);
+}
+
+/* src/tokens/theme/play.css.ts.vanilla.css -> tokens/theme/play.css.ts.vanilla.css */
+.play_theme__1sgy94z0 {
+  --brand__1noa3sc4: rgba(191, 4, 7, 1);
+  --brandInverse__1noa3sc5: white;
+  --text-primary__1noa3sc6: rgba(0, 0, 0, 0.87);
+  --text-secondary__1noa3sc7: rgba(0, 0, 0, 0.54);
+  --text-hint__1noa3sc8: rgba(0, 0, 0, 0.38);
+  --text-link__1noa3sc9: rgba(33, 150, 243, 1);
+  --bg__1noa3sca: rgba(236, 239, 241, 1);
 }

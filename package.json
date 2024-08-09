@@ -5,9 +5,6 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    "css": "./dist/esm/bundle.css"
-  },
   "license": "MIT",
   "private": true,
   "type": "module",
