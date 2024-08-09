@@ -34,7 +34,7 @@ export default Button;
 import { Slot } from '@radix-ui/react-slot';
 import { AsChildProps } from '../../util/AsChildProps';
 import { ButtonProps } from './Button.types';
-import { button } from './Button.css';
+import button from './Button.css';
 
 const Button: React.FC<AsChildProps<ButtonProps, "button">> = ({
   asChild = false,
