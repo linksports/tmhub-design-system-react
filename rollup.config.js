@@ -16,17 +16,11 @@ const bundleCssEmits = () => ({
   buildStart () {
     emittedCSSFiles.clear();
   },
-  /**
-   * @param {string} code
-   * @param {import('rollup').RenderedChunk} chunkInfo
-   */
   renderChunk (code, chunkInfo) {
-    /** @type Array<[string, string]> */
     const allImports = [...code.matchAll(/import (?:.* from )?['"]([^;'"]*)['"];?/g)];
     const dirname = path.dirname(chunkInfo.fileName);
     const output = allImports.reduce((resultingCode, [importLine, moduleId]) => {
       if (emittedCSSFiles.has(path.posix.join(dirname, moduleId))) {
-        console.log('Stripping: ' + importLine);
         return resultingCode.replace(importLine, '');
       }
       return resultingCode;
@@ -36,10 +30,6 @@ const bundleCssEmits = () => ({
       map: chunkInfo.map ?? null,
     };
   },
-  /**
-   * @param {import('rollup').RollupOptions} options
-   * @param {{ [fileName: string]: import('rollup').EmittedAsset | import('rollup').EmittedChunk }} bundle
-   */
   generateBundle (options, bundle) {
     const bundleCode = Array.from(emittedCSSFiles.values())
       .map(file => bundle[file])
@@ -50,11 +40,6 @@ const bundleCssEmits = () => ({
       name: 'src/bundle.css',
       source: bundleCode,
     });
-    // this.emitFile({
-    //   type: 'asset',
-    //   name: 'src/index.css',
-    //   source: Array.from(emittedCSSFiles).map(name => `@import "${name.replace(/^assets\//, './')}";`).join('\n') + '\n',
-    // });
   },
 });
 
@@ -63,7 +48,6 @@ export default [
     input: "src/index.ts",
     output: [
       {
-        // file: packageJson.main,
         dir: './dist/cjs',
         format: "cjs",
         sourcemap: 'inline',
@@ -74,7 +58,6 @@ export default [
         },
       },
       {
-        // file: packageJson.module,
         dir: './dist/esm',
         format: "esm",
         sourcemap: 'inline',
@@ -91,9 +74,6 @@ export default [
           return assetPath;
         },
         exports: 'named',
-        // assetFileNames({ name }) {
-        //   return name?.replace(/^src\//, '') ?? '';
-        // },
       },
     ],
     plugins: [
@@ -104,11 +84,10 @@ export default [
       vanillaExtractPlugin({
         projectRoot: __dirname,
       }),
-      depsExternal(),
-      // terser(),
       bundleCssEmits(),
+      depsExternal(),
+      terser(),
     ],
-    // external: ["react", "react-dom", "@vanilla-extract/css", "@vanilla-extract/recipes"],
     external: ["react", "react-dom"],
   },
   {

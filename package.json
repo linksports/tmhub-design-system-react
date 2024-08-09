@@ -5,6 +5,9 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "css": "./dist/esm/bundle.css"
+  },
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -52,12 +55,12 @@
     "build": "rollup -c --bundleConfigAsCjs"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "tslib": "^2.6.3",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@vanilla-extract/css": "^1.15.3",
-    "@vanilla-extract/recipes": "^0.5.3"
+    "@vanilla-extract/recipes": "^0.5.3",
+    "react": "^18.3.1",
+    "tslib": "^2.6.3"
   },
   "peerDependencies": {
     "@vanilla-extract/css": "^1.15.3",

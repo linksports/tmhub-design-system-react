@@ -5,13 +5,16 @@ import pluginReact from "eslint-plugin-react";
 
 export default [
   {
+    languageOptions: { globals: globals.browser },
     settings: {
       react: {
         version: 'detect',
       },
     },
+  },
+  {
     files: [
-      "**/*.{js,mjs,cjs,ts,jsx,tsx}",
+      "src/**/*.{js,mjs,cjs,ts,jsx,tsx}",
     ],
   },
   {
@@ -24,16 +27,10 @@ export default [
       "rollup.config.js",
     ],
   },
-  {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
-    files: [
-      "components/**/*.{js,mjs,cjs,ts,jsx,tsx}",
-      "util/**/*.{js,mjs,cjs,ts,jsx,tsx}",
-      "tokens/**/*.{js,mjs,cjs,ts,jsx,tsx}",
-    ],
     rules: {
       "react/jsx-uses-react": "off",
       "react/prop-types": "off",
