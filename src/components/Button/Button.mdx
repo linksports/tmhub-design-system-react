@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story, Controls } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+import Button from './Button';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+## asChild
+
+`Button` コンポーネントはレンダリングされるとHTMLの `button` エレメントになる。もし何らかの理由で要素を `a` にしたいなどあれば `asChild` 属性を使う。
+
+```typescript
+<Button asChild>
+  <a href="https://tmhub.jp" target="_blank">TeamHub</a>
+</Button>
+```
+
+```typescript
+import Link from 'next/link';
+
+<Button variant="outlined" asChild>
+  <Link href="/">Home</Link>
+</Button>
+```
+
+## Playground
+
+<Story />
+<Controls />

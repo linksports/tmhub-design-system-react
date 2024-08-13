@@ -3,6 +3,9 @@ import { AsChildProps } from '../../util/AsChildProps';
 import { ButtonProps } from './Button.types';
 import { button } from './Button.css';
 
+/**
+ * ボタンコンポーネント
+ */
 const Button: React.FC<AsChildProps<ButtonProps, "button">> = ({
   asChild = false,
   ...props

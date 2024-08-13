@@ -1,6 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
 import Button from './Button';
-// import { Button } from '../../../dist/esm';
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -12,13 +11,20 @@ const meta: Meta<typeof Button> = {
     variant: {
       control: 'radio',
       options: ['filled', 'outlined', 'text'],
+      description: 'ボタンの外観設定',
     },
     size: {
       control: 'radio',
-      options: ['xs', 'sm', 'md', 'lg', undefined],
+      options: ['xs', 'sm', 'md', 'lg'],
+      description: 'サイズ（主に横幅）'
     },
     disabled: {
       control: 'boolean',
+      description: 'ボタン無効',
+    },
+    asChild: {
+      control: 'boolean',
+      description: '子要素をコンポーネントとして利用',
     },
     children: {
       control: 'text',
@@ -32,6 +38,9 @@ const Template: StoryFn<typeof Button> = (args) => (
   </Button>
 );
 
+/**
+ * デフォルトボタン
+ */
 export const FilledButton = Template.bind({});
 FilledButton.args = {
   variant: 'filled',
@@ -39,6 +48,9 @@ FilledButton.args = {
   children: 'Click!',
 };
 
+/**
+ * アウトラインボタン
+ */
 export const OutlinedButton = Template.bind({});
 OutlinedButton.args = {
   variant: 'outlined',
@@ -46,6 +58,9 @@ OutlinedButton.args = {
   children: 'Click!',
 };
 
+/**
+ * テキストボタン
+ */
 export const TextButton = Template.bind({});
 TextButton.args = {
   variant: 'text',

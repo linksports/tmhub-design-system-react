@@ -8,10 +8,6 @@ const meta: Meta<typeof Tabs.Root> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    orientation: {
-      control: 'radio',
-      options: ['horizontal', 'vertical'],
-    },
   },
 };
 export default meta;
@@ -35,8 +31,7 @@ const Template: StoryFn<typeof Tabs.Root> = (args) => (
   </Tabs.Root>
 );
 
-export const HorizontalTabs = Template.bind({});
-HorizontalTabs.args = {
-  orientation: 'horizontal',
+export const Basic = Template.bind({});
+Basic.args = {
   defaultValue: 'tab1',
 };

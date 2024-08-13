@@ -24,6 +24,9 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
+  docs: {
+    autodocs: true,
+  },
   viteFinal: async (config) => {
     return mergeConfig(config, {
       plugins: [vanillaExtractPlugin()],

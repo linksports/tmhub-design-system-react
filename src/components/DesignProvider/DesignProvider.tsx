@@ -9,11 +9,11 @@ import {
 } from '../../tokens/theme.css';
 import { designProviderRecipe } from './DesignProvider.css';
 
-const DesignProvider: React.FC<AsChildProps<DesignProviderProps, "body">> = ({
+const DesignProvider: React.FC<AsChildProps<DesignProviderProps, "div">> = ({
   asChild = false,
   ...props
 }) => {
-  const Component = asChild ? Slot : "body";
+  const Component = asChild ? Slot : "div";
 
   const {
     theme = 'teamhub',

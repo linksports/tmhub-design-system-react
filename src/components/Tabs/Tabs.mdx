@@ -1,0 +1,59 @@
+import { Canvas, Meta, Story, Controls, Markdown } from '@storybook/blocks';
+import PropsTable from '../../../.storybook/propertiesTable';
+import * as TabsStories from './Tabs.stories';
+import Tabs from './Tabs';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+## API Reference
+
+### Root
+
+<PropsTable props={[
+  ['defaultValue', 'string', '初期表示されるタブの識別子'],
+  ['value', 'string', '現在選択されているタブの識別子'],
+  ['onValueChange', '(value: string) => void', 'タブが変更された際のイベント'],
+]} />
+
+### Trigger
+
+<PropsTable props={[
+  ['value*', 'string', 'タップした際に選択状態になるタブの識別子'],
+  ['disabled', 'boolean', '無効状態'],
+]} />
+
+### Content
+
+<PropsTable props={[
+  ['value*', 'string', 'タブの識別子'],
+]} />
+
+## Anatomy
+
+`Tabs.Trigger` をタップすると、対応する `value` の `Tabs.Content` が表示される。
+
+```typescript
+<Tabs.Root defaultValue="value1">
+  <Tabs.List aria-label="コンテンツリスト">
+    <Tabs.Trigger value="value1">
+      Tab #1
+    </Tabs.Trigger>
+    <Tabs.Trigger value="value2">
+      Tab #2
+    </Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="value1">
+    Content #1
+  </Tabs.Content>
+  <Tabs.Content value="value2">
+    Content #2
+  </Tabs.Content>
+</Tabs.Root>
+```
+
+## Playground
+
+<Story />
+<Controls />

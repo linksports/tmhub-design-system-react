@@ -2,6 +2,9 @@ import * as Tabs from '@radix-ui/react-tabs';
 import type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from './Tabs.types';
 import { tabsRecipe, tabsListRecipe, tabsTriggerRecipe, tabsContentRecipe } from './Tabs.css';
 
+/**
+ * タブコントロール
+ */
 const Root: React.FC<TabsProps> = (props) => {
   const {
     children,

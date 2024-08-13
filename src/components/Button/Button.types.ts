@@ -1,4 +1,4 @@
-export type ButtonProps = {
+export interface ButtonProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   variant?: 'filled' | 'outlined' | 'text';
   children: React.ReactNode;
