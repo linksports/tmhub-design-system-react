@@ -40,8 +40,10 @@ const DesignProvider: React.FC<AsChildProps<DesignProviderProps, "div">> = ({
       } else {
         setColorMode('light');
       };
-    };
-  }, []);
+    } else {
+      setColorMode(mode);
+    };;
+  }, [mode]);
 
   return (
     <Component className={[

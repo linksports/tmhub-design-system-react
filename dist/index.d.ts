@@ -14,9 +14,9 @@ type DesignProviderProps = {
     theme?: 'teamhub' | 'play' | 'joynup';
     mode?: 'light' | 'dark';
     children?: React.ReactNode;
-} & React.ComponentProps<'body'>;
+} & React.ComponentProps<'div'>;
 
-declare const DesignProvider: React.FC<AsChildProps<DesignProviderProps, "body">>;
+declare const DesignProvider: React.FC<AsChildProps<DesignProviderProps, "div">>;
 
 type ButtonProps = {
     size?: 'xs' | 'sm' | 'md' | 'lg';
@@ -24,6 +24,9 @@ type ButtonProps = {
     children: React.ReactNode;
 } & React.ComponentProps<'button'>;
 
+/**
+ * ボタンコンポーネント
+ */
 declare const Button: React.FC<AsChildProps<ButtonProps, "button">>;
 
 declare const _default: {

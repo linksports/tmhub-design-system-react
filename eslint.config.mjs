@@ -25,6 +25,7 @@ export default [
       ".storybook/**/*",
       ".pnp.cjs",
       "rollup.config.js",
+      "dist/**/*",
     ],
   },
   pluginJs.configs.recommended,

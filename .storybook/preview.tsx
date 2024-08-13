@@ -1,47 +1,32 @@
 import type { Preview } from "@storybook/react";
-import DesignProvider from '../src/components/DesignProvider';
+import { withTmhubTheme } from './tmhubTheme.decorator';
 
 const preview: Preview = {
   parameters: {
+    layout: 'fullscreen',
+    actions: {
+      argTypesRegex: '^on[A-Z].*',
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
     },
-    docs: {
-      toc: true,
-    },
+  },
+  initialGlobals: {
+    theme: 'teamhub',
   },
   decorators: [
-    (Story) => (
-      <>
-        <DesignProvider theme="teamhub" mode="light" asChild>
-          <div style={{ padding: '20px 50px 40px' }}>
-            <h5>TeamHub (Light)</h5>
-            <div style={{ textAlign: 'center' }}>
-              <Story />
-            </div>
-          </div>
-        </DesignProvider>
-        <DesignProvider theme="teamhub" mode="dark" asChild>
-          <div style={{ padding: '20px 50px 40px' }}>
-            <h5>TeamHub (Dark)</h5>
-            <div style={{ textAlign: 'center' }}>
-              <Story />
-            </div>
-          </div>
-        </DesignProvider>
-        <DesignProvider theme="play" mode="light" asChild>
-          <div style={{ padding: '20px 50px 40px' }}>
-            <h5>PLAY</h5>
-            <div style={{ textAlign: 'center' }}>
-              <Story />
-            </div>
-          </div>
-        </DesignProvider>
-      </>
-    ),
+    withTmhubTheme({
+      themes: {
+        'TeamHub': 'teamhub',
+        'TeamHub (Dark)': 'teamhub_dark',
+        'PLAY': 'play',
+        'Joynup': 'joynup',
+      },
+      defaultTheme: 'tmhub',
+    }),
   ],
 };
 

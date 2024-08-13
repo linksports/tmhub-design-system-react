@@ -12,9 +12,50 @@
   color: var(--text-primary__1noa3sc6);
 }
 
+/* src/components/Tabs/Tabs.css.ts.vanilla.css -> components/Tabs/Tabs.css.ts.vanilla.css */
+.Tabs_tabsRecipe__1yn9xmn0 {
+  display: flex;
+  flex-direction: column;
+}
+.Tabs_tabsListRecipe__1yn9xmn1 {
+  flex-shrink: 0;
+  display: flex;
+  border: 1px solid var(--brand__1noa3sc4);
+  border-radius: 4px;
+}
+.Tabs_tabsTriggerRecipe__1yn9xmn2 {
+  all: unset;
+  font-family: inherit;
+  padding: 0 20px;
+  height: 32px;
+  border: 1px solid var(--brand__1noa3sc4);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  background-color: inherit;
+  color: var(--brand__1noa3sc4);
+  user-select: none;
+  font-size: .625rem;
+}
+.Tabs_tabsTriggerRecipe__1yn9xmn2:hover {
+  cursor: pointer;
+}
+.Tabs_tabsTriggerRecipe__1yn9xmn2[data-state='active'] {
+  background-color: var(--brand__1noa3sc4);
+  color: var(--brandInverse__1noa3sc5);
+}
+.Tabs_tabsContentRecipe__1yn9xmn3 {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: inherit;
+  outline: none;
+}
+
 /* src/components/Button/Button.css.ts.vanilla.css -> components/Button/Button.css.ts.vanilla.css */
 .Button_button__19coy7n0 {
-  padding: var(--spacing-md__1noa3sc1) var(--spacing-lg__1noa3sc2);
+  padding: var(--spacing-md__1noa3sc1) 0;
   border: 2px solid transparent;
   border-radius: 24px;
   text-decoration: none;
@@ -56,47 +97,6 @@
   border-color: transparent;
   background-color: inherit;
   color: var(--text-primary__1noa3sc6);
-}
-
-/* src/components/Tabs/Tabs.css.ts.vanilla.css -> components/Tabs/Tabs.css.ts.vanilla.css */
-.Tabs_tabsRecipe__1yn9xmn0 {
-  display: flex;
-  flex-direction: column;
-}
-.Tabs_tabsListRecipe__1yn9xmn1 {
-  flex-shrink: 0;
-  display: flex;
-  border: 1px solid var(--brand__1noa3sc4);
-  border-radius: 4px;
-}
-.Tabs_tabsTriggerRecipe__1yn9xmn2 {
-  all: unset;
-  font-family: inherit;
-  padding: 0 20px;
-  height: 32px;
-  border: 1px solid var(--brand__1noa3sc4);
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  background-color: inherit;
-  color: var(--brand__1noa3sc4);
-  user-select: none;
-  font-size: .625rem;
-}
-.Tabs_tabsTriggerRecipe__1yn9xmn2:hover {
-  cursor: pointer;
-}
-.Tabs_tabsTriggerRecipe__1yn9xmn2[data-state='active'] {
-  background-color: var(--brand__1noa3sc4);
-  color: var(--brandInverse__1noa3sc5);
-}
-.Tabs_tabsContentRecipe__1yn9xmn3 {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: inherit;
-  outline: none;
 }
 
 /* src/tokens/theme/teamhubLight.css.ts.vanilla.css -> tokens/theme/teamhubLight.css.ts.vanilla.css */

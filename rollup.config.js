@@ -37,7 +37,7 @@ const bundleCssEmits = () => ({
       .join('\n\n');
     this.emitFile({
       type: 'asset',
-      name: 'src/bundle.css',
+      fileName: 'bundle.css',
       source: bundleCode,
     });
   },

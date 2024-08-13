@@ -12,8 +12,8 @@ const Table = ({ props }: Props) => (
       </tr>
     </thead>
     <tbody>
-      {props.map(row => (
-        <tr>
+      {props.map((row, inx) => (
+        <tr key={`property-row-${inx}`}>
           <td>{row[0]}</td>
           <td>{row[1]}</td>
           <td>{row[2]}</td>
