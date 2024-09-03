@@ -3256,6 +3256,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:^18":
+  version: 18.3.0
+  resolution: "@types/react-dom@npm:18.3.0"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: 10c0/6c90d2ed72c5a0e440d2c75d99287e4b5df3e7b011838cdc03ae5cd518ab52164d86990e73246b9d812eaf02ec351d74e3b4f5bd325bf341e13bf980392fd53b
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*":
+  version: 18.3.5
+  resolution: "@types/react@npm:18.3.5"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/548b1d3d7c2f0242fbfdbbd658731b4ce69a134be072fa83e6ab516f2840402a3f20e3e7f72e95133b23d4880ef24a6d864050dc8e1f7c68f39fa87ca8445917
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:^16.8.0 || ^17.0.0 || ^18.0.0, @types/react@npm:^18.3.3":
   version: 18.3.3
   resolution: "@types/react@npm:18.3.3"
@@ -7834,7 +7853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0":
+"react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react-dom@npm:^18.3.1":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
   dependencies:
@@ -8975,6 +8994,7 @@ __metadata:
     "@storybook/test": "npm:^8.2.9"
     "@types/eslint": "npm:^9"
     "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18"
     "@types/rollup-plugin-peer-deps-external": "npm:^2"
     "@vanilla-extract/css": "npm:^1.15.3"
     "@vanilla-extract/esbuild-plugin": "npm:^2.3.8"
@@ -8986,6 +9006,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.35.0"
     globals: "npm:^15.9.0"
     react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
     rollup: "npm:^4.19.0"
     rollup-plugin-deps-external: "npm:^0.2.1"
     rollup-plugin-dts: "npm:^6.1.1"

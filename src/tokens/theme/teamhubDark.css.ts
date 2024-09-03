@@ -1,6 +1,6 @@
 import { createTheme } from '@vanilla-extract/css';
 import { color } from '../vars.css';
-import { colorDark as colorToken } from '../../dummy_tokens/colorDark';
+import { colorDark as colorToken } from '../../../shared/tokens/colorDark';
 
 const theme = createTheme(color, {
   brand: colorToken.colorBrand,
