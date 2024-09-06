@@ -28,12 +28,17 @@ export const flex = recipe({
       wrap: { flexWrap: 'wrap' },
       'wrap-reverse': { flexWrap: 'wrap-reverse' },
     },
+    alignContent: {
+      stretch: { alignContent: 'stretch' },
+      start: { alignContent: 'flex-start' },
+      end: { alignContent: 'flex-end' },
+      center: { alignContent: 'center' },
+      between: { alignContent: 'space-between' },
+      around: { alignContent: 'space-around' },
+    },
     ...gapRecipes,
     ...paddingRecipes,
   },
   defaultVariants: {
-    align: 'start',
-    justify: 'start',
-    wrap: 'nowrap',
   },
 });

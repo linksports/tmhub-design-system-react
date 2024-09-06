@@ -10,12 +10,21 @@ const Box: React.FC<BoxProps> = ({
 }) => {
   const {
     as = 'div',
+    flexBasis,
+    flexGrow,
+    flexShrink,
     gridColumn,
     gridColumnStart,
     gridColumnEnd,
     gridRow,
     gridRowStart,
     gridRowEnd,
+    width,
+    minWidth,
+    maxWidth,
+    height,
+    minHeight,
+    maxHeight,
     p,
     pt,
     pr,
@@ -32,6 +41,15 @@ const Box: React.FC<BoxProps> = ({
     <Component className={box({
       p, pt, pr, pl, pb,
     })} style={{ ...style, ...assignInlineVars({
+      width,
+      minWidth,
+      maxWidth,
+      height,
+      minHeight,
+      maxHeight,
+      flexBasis,
+      flexGrow,
+      flexShrink,
       gridColumn: convertGridPos(gridColumn, gridColumnStart, gridColumnEnd),
       gridRow: convertGridPos(gridRow, gridRowStart, gridRowEnd),
     })}} {...others}>

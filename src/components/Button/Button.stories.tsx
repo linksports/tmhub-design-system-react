@@ -1,6 +1,7 @@
 import { StoryFn, Meta } from "@storybook/react";
 import Button from './Button';
 import { sizeValues, variantValues } from './Button.types';
+import { asChildArgTypes } from '../../props/asChild.props';
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -43,17 +44,13 @@ const meta: Meta<typeof Button> = {
         type: { summary: 'function' },
       },
     },
-    asChild: {
-      control: 'boolean',
-      description: '子要素をコンポーネントとして利用',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
     children: {
       control: 'text',
+      table: {
+        type: { summary: 'ReactNode' },
+      },
     },
+    ...asChildArgTypes,
   },
 };
 export default meta;
@@ -93,6 +90,9 @@ TextButton.args = {
   children: 'Click!',
 };
 
+/**
+ * リンクをボタンとして扱う
+ */
 export const LinkAsButton = Template.bind({});
 LinkAsButton.args = {
   asChild: true,
