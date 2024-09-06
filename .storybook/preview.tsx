@@ -1,6 +1,5 @@
 import type { Preview } from "@storybook/react";
 import { withTmhubTheme } from './tmhubTheme.decorator';
-import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview: Preview = {
   parameters: {
@@ -12,11 +11,6 @@ const preview: Preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
-      },
-    },
-    viewport: {
-      viewports: {
-        ...MINIMAL_VIEWPORTS,
       },
     },
   },
