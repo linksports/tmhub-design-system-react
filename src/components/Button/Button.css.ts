@@ -3,7 +3,8 @@ import { vars } from '../../tokens/vars.css';
 
 export const button = recipe({
   base: {
-    padding: `${vars.spacing.md} 0`,
+    // padding: `${vars.spacing.sm} 0`,
+    padding: 0,
     border: '2px solid transparent',
     borderRadius: '24px',
     textDecoration: 'none',

@@ -3,4 +3,9 @@
   --spacing-md__1noa3sc1: 8px;
   --spacing-lg__1noa3sc2: 16px;
   --spacing-xl__1noa3sc3: 24px;
+  --container-maxWidthXs__1noa3sc4: 448px;
+  --container-maxWidthSm__1noa3sc5: 688px;
+  --container-maxWidthMd__1noa3sc6: 880px;
+  --container-maxWidthLg__1noa3sc7: 1136px;
+  --container-maxWidthFull__1noa3sc8: 100%;
 }

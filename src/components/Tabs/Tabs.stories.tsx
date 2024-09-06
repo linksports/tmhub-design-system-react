@@ -3,6 +3,7 @@ import Tabs from './Tabs';
 
 const meta: Meta<typeof Tabs.Root> = {
   component: Tabs.Root,
+  title: 'Components/Tabs',
   parameters: {
     layout: 'fullscreen',
   },
@@ -19,7 +20,7 @@ const meta: Meta<typeof Tabs.Root> = {
 export default meta;
 
 const Template: StoryFn<typeof Tabs.Root> = (args) => (
-  <Tabs.Root style={{ width: '80%', height: '300px' }} {...args}>
+  <Tabs.Root {...args}>
     <Tabs.List>
       <Tabs.Trigger value="tab1">
         Tab #1

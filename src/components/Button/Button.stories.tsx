@@ -1,8 +1,10 @@
 import { StoryFn, Meta } from "@storybook/react";
 import Button from './Button';
+import { sizeValues, variantValues } from './Button.types';
 
 const meta: Meta<typeof Button> = {
   component: Button,
+  title: 'Components/Button',
   parameters: {
     layout: 'fullscreen',
   },
@@ -10,19 +12,19 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: 'radio',
-      options: ['filled', 'outlined', 'text'],
+      options: variantValues,
       description: 'ボタンの外観設定',
       table: {
-        type: { summary: 'string' },
+        type: { summary: variantValues.join('|') },
         defaultValue: { summary: 'filled' },
       },
     },
     size: {
       control: 'radio',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: sizeValues,
       description: 'サイズ（主に横幅）',
       table: {
-        type: { summary: 'string' },
+        type: { summary: sizeValues.join('|') },
         defaultValue: { summary: 'md' },
       },
     },
