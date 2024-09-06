@@ -92,3 +92,11 @@ TextButton.args = {
   size: 'md',
   children: 'Click!',
 };
+
+export const LinkAsButton = Template.bind({});
+LinkAsButton.args = {
+  asChild: true,
+  children: (
+    <a href="https://tmhub.jp">TeamHub</a>
+  ),
+};

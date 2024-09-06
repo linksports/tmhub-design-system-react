@@ -1,2 +1,2 @@
-import{createRuntimeFn as a}from"@vanilla-extract/recipes/createRuntimeFn";var e=a({defaultClassName:"DesignProvider_designProviderRecipe__t7rwa10",variantClassNames:{},defaultVariants:{},compoundVariants:[]});export{e as designProviderRecipe};
+import{c as e}from"../../node_modules/@vanilla-extract/recipes/dist/createRuntimeFn-62c9670f.esm.js";var a=e({defaultClassName:"DesignProvider_designProviderRecipe__t7rwa10",variantClassNames:{},defaultVariants:{},compoundVariants:[]});export{a as designProviderRecipe};
 //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRGVzaWduUHJvdmlkZXIuY3NzLnZhbmlsbGEuanMiLCJzb3VyY2VzIjpbXSwic291cmNlc0NvbnRlbnQiOltdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIn0=

@@ -9034,9 +9034,6 @@ __metadata:
     typescript: "npm:^5.5.4"
     typescript-eslint: "npm:^8.0.0"
     vite: "npm:^5.3.5"
-  peerDependencies:
-    "@vanilla-extract/css": ^1.15.3
-    "@vanilla-extract/recipes": ^0.5.3
   languageName: unknown
   linkType: soft
 
