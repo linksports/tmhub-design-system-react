@@ -1,8 +1,11 @@
 import { StoryFn, Meta } from "@storybook/react";
 import Button from './Button';
+import { sizeValues, variantValues } from './Button.types';
+import { asChildArgTypes } from '../../props/asChild.props';
 
 const meta: Meta<typeof Button> = {
   component: Button,
+  title: 'Components/Button',
   parameters: {
     layout: 'fullscreen',
   },
@@ -10,19 +13,19 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: 'radio',
-      options: ['filled', 'outlined', 'text'],
+      options: variantValues,
       description: 'ボタンの外観設定',
       table: {
-        type: { summary: 'string' },
+        type: { summary: variantValues.join('|') },
         defaultValue: { summary: 'filled' },
       },
     },
     size: {
       control: 'radio',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: sizeValues,
       description: 'サイズ（主に横幅）',
       table: {
-        type: { summary: 'string' },
+        type: { summary: sizeValues.join('|') },
         defaultValue: { summary: 'md' },
       },
     },
@@ -41,17 +44,13 @@ const meta: Meta<typeof Button> = {
         type: { summary: 'function' },
       },
     },
-    asChild: {
-      control: 'boolean',
-      description: '子要素をコンポーネントとして利用',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
     children: {
       control: 'text',
+      table: {
+        type: { summary: 'ReactNode' },
+      },
     },
+    ...asChildArgTypes,
   },
 };
 export default meta;
@@ -89,4 +88,15 @@ TextButton.args = {
   variant: 'text',
   size: 'md',
   children: 'Click!',
+};
+
+/**
+ * リンクをボタンとして扱う
+ */
+export const LinkAsButton = Template.bind({});
+LinkAsButton.args = {
+  asChild: true,
+  children: (
+    <a href="https://tmhub.jp">TeamHub</a>
+  ),
 };

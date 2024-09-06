@@ -1,9 +1,10 @@
-.teamhubLight_theme__thi3m60 {
-  --brand__1noa3sc4: rgba(70, 165, 135, 1);
-  --brandInverse__1noa3sc5: white;
-  --text-primary__1noa3sc6: rgba(0, 0, 0, 0.87);
-  --text-secondary__1noa3sc7: rgba(0, 0, 0, 0.54);
-  --text-hint__1noa3sc8: rgba(0, 0, 0, 0.38);
-  --text-link__1noa3sc9: rgba(33, 150, 243, 1);
-  --bg__1noa3sca: rgba(236, 239, 241, 1);
+.teamhubLight__thi3m60 {
+  --brand__1noa3sc9: rgba(70, 165, 135, 1);
+  --brandInverse__1noa3sca: white;
+  --text-primary__1noa3scb: rgba(0, 0, 0, 0.87);
+  --text-secondary__1noa3scc: rgba(0, 0, 0, 0.54);
+  --text-hint__1noa3scd: rgba(0, 0, 0, 0.38);
+  --text-link__1noa3sce: rgba(33, 150, 243, 1);
+  --bg__1noa3scf: rgba(236, 239, 241, 1);
+  --surface__1noa3scg: rgba(255, 255, 255, 1);
 }

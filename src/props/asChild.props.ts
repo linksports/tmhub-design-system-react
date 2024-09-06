@@ -16,3 +16,14 @@ export type AsChildProps<
         children: ReactNode;
       }
     );
+
+export const asChildArgTypes = {
+  asChild: {
+    control: 'boolean',
+    description: '子要素をコンポーネントとして利用',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: 'false' },
+    },
+  },
+} as const;

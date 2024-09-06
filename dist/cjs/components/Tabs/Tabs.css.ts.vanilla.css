@@ -5,7 +5,7 @@
 .Tabs_tabsListRecipe__1yn9xmn1 {
   flex-shrink: 0;
   display: flex;
-  border: 1px solid var(--brand__1noa3sc4);
+  border: 1px solid var(--brand__1noa3sc9);
   border-radius: 4px;
 }
 .Tabs_tabsTriggerRecipe__1yn9xmn2 {
@@ -13,14 +13,14 @@
   font-family: inherit;
   padding: 0 20px;
   height: 32px;
-  border: 1px solid var(--brand__1noa3sc4);
+  border: 1px solid var(--brand__1noa3sc9);
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
   background-color: inherit;
-  color: var(--brand__1noa3sc4);
+  color: var(--brand__1noa3sc9);
   user-select: none;
   font-size: .625rem;
 }
@@ -28,8 +28,8 @@
   cursor: pointer;
 }
 .Tabs_tabsTriggerRecipe__1yn9xmn2[data-state='active'] {
-  background-color: var(--brand__1noa3sc4);
-  color: var(--brandInverse__1noa3sc5);
+  background-color: var(--brand__1noa3sc9);
+  color: var(--brandInverse__1noa3sca);
 }
 .Tabs_tabsContentRecipe__1yn9xmn3 {
   flex-grow: 1;

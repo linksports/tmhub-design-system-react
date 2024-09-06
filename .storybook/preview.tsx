@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { withTmhubTheme } from './tmhubTheme.decorator';
+import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview: Preview = {
   parameters: {
@@ -13,6 +14,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    viewport: {
+      viewports: {
+        ...MINIMAL_VIEWPORTS,
+      },
+    },
   },
   initialGlobals: {
     theme: 'teamhub',
@@ -20,12 +26,12 @@ const preview: Preview = {
   decorators: [
     withTmhubTheme({
       themes: {
-        'TeamHub': 'teamhub',
-        'TeamHub (Dark)': 'teamhub_dark',
-        'PLAY': 'play',
-        'Joynup': 'joynup',
+        'TeamHub': 'TeamHub',
+        'TeamHub (Dark)': 'TeamHub (Dark)',
+        'PLAY': 'PLAY',
+        'Joynup': 'Joynup',
       },
-      defaultTheme: 'tmhub',
+      defaultTheme: 'TeamHub',
     }),
   ],
 };

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Slot } from '@radix-ui/react-slot';
-import { AsChildProps } from '../../util/AsChildProps';
 import { DesignProviderProps } from './DesignProvider.types';
 import {
   teamhubLightTheme,
@@ -9,7 +8,7 @@ import {
 } from '../../tokens/theme.css';
 import { designProviderRecipe } from './DesignProvider.css';
 
-const DesignProvider: React.FC<AsChildProps<DesignProviderProps, "div">> = ({
+const DesignProvider: React.FC<DesignProviderProps> = ({
   asChild = false,
   ...props
 }) => {

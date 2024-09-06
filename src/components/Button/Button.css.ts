@@ -3,7 +3,12 @@ import { vars } from '../../tokens/vars.css';
 
 export const button = recipe({
   base: {
-    padding: `${vars.spacing.md} 0`,
+    // padding: `${vars.spacing.sm} 0`,
+    display: 'inline-block',
+    padding: 0,
+    fontSize: '80%',
+    fontFamily: 'inherit',
+    textAlign: 'center',
     border: '2px solid transparent',
     borderRadius: '24px',
     textDecoration: 'none',

@@ -1,0 +1,209 @@
+import { Canvas, Meta, Story, Controls } from '@storybook/blocks';
+import * as FlexStories from './Flex.stories';
+import Flex from './Flex';
+
+<Meta of={FlexStories} />
+
+# Flex
+
+```typescript
+<Flex gap={2}>
+  <Box>Item 1</Box>
+  <Box>Item 2</Box>
+  <Box>Item 3</Box>
+  <Box>Item 4</Box>
+  <Box>Item 5</Box>
+</Flex>
+```
+
+<Canvas of={FlexStories.sample} />
+
+## direction: 子要素の並ぶ向き
+
+子要素が水平/垂直方向、順/逆順のどのように並ぶかを指定する。初期値は `row` 。
+
+```typescript
+<Flex gap={2} direction="row">
+  <Box>Item 1</Box>
+  ...
+</FLex>
+```
+
+### row: 水平順
+
+<Canvas of={FlexStories.directionRow} />
+
+### column: 垂直順
+
+<Canvas of={FlexStories.directionColumn} />
+
+### row: 水平逆順
+
+<Canvas of={FlexStories.directionRowReverse} />
+
+### column: 垂直逆順
+
+<Canvas of={FlexStories.directionColumnReverse} />
+
+
+## wrap: 折り返し設定
+
+`wrap` プロパティでは子要素の折り返しを指定する。  
+初期値は `nowrap` で、折り返しは行なわずに `justify` の設定に従って子要素が並べられる。横幅が溢れる場合には、各子要素が均等に縮んで表示される。
+
+```typescript
+<Flex gap={2} width="400px" wrap="nowrap">
+  <Box>Item 1</Box>
+  ...
+</FLex>
+```
+
+<Canvas of={FlexStories.nowrap} />
+
+### wrap: 折り返し
+
+次の行に折り返して表示する
+
+<Canvas of={FlexStories.wrap} />
+
+### wrap-reverse: 逆方向折り返し
+
+下から上へ折り返して表示する
+
+<Canvas of={FlexStories.wrapReverse} />
+
+## justify: 水平方向の位置揃え
+
+```typescript
+<Flex gap={2} justify="start">
+  <Box>Item 1</Box>
+  ...
+</FLex>
+```
+
+### end: 終端揃え
+
+<Canvas of={FlexStories.justifyEnd} />
+
+### center: 中央揃え
+
+<Canvas of={FlexStories.justifyCenter} />
+
+### between: 両端均等揃え
+
+<Canvas of={FlexStories.justifyBetween} />
+
+### around: 左右に余白を入れた均等揃え
+
+<Canvas of={FlexStories.justifyAround} />
+
+## align: 垂直方向の位置揃え
+
+子要素の垂直方向の位置揃えを指定する。  
+子要素は `wrap` の指定により折り返すかどうかが決められ、それによって垂直方向の位置揃えも挙動が変わる。値の組み合わせによっては効果が無いものもある。
+
+```typescript
+<Flex gap={2} height="100px" align="stretch">
+  <Box>Item 1</Box>
+  ...
+</FLex>
+```
+
+### stretch: 引き伸ばし
+
+#### nowrap
+
+<Canvas of={FlexStories.alignStretch} />
+
+#### wrap
+
+<Canvas of={FlexStories.alignContentStretch} />
+
+### start: 上寄せ
+
+#### nowrap
+
+<Canvas of={FlexStories.alignStart} />
+
+#### wrap
+
+<Canvas of={FlexStories.alignContentStart} />
+
+### end: 下寄せ
+
+#### nowrap
+
+<Canvas of={FlexStories.alignEnd} />
+
+#### wrap
+
+<Canvas of={FlexStories.alignContentEnd} />
+
+### center: 中央寄せ
+
+#### nowrap
+
+<Canvas of={FlexStories.alignCenter} />
+
+#### wrap
+
+<Canvas of={FlexStories.alignContentCenter} />
+
+### baseline: 文字の基本ライン揃え
+
+#### nowrap
+
+<Canvas of={FlexStories.alignBaseline} />
+
+### start: 両端寄せ
+
+#### wrap
+
+<Canvas of={FlexStories.alignContentBetween} />
+
+### around: 余白付き均等
+
+#### wrap
+
+<Canvas of={FlexStories.alignContentAround} />
+
+## 子要素で指定するプロパティ
+
+子要素(通常は `Box` コンポーネント)で指定する値の挙動についても、ここで併記しておく。
+
+### flexGrow: 余白があった際に伸びる比率
+
+`Flex` に余白があった場合、各子要素がどのくらい伸びるかを指定する。
+
+```typescript
+<Flex gap={2}>
+  <Box flexGrow="1" flexBasis="40px">1</Box>
+  <Box flexGrow="2" flexBasis="40px">2</Box>
+  <Box flexGrow="0" flexBasis="40px">0</Box>
+</Flex>
+```
+
+この例でいけば、ゼロを指定した3番目の要素は画面サイズを拡げても横幅は変化しない。残った余白を、1番目と2番目の要素で1:2の割合で拡張する。
+
+<Canvas of={FlexStories.boxFlexGrow} />
+
+### flexShrink: 収まらなかった際に縮む比率
+
+逆に `Flex` に子要素が収まらなかった際に、各子要素がどのくらい縮むかを指定する。
+
+```typescript
+<Flex gap={2}>
+  <Box flexShrink="1" flexBasis="400px">1</Box>
+  <Box flexShrink="2" flexBasis="400px">2</Box>
+  <Box flexShrink="0" flexBasis="400px">0</Box>
+</Flex>
+```
+
+指定した値が大きいほど、縮む比率が高くなる。
+
+<Canvas of={FlexStories.boxFlexShrink} />
+
+## Playground
+
+<Story />
+<Controls />
