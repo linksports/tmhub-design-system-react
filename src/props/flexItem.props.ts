@@ -26,4 +26,4 @@ export const flexItemArgTypes = {
       type: { summary: 'string' },
     },
   },
-};
+} as const;

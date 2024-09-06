@@ -9,10 +9,10 @@ const Flex: React.FC<FlexProps> = ({
 }) => {
   const {
     as = 'div',
+    direction,
     align,
     justify,
     wrap,
-    alignContent,
     gap,
     gapX,
     gapY,
@@ -36,7 +36,7 @@ const Flex: React.FC<FlexProps> = ({
 
   return (
     <Component className={flex({
-      align, justify, wrap, alignContent, gap, gapX, gapY, p, pt, pr, pl, pb,
+      direction, align, justify, wrap, gap, gapX, gapY, p, pt, pr, pl, pb,
     })} style={{ ...style, ...assignInlineVars({
       width,
       minWidth,

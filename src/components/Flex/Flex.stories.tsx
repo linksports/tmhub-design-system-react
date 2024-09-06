@@ -4,10 +4,10 @@ import Box from '../Box';
 import { gapArgTypes } from '../../props/gap.props';
 import { paddingArgTypes } from '../../props/padding.props';
 import {
+  directionValues,
   alignValues,
   justifyValues,
   wrapValues,
-  alignContentValues,
 } from './Flex.types';
 
 const meta: Meta<typeof Flex> = {
@@ -18,6 +18,15 @@ const meta: Meta<typeof Flex> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    direction: {
+      control: 'select',
+      options: directionValues,
+      description: '子要素の並ぶ向き',
+      table: {
+        type: { summary: directionValues.join('|') },
+        defaultValue: { summary: 'row' },
+      },
+    },
     align: {
       control: 'select',
       options: alignValues,
@@ -45,15 +54,6 @@ const meta: Meta<typeof Flex> = {
         defaultValue: { summary: 'nowrap' },
       },
     },
-    alignContent: {
-      control: 'select',
-      options: alignContentValues,
-      description: '折り返した際の垂直方向位置揃え',
-      table: {
-        type: { summary: alignContentValues.join('|') },
-        defaultValue: { summary: 'nowrap' },
-      },
-    },
     ...gapArgTypes,
     ...paddingArgTypes,
   },
@@ -77,19 +77,38 @@ const Template: StoryFn<typeof Flex> = (args) => (
   </Flex>
 );
 
-const MessyTemplate: StoryFn<typeof Flex> = (args) => (
+const VoidTemplate: StoryFn<typeof Flex> = (args) => (
   <Flex p={2} style={{ border: '1px dotted red' }} {...args}>
-    <Box style={{...itemStyle, fontSize: '20px' }}>Item 1</Box>
-    <Box style={{...itemStyle, fontSize: '10px' }}>Item 2</Box>
-    <Box style={{...itemStyle, fontSize: '18px' }}>Item 3</Box>
-    <Box style={{...itemStyle, fontSize: '30px' }}>Item 4</Box>
-    <Box style={{...itemStyle, fontSize: '16px' }}>Item 5</Box>
   </Flex>
 );
 
 export const sample = Template.bind({});
 sample.args = {
   gap: 2,
+};
+
+export const directionRow = Template.bind({});
+directionRow.args = {
+  gap: 2,
+  direction: 'row',
+};
+
+export const directionColumn = Template.bind({});
+directionColumn.args = {
+  gap: 2,
+  direction: 'column',
+};
+
+export const directionRowReverse = Template.bind({});
+directionRowReverse.args = {
+  gap: 2,
+  direction: 'row-reverse',
+};
+
+export const directionColumnReverse = Template.bind({});
+directionColumnReverse.args = {
+  gap: 2,
+  direction: 'column-reverse',
 };
 
 export const nowrap = Template.bind({});
@@ -165,11 +184,20 @@ alignCenter.args = {
   align: 'center',
 };
 
-export const alignBaseline = MessyTemplate.bind({});
+export const alignBaseline = VoidTemplate.bind({});
 alignBaseline.args = {
   gap: 2,
   height: '100px',
   align: 'baseline',
+  children: (
+    <>
+    <Box style={{...itemStyle, fontSize: '20px' }}>Item 1</Box>
+    <Box style={{...itemStyle, fontSize: '10px' }}>Item 2</Box>
+    <Box style={{...itemStyle, fontSize: '18px' }}>Item 3</Box>
+    <Box style={{...itemStyle, fontSize: '30px' }}>Item 4</Box>
+    <Box style={{...itemStyle, fontSize: '16px' }}>Item 5</Box>
+    </>
+  )
 };
 
 export const alignContentStretch = Template.bind({});
@@ -178,7 +206,7 @@ alignContentStretch.args = {
   height: '150px',
   width: '400px',
   wrap: 'wrap',
-  alignContent: 'stretch',
+  align: 'stretch',
 };
 
 export const alignContentStart = Template.bind({});
@@ -187,7 +215,7 @@ alignContentStart.args = {
   height: '150px',
   width: '400px',
   wrap: 'wrap',
-  alignContent: 'start',
+  align: 'start',
 };
 
 export const alignContentEnd = Template.bind({});
@@ -196,7 +224,7 @@ alignContentEnd.args = {
   height: '150px',
   width: '400px',
   wrap: 'wrap',
-  alignContent: 'end',
+  align: 'end',
 };
 
 export const alignContentCenter = Template.bind({});
@@ -205,7 +233,7 @@ alignContentCenter.args = {
   height: '150px',
   width: '400px',
   wrap: 'wrap',
-  alignContent: 'center',
+  align: 'center',
 };
 
 export const alignContentBetween = Template.bind({});
@@ -214,7 +242,7 @@ alignContentBetween.args = {
   height: '150px',
   width: '400px',
   wrap: 'wrap',
-  alignContent: 'between',
+  align: 'between',
 };
 
 export const alignContentAround = Template.bind({});
@@ -223,5 +251,29 @@ alignContentAround.args = {
   height: '150px',
   width: '400px',
   wrap: 'wrap',
-  alignContent: 'around',
+  align: 'around',
+};
+
+export const boxFlexGrow = VoidTemplate.bind({});
+boxFlexGrow.args = {
+  gap: 2,
+  children: (
+    <>
+      <Box style={itemStyle} flexBasis="40px" flexGrow="1">1</Box>
+      <Box style={itemStyle} flexBasis="40px" flexGrow="2">2</Box>
+      <Box style={itemStyle} flexBasis="40px" flexGrow="0">0</Box>
+    </>
+  ),
+};
+
+export const boxFlexShrink = VoidTemplate.bind({});
+boxFlexShrink.args = {
+  gap: 2,
+  children: (
+    <>
+      <Box style={itemStyle} flexBasis="400px" flexShrink="1">1</Box>
+      <Box style={itemStyle} flexBasis="400px" flexShrink="2">2</Box>
+      <Box style={itemStyle} flexBasis="400px" flexShrink="0">0</Box>
+    </>
+  ),
 };

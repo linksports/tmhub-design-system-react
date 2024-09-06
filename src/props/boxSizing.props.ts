@@ -3,8 +3,8 @@ export type boxSizingProps = {
   minWidth?: string;
   maxWidth?: string;
   height?: string;
-  minHeight: string;
-  maxHeight: string;
+  minHeight?: string;
+  maxHeight?: string;
 };
 
 export const boxSizingArgTypes = {

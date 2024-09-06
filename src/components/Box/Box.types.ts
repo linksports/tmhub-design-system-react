@@ -10,6 +10,6 @@ type Props = {
   as?: 'div' | 'span';
   display?: (typeof displayValues)[number];
   children: React.ReactNode;
-} & boxSizing & gridItemProps & flexItemProps & paddingProps & React.ComponentProps<'div'>;
+} & boxSizingProps & gridItemProps & flexItemProps & paddingProps & React.ComponentProps<'div'>;
 
 export type BoxProps = AsChildProps<Props, 'div'>;
