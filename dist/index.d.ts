@@ -19,6 +19,15 @@ type paddingProps = {
     pb?: (typeof paddingValues)[number];
 };
 
+type boxSizingProps = {
+    width?: string;
+    minWidth?: string;
+    maxWidth?: string;
+    height?: string;
+    minHeight?: string;
+    maxHeight?: string;
+};
+
 type gridItemProps = {
     gridColumn?: string;
     gridColumnStart?: string;
@@ -28,12 +37,18 @@ type gridItemProps = {
     gridRowEnd?: string;
 };
 
+type flexItemProps = {
+    flexBasis?: string;
+    flexGrow?: string;
+    flexShrink?: string;
+};
+
 declare const displayValues$1: readonly ["none", "inline", "inline-block", "block"];
 type Props$6 = {
     as?: 'div' | 'span';
     display?: (typeof displayValues$1)[number];
     children: React.ReactNode;
-} & gridItemProps & paddingProps & React.ComponentProps<'div'>;
+} & boxSizingProps & gridItemProps & flexItemProps & paddingProps & React.ComponentProps<'div'>;
 type BoxProps = AsChildProps<Props$6, 'div'>;
 
 declare const Box: React.FC<BoxProps>;
@@ -79,16 +94,18 @@ type gapProps = {
     gapY?: (typeof gapValues)[number];
 };
 
-declare const alignValues$1: readonly ["start", "center", "end", "baseline", "stretch"];
+declare const directionValues: readonly ["row", "column", "row-reverse", "column-reverse"];
+declare const alignValues$1: readonly ["start", "center", "end", "baseline", "stretch", "between", "around"];
 declare const justifyValues$1: readonly ["start", "center", "end", "between", "around"];
 declare const wrapValues: readonly ["nowrap", "wrap", "wrap-reverse"];
 type Props$2 = {
     as?: 'div' | 'span';
+    direction?: (typeof directionValues)[number];
     align?: (typeof alignValues$1)[number];
     justify?: (typeof justifyValues$1)[number];
     wrap?: (typeof wrapValues)[number];
     children: React.ReactNode;
-} & gapProps & paddingProps & React.ComponentProps<'div'>;
+} & boxSizingProps & gapProps & paddingProps & React.ComponentProps<'div'>;
 type FlexProps = AsChildProps<Props$2, 'div'>;
 
 declare const Flex: React.FC<FlexProps>;
