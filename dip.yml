@@ -14,3 +14,7 @@ interaction:
   build:
     service: storybook
     command: yarn build
+
+  shnext:
+    service: example-nextjs
+    command: sh

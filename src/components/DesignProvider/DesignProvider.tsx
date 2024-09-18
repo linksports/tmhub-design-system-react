@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { DesignProviderProps } from './DesignProvider.types';
