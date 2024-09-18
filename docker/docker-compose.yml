@@ -36,3 +36,22 @@ services:
       - $HOME/.ssh:/root/.ssh
     ports:
       - "3000:3000"
+
+  example-nextjs-pages:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    image: tmhub-design-system-react
+    tty: true
+    working_dir: /app
+    command: sh -c 'yarn install && npm run dev'
+    environment:
+      BROWSER: true
+      WATCHPACK_POLLING: true
+      VITE_CJS_TRACE: true
+    volumes:
+      - ../examples/nextjs-pages:/app
+      - ..:/usr/lib/tmhub-design-system-react
+      - $HOME/.ssh:/root/.ssh
+    ports:
+      - "3001:3000"

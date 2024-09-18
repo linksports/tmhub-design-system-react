@@ -10,9 +10,6 @@
   "files": [
     "src"
   ],
-  "exports": {
-    "./*": "./src/*"
-  },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@eslint/js": "^9.8.0",

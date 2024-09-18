@@ -18,3 +18,7 @@ interaction:
   shnext:
     service: example-nextjs
     command: sh
+
+  shnextp:
+    service: example-nextjs-pages
+    command: sh
