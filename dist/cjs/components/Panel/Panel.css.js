@@ -1,2 +1,0 @@
-"use strict";require("./../../tokens/vars.css.ts.vanilla.css"),require("./Panel.css.ts.vanilla.css");var a=require("@vanilla-extract/recipes/createRuntimeFn").createRuntimeFn({defaultClassName:"Panel_panel__15dgsyv0",variantClassNames:{},defaultVariants:{},compoundVariants:[]});exports.panel=a;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGFuZWwuY3NzLmpzIiwic291cmNlcyI6W10sInNvdXJjZXNDb250ZW50IjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiJ9

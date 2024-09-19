@@ -1,4 +1,4 @@
-import { vars } from '../tokens/vars.css';
+import { sprinkles } from '../tokens/sprinkles.css';
 
 export const paddingValues = [ 0, 1, 2, 3, 4 ] as const;
 
@@ -12,39 +12,39 @@ export type paddingProps = {
 
 export const paddingRecipes = {
   p: {
-    0: { padding: 0 },
-    1: { padding: vars.spacing.sm },
-    2: { padding: vars.spacing.md },
-    3: { padding: vars.spacing.lg },
-    4: { padding: vars.spacing.xl },
+    0: sprinkles({ padding: 'none' }),
+    1: sprinkles({ padding: 'sm' }),
+    2: sprinkles({ padding: 'md' }),
+    3: sprinkles({ padding: 'lg' }),
+    4: sprinkles({ padding: 'xl' }),
   },
   pt: {
-    0: { paddingTop: 0 },
-    1: { padding: vars.spacing.sm },
-    2: { padding: vars.spacing.md },
-    3: { padding: vars.spacing.lg },
-    4: { padding: vars.spacing.xl },
+    0: sprinkles({ paddingTop: 'none' }),
+    1: sprinkles({ paddingTop: 'sm' }),
+    2: sprinkles({ paddingTop: 'md' }),
+    3: sprinkles({ paddingTop: 'lg' }),
+    4: sprinkles({ paddingTop: 'xl' }),
   },
   pr: {
-    0: { paddingTop: 0 },
-    1: { padding: vars.spacing.sm },
-    2: { padding: vars.spacing.md },
-    3: { padding: vars.spacing.lg },
-    4: { padding: vars.spacing.xl },
+    0: sprinkles({ paddingRight: 'none' }),
+    1: sprinkles({ paddingRight: 'sm' }),
+    2: sprinkles({ paddingRight: 'md' }),
+    3: sprinkles({ paddingRight: 'lg' }),
+    4: sprinkles({ paddingRight: 'xl' }),
   },
   pl: {
-    0: { paddingTop: 0 },
-    1: { padding: vars.spacing.sm },
-    2: { padding: vars.spacing.md },
-    3: { padding: vars.spacing.lg },
-    4: { padding: vars.spacing.xl },
+    0: sprinkles({ paddingLeft: 'none' }),
+    1: sprinkles({ paddingLeft: 'sm' }),
+    2: sprinkles({ paddingLeft: 'md' }),
+    3: sprinkles({ paddingLeft: 'lg' }),
+    4: sprinkles({ paddingLeft: 'xl' }),
   },
   pb: {
-    0: { paddingTop: 0 },
-    1: { padding: vars.spacing.sm },
-    2: { padding: vars.spacing.md },
-    3: { padding: vars.spacing.lg },
-    4: { padding: vars.spacing.xl },
+    0: sprinkles({ paddingBottom: 'none' }),
+    1: sprinkles({ paddingBottom: 'sm' }),
+    2: sprinkles({ paddingBottom: 'md' }),
+    3: sprinkles({ paddingBottom: 'lg' }),
+    4: sprinkles({ paddingBottom: 'xl' }),
   },
 };
 

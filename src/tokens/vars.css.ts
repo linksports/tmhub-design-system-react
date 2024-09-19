@@ -3,6 +3,7 @@ import { spacing } from '../../shared/tokens/spacing';
 
 const base = createGlobalTheme('.tmhub-design-system-root', {
   spacing: {
+    none: '0',
     sm: `${spacing.spacingSm}px`,
     md: `${spacing.spacingMd}px`,
     lg: `${spacing.spacingLg}px`,
@@ -20,14 +21,14 @@ const base = createGlobalTheme('.tmhub-design-system-root', {
 export const color = createThemeContract({
   brand: '',
   brandInverse: '',
-  text: {
-    primary: '',
-    secondary: '',
-    hint: '',
-    link: '',
-  },
+  textPrimary: '',
+  textSecondary: '',
+  textHint: '',
+  textLink: '',
   bg: '',
   surface: '',
+  inherit: '',
+  transparent: '',
 });
 
 export const vars = { ...base, color };

@@ -5,13 +5,13 @@ export function createThemeVars(colorToken: any) {
   return createTheme(color, {
     brand: colorToken.colorBrand,
     brandInverse: 'white',
-    text: {
-      primary: colorToken.textPrimary,
-      secondary: colorToken.textSecondary,
-      hint: colorToken.textHint,
-      link: colorToken.textLink,
-    },
+    textPrimary: colorToken.textPrimary,
+    textSecondary: colorToken.textSecondary,
+    textHint: colorToken.textHint,
+    textLink: colorToken.textLink,
     bg: colorToken.colorBackground,
     surface: colorToken.colorSurface,
+    inherit: 'inherit',
+    transparent: 'transparent',
   });
 };
