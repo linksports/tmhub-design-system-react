@@ -1,9 +1,9 @@
 import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../../tokens/vars.css';
+import { sprinkles } from '../../tokens/sprinkles.css';
 
 export const designProviderRecipe = recipe({
-  base: {
-    backgroundColor: vars.color.bg,
-    color: vars.color.text.primary,
-  },
+  base: sprinkles({
+    backgroundColor: 'bg',
+    color: 'textPrimary',
+  }),
 });

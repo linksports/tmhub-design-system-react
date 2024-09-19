@@ -1,4 +1,4 @@
-import { vars } from '../tokens/vars.css';
+import { sprinkles } from '../tokens/sprinkles.css';
 
 export const gapValues = [0, 1, 2, 3, 4] as const;
 
@@ -10,25 +10,25 @@ export type gapProps = {
 
 export const gapRecipes = {
   gap: {
-    0: { gap: 0 },
-    1: { gap: vars.spacing.sm },
-    2: { gap: vars.spacing.md },
-    3: { gap: vars.spacing.lg },
-    4: { gap: vars.spacing.xl },
+    0: sprinkles({ gap: 'none' }),
+    1: sprinkles({ gap: 'sm' }),
+    2: sprinkles({ gap: 'md' }),
+    3: sprinkles({ gap: 'lg' }),
+    4: sprinkles({ gap: 'xl' }),
   },
   gapX: {
-    0: { columnGap: 0 },
-    1: { columnGap: vars.spacing.sm },
-    2: { columnGap: vars.spacing.md },
-    3: { columnGap: vars.spacing.lg },
-    4: { columnGap: vars.spacing.xl },
+    0: sprinkles({ columnGap: 'none' }),
+    1: sprinkles({ columnGap: 'sm' }),
+    2: sprinkles({ columnGap: 'md' }),
+    3: sprinkles({ columnGap: 'lg' }),
+    4: sprinkles({ columnGap: 'xl' }),
   },
   gapY: {
-    0: { rowGap: 0 },
-    1: { rowGap: vars.spacing.sm },
-    2: { rowGap: vars.spacing.md },
-    3: { rowGap: vars.spacing.lg },
-    4: { rowGap: vars.spacing.xl },
+    0: sprinkles({ rowGap: 'none' }),
+    1: sprinkles({ rowGap: 'sm' }),
+    2: sprinkles({ rowGap: 'md' }),
+    3: sprinkles({ rowGap: 'lg' }),
+    4: sprinkles({ rowGap: 'xl' }),
   },
 } as const;
 
