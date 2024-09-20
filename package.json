@@ -49,7 +49,7 @@
     "storybook": "^8.2.9",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.0",
-    "vite": "^5.3.5"
+    "vite": "^5.4.6"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006 -h 0.0.0.0",
