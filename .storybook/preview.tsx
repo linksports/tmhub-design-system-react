@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { withTmhubTheme } from './tmhubTheme.decorator';
+import { themeDefinitions } from './themes';
 
 const preview: Preview = {
   parameters: {
@@ -19,12 +20,10 @@ const preview: Preview = {
   },
   decorators: [
     withTmhubTheme({
-      themes: {
-        'TeamHub': 'TeamHub',
-        'TeamHub (Dark)': 'TeamHub (Dark)',
-        'PLAY': 'PLAY',
-        'Joynup': 'Joynup',
-      },
+      themes: Object.keys(themeDefinitions).reduce((map, key) => {
+        map[key] = key;
+        return map;
+      }, {}) as const,
       defaultTheme: 'TeamHub',
     }),
   ],
