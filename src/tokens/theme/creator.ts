@@ -1,6 +1,7 @@
 import { createTheme } from '@vanilla-extract/css';
 import { color } from '../vars.css';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function createThemeVars(colorToken: any) {
   return createTheme(color, {
     brand: colorToken.colorBrand,
