@@ -2,5 +2,5 @@
 
 ## Storybook
 
-Visit [storybook](https://linksports.github.io/tmhub-design-system-react/) to see how components
+Visit [storybook](https://teamhub-design-system.web.app/) to see how components
 work.
