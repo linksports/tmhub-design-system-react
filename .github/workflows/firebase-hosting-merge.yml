@@ -11,7 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable && yarn install && yarn build-storybook
+      - name: Prepare
+        run: corepack enable && yarn install
+      - name: Audit
+        run: yarn npm audit
+      - name: ESLint
+        run: yarn lint
+      - name: Type Check
+        run: yarn typecheck
+      - name: Build
+        run: yarn build-storybook
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
