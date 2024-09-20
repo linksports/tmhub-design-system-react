@@ -8,21 +8,19 @@ permissions:
   contents: read
   pull-requests: write
 jobs:
-  test:
+  build_and_preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Prepare
         run: corepack enable && yarn install
       - name: ESLint
         run: yarn lint
       - name: Type Check
         run: yarn typecheck
-  build_and_preview:
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: corepack enable && yarn install && yarn build-storybook
+      - name: Build
+        run: yarn build-storybook
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
