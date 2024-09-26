@@ -1,5 +1,5 @@
 import { recipe } from '@vanilla-extract/recipes';
-import { vars } from '../../tokens/vars.css';
+import { sprinkles } from '../../tokens/sprinkles.css';
 
 export const tabsRecipe = recipe({
   base: {
@@ -9,40 +9,61 @@ export const tabsRecipe = recipe({
 });
 
 export const tabsListRecipe = recipe({
-  base: {
-    flexShrink: 0,
-    display: 'flex',
-    border: `1px solid ${vars.color.brand}`,
-    borderRadius: '4px',
-  },
+  base: [
+    {
+      flexShrink: 0,
+      display: 'flex',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderRadius: '4px',
+    }, sprinkles({
+      borderColor: {
+        lightMode: 'brandLight',
+        darkMode: 'brandDark',
+      },
+    }),
+  ],
 });
 
 export const tabsTriggerRecipe = recipe({
-  base: {
-    all: 'unset',
-    fontFamily: 'inherit',
-    padding: '0 20px',
-    height: '32px',
-    border: `1px solid ${vars.color.brand}`,
-    flex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    lineHeight: 1,
-    backgroundColor: 'inherit',
-    color: vars.color.brand,
-    userSelect: 'none',
-    fontSize: '.625rem',
-    ':hover': {
-      cursor: 'pointer',
-    },
-    selectors: {
-      "&[data-state='active']": {
-        backgroundColor: vars.color.brand,
-        color: vars.color.brandInverse,
+  base: [
+    {
+      all: 'unset',
+      fontFamily: 'inherit',
+      padding: '0 20px',
+      height: '32px',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      lineHeight: 1,
+      backgroundColor: 'inherit',
+      userSelect: 'none',
+      fontSize: '.625rem',
+      ':hover': {
+        cursor: 'pointer',
       },
-    },
-  },
+    }, sprinkles({
+      borderColor: {
+        lightMode: 'brandLight',
+        darkMode: 'brandDark',
+        lightModeActive: 'brandLight',
+        darkModeActive: 'brandDark',
+      },
+      color: {
+        lightMode: 'brandLight',
+        darkMode: 'brandDark',
+        lightModeActive: 'brandInverseLight',
+        darkModeActive: 'brandInverseDark',
+      },
+      backgroundColor: {
+        lightModeActive: 'brandLight',
+        darkModeActive: 'brandDark',
+      },
+    }),
+  ],
 });
 
 export const tabsContentRecipe = recipe({

@@ -16,7 +16,7 @@ export default function Home() {
       <Button variant="outlined">Outlined</Button>
       <Button variant="text">Text</Button>
       <h2>Tabs</h2>
-      <Tabs.Root value="tab1">
+      <Tabs.Root defaultValue="tab1">
         <Tabs.List>
           <Tabs.Trigger value="tab1">
             Tab #1

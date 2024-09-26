@@ -19,14 +19,25 @@ const base = createGlobalTheme('.tmhub-design-system-root', {
 });
 
 export const color = createThemeContract({
-  brand: '',
-  brandInverse: '',
-  textPrimary: '',
-  textSecondary: '',
-  textHint: '',
-  textLink: '',
-  bg: '',
-  surface: '',
+  // Light
+  brandLight: '',
+  brandInverseLight: '',
+  textPrimaryLight: '',
+  textSecondaryLight: '',
+  textHintLight: '',
+  textLinkLight: '',
+  bgLight: '',
+  surfaceLight: '',
+  // Dark
+  brandDark: '',
+  brandInverseDark: '',
+  textPrimaryDark: '',
+  textSecondaryDark: '',
+  textHintDark: '',
+  textLinkDark: '',
+  bgDark: '',
+  surfaceDark: '',
+  // General
   inherit: '',
   transparent: '',
 });

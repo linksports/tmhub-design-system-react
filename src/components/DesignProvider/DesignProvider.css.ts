@@ -3,7 +3,13 @@ import { sprinkles } from '../../tokens/sprinkles.css';
 
 export const designProviderRecipe = recipe({
   base: sprinkles({
-    backgroundColor: 'bg',
-    color: 'textPrimary',
+    backgroundColor: {
+      lightMode: 'bgLight',
+      darkMode: 'bgDark',
+    },
+    color: {
+      lightMode: 'textPrimaryLight',
+      darkMode: 'textPrimaryDark',
+    },
   }),
 });

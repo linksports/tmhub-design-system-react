@@ -1,14 +1,34 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { DesignProviderProps } from './DesignProvider.types';
 import {
+  teamhubTheme,
   teamhubLightTheme,
   teamhubDarkTheme,
-  playTheme,
+  playTheme
 } from '../../tokens/theme.css';
 import { designProviderRecipe } from './DesignProvider.css';
+
+const chooseTheme = (theme: string, mode: string) => {
+  switch (theme) {
+    case 'teamhub':
+      if (mode == 'light') {
+        return teamhubLightTheme;
+      } else if (mode == 'dark') {
+        return teamhubDarkTheme;
+      }
+      return teamhubTheme;
+      break;
+    case 'play':
+      return playTheme;
+      break;
+    case 'joynup':
+      return playTheme;
+      break;
+  }
+  return teamhubTheme;
+};
 
 const DesignProvider: React.FC<DesignProviderProps> = ({
   asChild = false,
@@ -23,33 +43,10 @@ const DesignProvider: React.FC<DesignProviderProps> = ({
     ...others
   } = props;
 
-  const [colorMode, setColorMode] = useState(mode);
-
-  let themeClass = teamhubLightTheme;
-  if (theme == 'teamhub' && colorMode == 'dark') {
-    themeClass = teamhubDarkTheme;
-  } else if (theme == 'play') {
-    themeClass = playTheme;
-  } else if (theme == 'joynup') {
-    themeClass = playTheme;
-  };
-
-  useEffect(() => {
-    if (mode == 'auto') {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setColorMode('dark');
-      } else {
-        setColorMode('light');
-      };
-    } else {
-      setColorMode(mode);
-    };;
-  }, [mode]);
-
   return (
     <Component className={[
       'tmhub-design-system-root',
-      themeClass,
+      chooseTheme(theme, mode),
       designProviderRecipe(),
       className
     ].filter(Boolean).join(' ')} {...others} />

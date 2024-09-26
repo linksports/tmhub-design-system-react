@@ -1,6 +1,6 @@
 import { createThemeVars } from './creator';
-import { colorLight as colorToken } from '../../../shared/tokens/colorLight';
+import { colorLight } from '../../../shared/tokens/colorLight';
 
-const theme = createThemeVars(colorToken);
+const theme = createThemeVars(colorLight, colorLight);
 
 export default theme;

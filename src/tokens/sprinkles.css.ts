@@ -1,11 +1,14 @@
 import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles';
 import { vars } from './vars.css';
 
+const condition_tablet = { '@media': 'screen and (min-width: 768px)' };
+const condition_desktop = { '@media': 'screen and (min-width: 1024px)' };
+
 const responsiveProperties = defineProperties({
   conditions: {
     mobile: {},
-    tablet: { '@media': 'screen and (min-width: 768px)' },
-    desktop: { '@media': 'screen and (min-width: 1024px)' },
+    tablet: condition_tablet,
+    desktop: condition_desktop,
   },
   defaultCondition: 'mobile',
   properties: {
@@ -28,7 +31,17 @@ const responsiveProperties = defineProperties({
   },
 });
 
+const condition_dark_mode = { '@media': '(prefers-color-scheme: dark)' };
+const condition_active = { selector: '&[data-state="active"]' };
+
 const colorProperties = defineProperties({
+  conditions: {
+    lightMode: {},
+    darkMode: condition_dark_mode,
+    lightModeActive: condition_active,
+    darkModeActive: { ...condition_dark_mode, ...condition_active },
+  },
+  defaultCondition: 'lightMode',
   properties: {
     color: vars.color,
     backgroundColor: vars.color,
@@ -38,7 +51,7 @@ const colorProperties = defineProperties({
 
 export const sprinkles = createSprinkles(
   responsiveProperties,
-  colorProperties
+  colorProperties,
 );
 
 export type Sprinkles = Parameters<typeof sprinkles>[0];

@@ -40,19 +40,37 @@ export const button = recipe({
     },
     variant: {
       filled: sprinkles({
-        borderColor: 'brand',
-        backgroundColor: 'brand',
-        color: 'brandInverse',
+        borderColor: {
+          lightMode: 'brandLight',
+          darkMode: 'brandDark',
+        },
+        backgroundColor: {
+          lightMode: 'brandLight',
+          darkMode: 'brandDark',
+        },
+        color: {
+          lightMode: 'brandInverseLight',
+          darkMode: 'brandInverseDark',
+        },
       }),
       outlined: sprinkles({
-        borderColor: 'brand',
+        borderColor: {
+          lightMode: 'brandLight',
+          darkMode: 'brandDark',
+        },
         backgroundColor: 'inherit',
-        color: 'brand',
+        color: {
+          lightMode: 'brandLight',
+          darkMode: 'brandDark',
+        },
       }),
       text: sprinkles({
         borderColor: 'transparent',
         backgroundColor: 'inherit',
-        color: 'textPrimary',
+        color: {
+          lightMode: 'textPrimaryLight',
+          darkMode: 'textPrimaryDark',
+        },
       }),
     },
   },
