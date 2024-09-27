@@ -28,7 +28,6 @@ export const tabsListRecipe = recipe({
 export const tabsTriggerRecipe = recipe({
   base: [
     {
-      all: 'unset',
       fontFamily: 'inherit',
       padding: '0 20px',
       height: '32px',

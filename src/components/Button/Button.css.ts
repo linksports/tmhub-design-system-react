@@ -4,7 +4,6 @@ import { sprinkles } from '../../tokens/sprinkles.css';
 export const button = recipe({
   base: [
     {
-    // padding: `${vars.spacing.sm} 0`,
       fontSize: '80%',
       fontFamily: 'inherit',
       textAlign: 'center',

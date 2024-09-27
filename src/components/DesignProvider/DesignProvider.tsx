@@ -1,5 +1,3 @@
-'use client';
-
 import { Slot } from '@radix-ui/react-slot';
 import { DesignProviderProps } from './DesignProvider.types';
 import {
@@ -8,6 +6,7 @@ import {
   teamhubDarkTheme,
   playTheme
 } from '../../tokens/theme.css';
+import '../../tokens/reset.css';
 import { designProviderRecipe } from './DesignProvider.css';
 
 const chooseTheme = (theme: string, mode: string) => {
