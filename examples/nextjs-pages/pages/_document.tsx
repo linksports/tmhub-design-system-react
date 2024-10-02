@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <DesignProvider theme="play" asChild>
+      <DesignProvider theme="teamhub" asChild>
         <body>
           <Main />
           <NextScript />

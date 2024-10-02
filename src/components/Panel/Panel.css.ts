@@ -8,7 +8,10 @@ export const panel = recipe({
       borderRadius: '8px',
     },
     sprinkles({
-      backgroundColor: 'surface',
+      backgroundColor: {
+        lightMode: 'surfaceLight',
+        darkMode: 'surfaceDark',
+      },
     }),
   ],
 });
