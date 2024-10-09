@@ -2,11 +2,13 @@ import {
   Container,
   Button,
   Tabs,
+  Icons,
 } from 'tmhub-design-system-react';
 
 export default function Home() {
   return (
     <Container>
+      <Icons.ClockIcon color="red" />
       <h2>Button</h2>
       <h3>Size</h3>
       <Button size="lg">Large</Button>
