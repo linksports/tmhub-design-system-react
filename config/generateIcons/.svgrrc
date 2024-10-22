@@ -1,0 +1,9 @@
+{
+  "typescript": true,
+  "expandProps": false,
+  "icon": true,
+  "replaceAttrValues": {
+    "#13334C": "{color}",
+    "1em": "{iconsSizeMap[size]}"
+  }
+}

@@ -1,0 +1,26 @@
+import { IconProps, iconsSizeMap } from "../Icons.types";
+const SvgSuccess: React.FC<IconProps> = (props) => {
+  const { size = "md", color = "#13334C" } = props;
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={iconsSizeMap[size]}
+      height={iconsSizeMap[size]}
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <g clipPath="url(#success_svg__a)">
+        <path
+          fill={color}
+          d="M16.59 7.58 10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"
+        />
+      </g>
+      <defs>
+        <clipPath id="success_svg__a">
+          <path fill="#fff" d="M0 0h24v24H0z" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+export default SvgSuccess;
