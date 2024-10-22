@@ -82,7 +82,7 @@ export { default as Softball } from "./Softball";
 export { default as SpeedBall } from "./SpeedBall";
 export { default as SquashTennis } from "./SquashTennis";
 export { default as Squash } from "./Squash";
-export { default as Stickétennis } from "./StickéTennis";
+export { default as StickeTennis } from "./StickeTennis";
 export { default as TableTennis } from "./TableTennis";
 export { default as TagRugby } from "./TagRugby";
 export { default as Taspony } from "./Taspony";
