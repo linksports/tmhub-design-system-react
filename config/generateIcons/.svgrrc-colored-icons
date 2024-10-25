@@ -1,0 +1,8 @@
+{
+  "typescript": true,
+  "expandProps": false,
+  "dimensions": false,
+  "svgProps": {
+    "className": "{icons({ size })}"
+  }
+}

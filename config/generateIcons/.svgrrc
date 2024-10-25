@@ -1,0 +1,11 @@
+{
+  "typescript": true,
+  "expandProps": false,
+  "dimensions": false,
+  "replaceAttrValues": {
+    "#13334C": "{color}"
+  },
+  "svgProps": {
+    "className": "{icons({ size })}"
+  }
+}
