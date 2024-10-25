@@ -1,13 +1,15 @@
-import { IconProps, iconsSizeMap } from "../Icons.types";
+import { IconProps } from "../Icons.types";
+import { icons } from "../Icons.css";
 const SvgEmail: React.FC<IconProps> = (props) => {
   const { size = "md", color = "#13334C" } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={iconsSizeMap[size]}
-      height={iconsSizeMap[size]}
       fill="none"
       viewBox="0 0 24 24"
+      className={icons({
+        size,
+      })}
     >
       <g clipPath="url(#email_svg__a)">
         <path

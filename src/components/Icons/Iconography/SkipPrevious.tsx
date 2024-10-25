@@ -1,13 +1,15 @@
-import { IconProps, iconsSizeMap } from "../Icons.types";
+import { IconProps } from "../Icons.types";
+import { icons } from "../Icons.css";
 const SvgSkipPrevious: React.FC<IconProps> = (props) => {
   const { size = "md", color = "#13334C" } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={iconsSizeMap[size]}
-      height={iconsSizeMap[size]}
       fill="none"
       viewBox="0 0 24 24"
+      className={icons({
+        size,
+      })}
     >
       <g clipPath="url(#skip_previous_svg__a)">
         <path fill={color} d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />

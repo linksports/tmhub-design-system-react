@@ -1,13 +1,15 @@
-import { IconProps, iconsSizeMap } from "../Icons.types";
+import { IconProps } from "../Icons.types";
+import { icons } from "../Icons.css";
 const SvgArrowDown: React.FC<IconProps> = (props) => {
   const { size = "md", color = "#13334C" } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={iconsSizeMap[size]}
-      height={iconsSizeMap[size]}
       fill="none"
       viewBox="0 0 24 24"
+      className={icons({
+        size,
+      })}
     >
       <g clipPath="url(#arrow_down_svg__a)">
         <path fill={color} d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z" />

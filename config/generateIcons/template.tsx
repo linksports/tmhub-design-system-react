@@ -1,6 +1,7 @@
 const template = (variables, { tpl }) => {
   return tpl`
-import { IconProps, iconsSizeMap } from "../Icons.types";
+import { IconProps } from "../Icons.types";
+import { icons } from "../Icons.css";
 ${variables.interfaces};
 const ${variables.componentName}: React.FC<IconProps> = (props) => {
   const { size = "md", color = "#13334C" } = props

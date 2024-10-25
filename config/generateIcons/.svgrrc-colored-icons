@@ -1,8 +1,8 @@
 {
   "typescript": true,
   "expandProps": false,
-  "icon": true,
-  "replaceAttrValues": {
-    "1em": "{iconsSizeMap[size]}"
+  "dimensions": false,
+  "svgProps": {
+    "className": "{icons({ size })}"
   }
 }

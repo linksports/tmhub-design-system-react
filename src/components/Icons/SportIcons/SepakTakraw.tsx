@@ -1,13 +1,15 @@
-import { IconProps, iconsSizeMap } from "../Icons.types";
+import { IconProps } from "../Icons.types";
+import { icons } from "../Icons.css";
 const SvgSepakTakraw: React.FC<IconProps> = (props) => {
   const { size = "md", color = "#13334C" } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={iconsSizeMap[size]}
-      height={iconsSizeMap[size]}
       fill="none"
       viewBox="0 0 24 24"
+      className={icons({
+        size,
+      })}
     >
       <g fill={color} clipPath="url(#Sepak-Takraw_svg__a)">
         <path d="M5.455 11.515c.655-.87 1.36-1.715 2.095-2.53q-.855-.631-1.755-1.195a7.5 7.5 0 0 0-1.265 3.5q.466.12.925.225M11.985 4.27q-.554 0-1.1.03c.38.29.75.575 1.125.87q.555-.436 1.125-.865a18 18 0 0 0-1.15-.035M19.465 11.29a7.5 7.5 0 0 0-1.26-3.49c-.595.375-1.18.77-1.745 1.19.735.81 1.435 1.655 2.09 2.525q.465-.105.915-.225M15.905 18.4c-.07-.12-.135-.24-.205-.36a36.5 36.5 0 0 1-7.395.005q-.106.18-.205.36A7.4 7.4 0 0 0 12 19.5c1.4 0 2.735-.38 3.905-1.1" />

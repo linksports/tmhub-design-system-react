@@ -1,13 +1,15 @@
-import { IconProps, iconsSizeMap } from "../Icons.types";
+import { IconProps } from "../Icons.types";
+import { icons } from "../Icons.css";
 const SvgSend: React.FC<IconProps> = (props) => {
   const { size = "md", color = "#13334C" } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={iconsSizeMap[size]}
-      height={iconsSizeMap[size]}
       fill="none"
       viewBox="0 0 24 24"
+      className={icons({
+        size,
+      })}
     >
       <g clipPath="url(#send_svg__a)">
         <path fill={color} d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />

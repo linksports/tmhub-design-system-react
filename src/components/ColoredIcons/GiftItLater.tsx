@@ -1,14 +1,15 @@
-import { iconsSizeMap } from "../Icons/Icons.types";
+import { icons } from "../Icons/Icons.css";
 import { ColoredIconProps } from "./ColoredIcons.types";
 const SvgGiftItLater: React.FC<ColoredIconProps> = (props) => {
   const { size = "md" } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={iconsSizeMap[size]}
-      height={iconsSizeMap[size]}
       fill="none"
       viewBox="0 0 24 24"
+      className={icons({
+        size,
+      })}
     >
       <path
         fill="#F7931E"

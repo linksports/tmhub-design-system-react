@@ -1,6 +1,6 @@
 const coloredIconsTemplate = (variables, { tpl }) => {
   return tpl`
-import { iconsSizeMap } from "../Icons/Icons.types";
+import { icons } from "../Icons/Icons.css";
 import { ColoredIconProps } from "./ColoredIcons.types";
 ${variables.interfaces};
 const ${variables.componentName}: React.FC<ColoredIconProps> = (props) => {
