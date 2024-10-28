@@ -16,7 +16,7 @@ const preview: Preview = {
     },
   },
   initialGlobals: {
-    theme: 'teamhub',
+    theme: "joynup",
   },
   decorators: [
     withTmhubTheme({
@@ -24,7 +24,7 @@ const preview: Preview = {
         map[key] = key;
         return map;
       }, {}) as const,
-      defaultTheme: 'TeamHub',
+      defaultTheme: "Joynup",
     }),
   ],
 };

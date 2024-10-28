@@ -1,4 +1,3 @@
-export { default as teamhubTheme } from './theme/teamhub.css';
-export { default as teamhubLightTheme } from './theme/teamhubLight.css';
-export { default as teamhubDarkTheme } from './theme/teamhubDark.css';
-export { default as playTheme } from './theme/play.css';
+export { default as joynupTheme } from "./theme/joynup.css";
+export { default as joynupDarkTheme } from "./theme/joynupDark.css";
+export { default as joynupLightTheme } from "./theme/joynupLight.css";
