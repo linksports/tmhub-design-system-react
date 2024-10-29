@@ -46,6 +46,7 @@ const colorProperties = defineProperties({
     color: vars.color,
     backgroundColor: vars.color,
     borderColor: vars.color,
+    outlineColor: vars.color,
   },
 });
 

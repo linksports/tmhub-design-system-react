@@ -5,6 +5,8 @@ import {
   Tabs,
   Icons,
   ColoredIcons,
+  Chip,
+  Text,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -42,6 +44,34 @@ export default function Home() {
         <Icons.TeamnaviSportIcons.Tennis size="sm" color="hyperlinks" />
         <h2>ColoredIcons</h2>
         <ColoredIcons.Gift size="md" />
+        <h2>Chip</h2>
+        <h3>Not Filled</h3>
+        <Chip type="gray">Gray</Chip>
+        <Chip type="blue">Blue</Chip>
+        <Chip type="orange">Orange</Chip>
+        <Chip type="green">Green</Chip>
+        <h3>Filled</h3>
+        <Chip type="gray" filled={true}>
+          Gray
+        </Chip>
+        <Chip type="blue" filled={true}>
+          Blue
+        </Chip>
+        <Chip type="orange" filled={true}>
+          Orange
+        </Chip>
+        <Chip type="green" filled={true}>
+          Green
+        </Chip>
+        <h2>Text</h2>
+        <Text
+          fontSize="M"
+          lineHeight="Normal"
+          fontWeight="Regular"
+          color="alert"
+        >
+          Sample Text
+        </Text>
       </Container>
     </>
   );

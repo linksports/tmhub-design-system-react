@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+import * as TextStories from "./Text.stories";
+import Text from "./Text";
+
+<Meta of={TextStories} />
+
+# Text
+
+## asChild
+
+`Text` コンポーネントはレンダリングされるとHTMLの `p` エレメントになる。もし何らかの理由で要素を `span` にしたいなどあれば `asChild` 属性を使う。
+
+```typescript
+<Text asChild>
+  <span>Sample Text</span>
+</Text>
+```
+
+## Playground
+
+<Story />
+<Controls />
