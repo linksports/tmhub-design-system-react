@@ -3,9 +3,6 @@ import { sprinkles } from "../../tokens/sprinkles.css";
 
 export const text = recipe({
   base: [
-    {
-      backgroundColor: "inherit",
-    },
     sprinkles({
       display: "inline-block",
       margin: "none",

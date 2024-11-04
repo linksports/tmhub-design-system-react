@@ -7,6 +7,7 @@ import {
   ColoredIcons,
   Chip,
   Text,
+  ActionChip,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -72,6 +73,21 @@ export default function Home() {
         >
           Sample Text
         </Text>
+        <h2>ActionChip.FilterChip</h2>
+        <ActionChip.FilterChip active={false} text="Sample Text" />
+        <ActionChip.FilterChip
+          active={true}
+          text="Sample Text"
+          Icon={<Icons.SportIcons.Baseball size="xs" />}
+        />
+
+        <h2>ActionChip.SuggestionChip</h2>
+        <ActionChip.SuggestionChip type="blue" text="Sample Text" />
+        <ActionChip.SuggestionChip
+          type="orange"
+          text="Sample Text"
+          Icon={<ColoredIcons.Gift size="md" />}
+        />
       </Container>
     </>
   );
