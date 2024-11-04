@@ -1,12 +1,12 @@
 import type { Preview } from "@storybook/react";
-import { withTmhubTheme } from './tmhubTheme.decorator';
-import { themeDefinitions } from './themes';
+import { withTmhubTheme } from "./tmhubTheme.decorator";
+import { themeDefinitions } from "./themes";
 
 const preview: Preview = {
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
     actions: {
-      argTypesRegex: '^on[A-Z].*',
+      argTypesRegex: "^on[A-Z].*",
     },
     controls: {
       matchers: {

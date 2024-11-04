@@ -1,0 +1,12 @@
+{
+  "typescript": true,
+  "expandProps": false,
+  "dimensions": false,
+  "replaceAttrValues": {
+    "#13334C": "currentColor"
+  },
+  "svgProps": {
+    "style": "{style}",
+    "className": "{[icons({ size, color }), className].filter(Boolean).join(\" \")}"
+  }
+}

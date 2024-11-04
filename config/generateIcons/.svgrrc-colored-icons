@@ -1,0 +1,9 @@
+{
+  "typescript": true,
+  "expandProps": false,
+  "dimensions": false,
+  "svgProps": {
+    "style": "{style}",
+    "className": "{[icons({ size }), className].filter(Boolean).join(\" \")}"
+  }
+}

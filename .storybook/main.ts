@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import { mergeConfig } from "vite";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
-import { join, dirname } from "path";
+import { join, dirname, resolve } from "path";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -12,7 +12,10 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, "package.json")));
 }
 const config: StorybookConfig = {
-  stories: ["../src/components/**/*.mdx", "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../src/components/**/*.mdx",
+    "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
   // stories: ["../src/components/**/*.mdx"],
   addons: [
     // getAbsolutePath("@storybook/addon-onboarding"),
@@ -32,6 +35,12 @@ const config: StorybookConfig = {
     autodocs: true,
   },
   viteFinal: async (config) => {
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        "~": resolve(__dirname, "../src"),
+      };
+    }
     return mergeConfig(config, {
       plugins: [vanillaExtractPlugin()],
     });
