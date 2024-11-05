@@ -27,6 +27,7 @@ const Flex: React.FC<FlexProps> = ({ asChild = false, ...props }) => {
     pb,
     style,
     children,
+    className,
     ...others
   } = props;
 
@@ -34,21 +35,26 @@ const Flex: React.FC<FlexProps> = ({ asChild = false, ...props }) => {
 
   return (
     <Component
-      className={flex({
-        direction,
-        align,
-        justify,
-        display,
-        wrap,
-        gap,
-        gapX,
-        gapY,
-        p,
-        pt,
-        pr,
-        pl,
-        pb,
-      })}
+      className={[
+        flex({
+          direction,
+          align,
+          justify,
+          display,
+          wrap,
+          gap,
+          gapX,
+          gapY,
+          p,
+          pt,
+          pr,
+          pl,
+          pb,
+        }),
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       style={{
         ...style,
         ...assignInlineVars({

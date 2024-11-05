@@ -7,6 +7,7 @@ import {
   Chip,
   Text,
   ActionChip,
+  Table,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -74,6 +75,17 @@ export default function Home() {
         type="orange"
         text="Sample Text"
         Icon={<ColoredIcons.Gift size="md" />}
+      />
+      <h2>Table</h2>
+      <Table
+        rows={[
+          { name: "TestName1", age: 20 },
+          { name: "TestName2", age: 25 },
+        ]}
+        columns={[
+          { key: "name", headerName: "Name" },
+          { key: "age", headerName: "Age" },
+        ]}
       />
     </Container>
   );

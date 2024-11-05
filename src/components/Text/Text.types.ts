@@ -33,8 +33,9 @@ export type Props = {
   lineHeight: (typeof lineHeightValues)[number];
   fontWeight: (typeof fontWeightValues)[number];
   color: (typeof colorValues)[number];
-  style?: React.CSSProperties;
   children: React.ReactNode;
+  style?: React.CSSProperties;
+  className?: string | undefined;
 };
 
 export type TextProps = AsChildProps<Props, "div">;

@@ -10,11 +10,17 @@ const Text: React.FC<TextProps> = ({
   color,
   style,
   children,
+  className,
 }) => {
   const Component = asChild ? Slot : "p";
   return (
     <Component
-      className={textCss({ fontSize, lineHeight, fontWeight, color })}
+      className={[
+        textCss({ fontSize, lineHeight, fontWeight, color }),
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       style={style}
     >
       {children}
