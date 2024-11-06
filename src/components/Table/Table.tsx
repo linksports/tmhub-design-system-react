@@ -1,5 +1,4 @@
 "use client";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
 import Text from "../Text";
 import {
   thRecipe,
@@ -34,23 +33,6 @@ const Table = <T extends Row>({
     key: keyof T;
     direction: (typeof directionValues)[number];
   } | null>(null);
-
-  const defaultSort = (
-    key: keyof T,
-    a: T,
-    b: T,
-    direction: (typeof directionValues)[number]
-  ) => {
-    const rowA = a[key];
-    const rowB = b[key];
-    if (rowA < rowB) {
-      return direction === "asc" ? -1 : 1;
-    }
-    if (rowA > rowB) {
-      return direction === "asc" ? 1 : -1;
-    }
-    return 0;
-  };
 
   const handleSort = (key: keyof T, columnSort: Column<T>["onSort"]) => {
     let direction: (typeof directionValues)[number] = "asc";
@@ -120,11 +102,9 @@ const TableColumn = <T extends Row>({
         <Flex
           key={String(column.key)}
           direction="column"
+          minWidth={column.minWidth}
+          maxWidth={column.maxWidth}
           className={columnRecipe()}
-          style={assignInlineVars({
-            minWidth: column.minWidth,
-            maxWidth: column.maxWidth,
-          })}
         >
           <div
             className={thRecipe({
@@ -192,3 +172,20 @@ const TableColumn = <T extends Row>({
 };
 
 export default Table;
+
+const defaultSort = <T extends Row>(
+  key: keyof T,
+  a: T,
+  b: T,
+  direction: (typeof directionValues)[number]
+) => {
+  const rowA = a[key];
+  const rowB = b[key];
+  if (rowA < rowB) {
+    return direction === "asc" ? -1 : 1;
+  }
+  if (rowA > rowB) {
+    return direction === "asc" ? 1 : -1;
+  }
+  return 0;
+};
