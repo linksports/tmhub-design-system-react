@@ -4,6 +4,7 @@ export { default as Chip } from "./Chip";
 export { default as Container } from "./Container";
 export { default as DesignProvider } from "./DesignProvider";
 export { default as Flex } from "./Flex";
+export { default as Heading } from "./Heading";
 export { default as Grid } from "./Grid";
 export { default as Panel } from "./Panel";
 export { default as Table } from "./Table";

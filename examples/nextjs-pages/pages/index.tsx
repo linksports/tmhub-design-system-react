@@ -9,6 +9,7 @@ import {
   Text,
   ActionChip,
   Table,
+  Heading,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -100,6 +101,10 @@ export default function Home() {
             { key: "age", headerName: "Age" },
           ]}
         />
+        <h2>Heading</h2>
+        <Heading level="L" color="primary">
+          Sample Heading
+        </Heading>
       </Container>
     </>
   );
