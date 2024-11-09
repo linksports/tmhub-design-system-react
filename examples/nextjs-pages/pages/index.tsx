@@ -10,6 +10,7 @@ import {
   ActionChip,
   Table,
   Heading,
+  Label,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -105,6 +106,18 @@ export default function Home() {
         <Heading level="L" color="primary">
           Sample Heading
         </Heading>
+        <h2>Label</h2>
+        <Label text="Sample Label" />
+        <Label text="Sample Label" type="cyan" />
+        <Label text="Sample Label" type="orange" />
+        <Label text="Sample Label" type="gray" />
+        <Label text="Sample Label" type="pink" />
+        <h3>Bold Label</h3>
+        <Label bold text="Sample Label" />
+        <Label bold text="Sample Label" type="cyan" />
+        <Label bold text="Sample Label" type="orange" />
+        <Label bold text="Sample Label" type="gray" />
+        <Label bold text="Sample Label" type="pink" />
       </Container>
     </>
   );
