@@ -11,6 +11,7 @@ import {
   Table,
   Heading,
   Label,
+  SegmentedControl,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -118,6 +119,35 @@ export default function Home() {
         <Label bold text="Sample Label" type="orange" />
         <Label bold text="Sample Label" type="gray" />
         <Label bold text="Sample Label" type="pink" />
+        <h2>SegmentedControl</h2>
+        <SegmentedControl.Root defaultValue="tab1">
+          <SegmentedControl.List>
+            <SegmentedControl.Trigger value="tab1">
+              Tab #1
+            </SegmentedControl.Trigger>
+            <SegmentedControl.Trigger value="tab2">
+              Tab #2
+            </SegmentedControl.Trigger>
+            <SegmentedControl.Trigger value="tab3" disabled>
+              Tab #3(disabled)
+            </SegmentedControl.Trigger>
+            <SegmentedControl.Trigger value="tab4">
+              Tab #4
+            </SegmentedControl.Trigger>
+          </SegmentedControl.List>
+          <SegmentedControl.Content value="tab1">
+            Content #1
+          </SegmentedControl.Content>
+          <SegmentedControl.Content value="tab2">
+            Content #2
+          </SegmentedControl.Content>
+          <SegmentedControl.Content value="tab3">
+            Content #3
+          </SegmentedControl.Content>
+          <SegmentedControl.Content value="tab4">
+            Content #4
+          </SegmentedControl.Content>
+        </SegmentedControl.Root>
       </Container>
     </>
   );

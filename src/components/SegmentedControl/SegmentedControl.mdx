@@ -1,0 +1,65 @@
+import { Canvas, Meta, Story, Controls, Markdown } from "@storybook/blocks";
+import PropsTable from "../../../.storybook/propertiesTable";
+import * as SegmentedControlStories from "./SegmentedControl.stories";
+import SegmentedControl from "./SegmentedControl";
+
+<Meta of={SegmentedControlStories} />
+
+# SegmentedControl
+
+## API Reference
+
+### Root
+
+<PropsTable
+  props={[
+    ["defaultValue", "string", "初期表示されるタブの識別子"],
+    ["value", "string", "現在選択されているタブの識別子"],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "タブが変更された際のイベント",
+    ],
+  ]}
+/>
+
+### Trigger
+
+<PropsTable
+  props={[
+    ["value*", "string", "タップした際に選択状態になるタブの識別子"],
+    ["disabled", "boolean", "無効状態"],
+  ]}
+/>
+
+### Content
+
+<PropsTable props={[["value*", "string", "タブの識別子"]]} />
+
+## Anatomy
+
+`SegmentedControl.Trigger` をタップすると、対応する `value` の `SegmentedControl.Content` が表示される。
+
+```typescript
+<SegmentedControl.Root defaultValue="value1">
+  <SegmentedControl.List aria-label="コンテンツリスト">
+    <SegmentedControl.Trigger value="value1">
+      Tab #1
+    </SegmentedControl.Trigger>
+    <SegmentedControl.Trigger value="value2">
+      Tab #2
+    </SegmentedControl.Trigger>
+  </SegmentedControl.List>
+  <SegmentedControl.Content value="value1">
+    Content #1
+  </SegmentedControl.Content>
+  <SegmentedControl.Content value="value2">
+    Content #2
+  </SegmentedControl.Content>
+</SegmentedControl.Root>
+```
+
+## Playground
+
+<Story />
+<Controls />
