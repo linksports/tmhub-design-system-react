@@ -1,22 +1,14 @@
 export const themeDefinitions = {
-  'TeamHub': {
-    theme: 'teamhub',
-    mode: 'auto',
+  Joynup: {
+    theme: "joynup",
+    mode: "auto",
   },
-  'TeamHub (Light)': {
-    theme: 'teamhub',
-    mode: 'light',
+  "Joynup (Light)": {
+    theme: "joynup",
+    mode: "light",
   },
-  'TeamHub (Dark)': {
-    theme: 'teamhub',
-    mode: 'dark',
-  },
-  'PLAY': {
-    theme: 'play',
-    mode: 'light',
-  },
-  'Joynup': {
-    theme: 'joynup',
-    mode: 'light',
+  "Joynup (Dark)": {
+    theme: "joynup",
+    mode: "dark",
   },
 };

@@ -1,15 +1,15 @@
-import { recipe } from '@vanilla-extract/recipes';
-import { sprinkles } from '../../tokens/sprinkles.css';
+import { recipe } from "@vanilla-extract/recipes";
+import { sprinkles } from "../../tokens/sprinkles.css";
 
 export const designProviderRecipe = recipe({
   base: sprinkles({
     backgroundColor: {
-      lightMode: 'bgLight',
-      darkMode: 'bgDark',
+      lightMode: "backgroundLight",
+      darkMode: "backgroundDark",
     },
     color: {
-      lightMode: 'textPrimaryLight',
-      darkMode: 'textPrimaryDark',
+      lightMode: "primaryTextLight",
+      darkMode: "primaryTextDark",
     },
   }),
 });

@@ -1,53 +1,53 @@
 import { StoryFn, Meta } from "@storybook/react";
-import Button from './Button';
-import { sizeValues, variantValues } from './Button.types';
-import { asChildArgTypes } from '../../props/asChild.props';
+import Button from "./Button";
+import { sizeValues, variantValues } from "./Button.types";
+import { asChildArgTypes } from "../../props/asChild.props";
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: 'Components/Button',
+  title: "Components/Button",
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'radio',
+      control: "radio",
       options: variantValues,
-      description: 'ボタンの外観設定',
+      description: "ボタンの外観設定",
       table: {
-        type: { summary: variantValues.join('|') },
-        defaultValue: { summary: 'filled' },
+        type: { summary: variantValues.join("|") },
+        defaultValue: { summary: "filled" },
       },
     },
     size: {
-      control: 'radio',
+      control: "radio",
       options: sizeValues,
-      description: 'サイズ（主に横幅）',
+      description: "サイズ（主に横幅）",
       table: {
-        type: { summary: sizeValues.join('|') },
-        defaultValue: { summary: 'md' },
+        type: { summary: sizeValues.join("|") },
+        defaultValue: { summary: "md" },
       },
     },
     disabled: {
-      control: 'boolean',
-      description: 'ボタン無効',
+      control: "boolean",
+      description: "ボタン無効",
       table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
       },
     },
     onClick: {
-      action: 'onClick',
-      description: 'ボタンクリック時イベント',
+      action: "onClick",
+      description: "ボタンクリック時イベント",
       table: {
-        type: { summary: 'function' },
+        type: { summary: "function" },
       },
     },
     children: {
-      control: 'text',
+      control: "text",
       table: {
-        type: { summary: 'ReactNode' },
+        type: { summary: "ReactNode" },
       },
     },
     ...asChildArgTypes,
@@ -55,19 +55,16 @@ const meta: Meta<typeof Button> = {
 };
 export default meta;
 
-const Template: StoryFn<typeof Button> = (args) => (
-  <Button {...args}>
-  </Button>
-);
+const Template: StoryFn<typeof Button> = (args) => <Button {...args}></Button>;
 
 /**
  * デフォルトボタン
  */
 export const FilledButton = Template.bind({});
 FilledButton.args = {
-  variant: 'filled',
-  size: 'md',
-  children: 'Click!',
+  variant: "filled",
+  size: "md",
+  children: "Click!",
 };
 
 /**
@@ -75,9 +72,9 @@ FilledButton.args = {
  */
 export const OutlinedButton = Template.bind({});
 OutlinedButton.args = {
-  variant: 'outlined',
-  size: 'md',
-  children: 'Click!',
+  variant: "outlined",
+  size: "md",
+  children: "Click!",
 };
 
 /**
@@ -85,9 +82,9 @@ OutlinedButton.args = {
  */
 export const TextButton = Template.bind({});
 TextButton.args = {
-  variant: 'text',
-  size: 'md',
-  children: 'Click!',
+  variant: "text",
+  size: "md",
+  children: "Click!",
 };
 
 /**
@@ -96,7 +93,5 @@ TextButton.args = {
 export const LinkAsButton = Template.bind({});
 LinkAsButton.args = {
   asChild: true,
-  children: (
-    <a href="https://tmhub.jp">TeamHub</a>
-  ),
+  children: <a href="https://tmhub.jp">TeamHub</a>,
 };
