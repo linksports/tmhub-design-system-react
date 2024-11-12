@@ -1,18 +1,18 @@
 import { AsChildProps } from "../../props/asChild.props";
 
 export const fontSizeValues = [
-  "XXS",
-  "XS",
-  "S",
-  "M",
-  "L",
-  "XL",
-  "XXL",
-  "XXXL",
+  "2xs",
+  "xs",
+  "sm",
+  "md",
+  "lg",
+  "xl",
+  "2xl",
+  "3xl",
 ] as const;
 
-export const lineHeightValues = ["None", "Tight", "Normal", "Loose"] as const;
-export const fontWeightValues = ["Regular", "Bold"] as const;
+export const lineHeightValues = ["none", "tight", "normal", "loose"] as const;
+export const fontWeightValues = ["regular", "bold"] as const;
 export const colorValues = [
   "primary",
   "secondary",

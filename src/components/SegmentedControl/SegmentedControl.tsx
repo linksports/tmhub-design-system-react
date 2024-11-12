@@ -48,9 +48,9 @@ const Trigger: React.FC<SegmentedControlTriggerProps> = (props) => {
       <Text
         asChild
         color={disabled ? "tertiaryDisabled" : "primary"}
-        fontSize="M"
-        fontWeight="Regular"
-        lineHeight="None"
+        fontSize="md"
+        fontWeight="regular"
+        lineHeight="none"
       >
         <SegmentedControl.Trigger
           disabled={disabled}

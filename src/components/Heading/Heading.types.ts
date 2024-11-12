@@ -1,13 +1,13 @@
 import { AsChildProps } from "../../props/asChild.props";
 
-export const levelValues = ["S", "M", "L", "XL", "XXL", "XXXL"] as const;
+export const levelValues = ["sm", "md", "lg", "xl", "2xl", "3xl"] as const;
 export const LevelHTagsMap: Record<(typeof levelValues)[number], string> = {
-  S: "h6",
-  M: "h5",
-  L: "h4",
-  XL: "h3",
-  XXL: "h2",
-  XXXL: "h1",
+  sm: "h6",
+  md: "h5",
+  lg: "h4",
+  xl: "h3",
+  "2xl": "h2",
+  "3xl": "h1",
 };
 
 export const colorValues = [

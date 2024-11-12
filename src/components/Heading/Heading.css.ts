@@ -6,6 +6,7 @@ export const headingRecipe = recipe({
     {
       fontWeight: 600,
       lineHeight: 1.25,
+      fontFamily: "inherit",
     },
     sprinkles({
       display: "inline-block",
@@ -15,12 +16,12 @@ export const headingRecipe = recipe({
   ],
   variants: {
     level: {
-      S: { fontSize: "14px" },
-      M: { fontSize: "16px" },
-      L: { fontSize: "19px" },
-      XL: { fontSize: "24px" },
-      XXL: { fontSize: "32px" },
-      XXXL: { fontSize: "48px" },
+      sm: { fontSize: "14px" },
+      md: { fontSize: "16px" },
+      lg: { fontSize: "19px" },
+      xl: { fontSize: "24px" },
+      "2xl": { fontSize: "32px" },
+      "3xl": { fontSize: "48px" },
     },
     color: {
       primary: sprinkles({

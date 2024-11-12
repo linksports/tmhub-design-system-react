@@ -44,14 +44,14 @@ const Template: StoryFn<typeof Heading> = (args) => (
 
 export const Basic = Template.bind({});
 Basic.args = {
-  level: "M",
+  level: "md",
   color: "primary",
   children: "Sample Text",
 };
 
 export const SpanAsHeading = Template.bind({});
 SpanAsHeading.args = {
-  level: "M",
+  level: "md",
   color: "primary",
   asChild: true,
   children: <span>Sample Text</span>,

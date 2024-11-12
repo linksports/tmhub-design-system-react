@@ -261,9 +261,9 @@ const NonTextRow: Row[] = [
       <Flex gap={2} align="center">
         <Text
           color="hyperlinks"
-          fontSize="M"
-          fontWeight="Regular"
-          lineHeight="Normal"
+          fontSize="md"
+          fontWeight="regular"
+          lineHeight="normal"
         >
           K.Chikamoto
         </Text>
@@ -276,9 +276,9 @@ const NonTextRow: Row[] = [
         />
         <Text
           color="primary"
-          fontSize="M"
-          fontWeight="Regular"
-          lineHeight="Normal"
+          fontSize="md"
+          fontWeight="regular"
+          lineHeight="normal"
         >
           CF
         </Text>
@@ -291,9 +291,9 @@ const NonTextRow: Row[] = [
       <Flex gap={2} align="center">
         <Text
           color="hyperlinks"
-          fontSize="M"
-          fontWeight="Regular"
-          lineHeight="Normal"
+          fontSize="md"
+          fontWeight="regular"
+          lineHeight="normal"
         >
           T.Nakano
         </Text>
@@ -306,9 +306,9 @@ const NonTextRow: Row[] = [
         />
         <Text
           color="primary"
-          fontSize="M"
-          fontWeight="Regular"
-          lineHeight="Normal"
+          fontSize="md"
+          fontWeight="regular"
+          lineHeight="normal"
         >
           2B
         </Text>

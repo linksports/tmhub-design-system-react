@@ -10,10 +10,10 @@ const Label: React.FC<LabelProps> = ({ type, bold, text, Icon }) => {
       <Box className={labelRecipe({ type, bold })}>
         {Icon && Icon}
         <Text
-          lineHeight="None"
+          lineHeight="none"
           color={bold ? "inverse" : "primary"}
-          fontSize="S"
-          fontWeight="Bold"
+          fontSize="sm"
+          fontWeight="bold"
         >
           {text}
         </Text>

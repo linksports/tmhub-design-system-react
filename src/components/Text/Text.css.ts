@@ -3,6 +3,9 @@ import { sprinkles } from "../../tokens/sprinkles.css";
 
 export const text = recipe({
   base: [
+    {
+      fontFamily: "inherit",
+    },
     sprinkles({
       display: "inline-block",
       margin: "none",
@@ -11,24 +14,24 @@ export const text = recipe({
   ],
   variants: {
     fontSize: {
-      XXS: { fontSize: "10px" },
-      XS: { fontSize: "12px" },
-      S: { fontSize: "14px" },
-      M: { fontSize: "16px" },
-      L: { fontSize: "19px" },
-      XL: { fontSize: "24px" },
-      XXL: { fontSize: "32px" },
-      XXXL: { fontSize: "48px" },
+      "2xs": { fontSize: "10px" },
+      xs: { fontSize: "12px" },
+      sm: { fontSize: "14px" },
+      md: { fontSize: "16px" },
+      lg: { fontSize: "19px" },
+      xl: { fontSize: "24px" },
+      "2xl": { fontSize: "32px" },
+      "3xl": { fontSize: "48px" },
     },
     lineHeight: {
-      None: { lineHeight: 1 },
-      Tight: { lineHeight: 1.25 },
-      Normal: { lineHeight: 1.5 },
-      Loose: { lineHeight: 1.75 },
+      none: { lineHeight: 1 },
+      tight: { lineHeight: 1.25 },
+      normal: { lineHeight: 1.5 },
+      loose: { lineHeight: 1.75 },
     },
     fontWeight: {
-      Regular: { fontWeight: 400 },
-      Bold: { fontWeight: 600 },
+      regular: { fontWeight: 400 },
+      bold: { fontWeight: 600 },
     },
     color: {
       primary: sprinkles({

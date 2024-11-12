@@ -4,17 +4,18 @@ import Text from "../Text";
 import Flex from "../Flex";
 import Box from "../Box";
 
-const Chip: React.FC<ChipProps> = ({ type, filled, children }) => {
+const Chip: React.FC<ChipProps> = ({ type, filled, text, Icon }) => {
   return (
-    <Flex asChild display="inline-flex" align="center">
+    <Flex asChild display="inline-flex" align="center" height="22px" gap={2}>
       <Box className={chip({ type, filled })}>
+        {Icon && Icon}
         <Text
-          lineHeight="None"
+          lineHeight="none"
           color="primary"
-          fontSize="S"
-          fontWeight="Regular"
+          fontSize="sm"
+          fontWeight="regular"
         >
-          {children}
+          {text}
         </Text>
       </Box>
     </Flex>

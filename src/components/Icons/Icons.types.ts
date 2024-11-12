@@ -1,12 +1,12 @@
 export const iconSizeValues = [
-  "xxs",
+  "2xs",
   "xs",
   "sm",
   "md",
   "ml",
   "lg",
   "xl",
-  "xxl",
+  "2xl",
 ] as const;
 
 export const colorValues = [

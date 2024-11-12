@@ -120,10 +120,10 @@ const TableColumn = <T extends Row>({
           >
             <Text
               key={String(column.key)}
-              fontSize="M"
+              fontSize="md"
               color="primary"
-              fontWeight="Bold"
-              lineHeight="Normal"
+              fontWeight="bold"
+              lineHeight="normal"
             >
               {column.headerName}
             </Text>
@@ -151,10 +151,10 @@ const TableColumn = <T extends Row>({
                   })}
                 >
                   <Text
-                    fontSize="M"
+                    fontSize="md"
                     color="primary"
-                    fontWeight="Regular"
-                    lineHeight="Normal"
+                    fontWeight="regular"
+                    lineHeight="normal"
                     className={tdTextRecipe()}
                   >
                     {row[column.key]}

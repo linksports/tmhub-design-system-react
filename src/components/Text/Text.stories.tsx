@@ -21,7 +21,7 @@ const meta: Meta<typeof Text> = {
       description: "文字サイズ",
       table: {
         type: { summary: fontSizeValues.join("|") },
-        defaultValue: { summary: "M" },
+        defaultValue: { summary: "md" },
       },
     },
     lineHeight: {
@@ -30,7 +30,7 @@ const meta: Meta<typeof Text> = {
       description: "行間",
       table: {
         type: { summary: lineHeightValues.join("|") },
-        defaultValue: { summary: "Normal" },
+        defaultValue: { summary: "normal" },
       },
     },
     fontWeight: {
@@ -39,7 +39,7 @@ const meta: Meta<typeof Text> = {
       description: "フォントウェイト",
       table: {
         type: { summary: fontWeightValues.join("|") },
-        defaultValue: { summary: "Regular" },
+        defaultValue: { summary: "regular" },
       },
     },
     color: {
@@ -68,18 +68,18 @@ const Template: StoryFn<typeof Text> = (args) => (
 
 export const Basic = Template.bind({});
 Basic.args = {
-  fontSize: "M",
-  lineHeight: "Normal",
-  fontWeight: "Regular",
+  fontSize: "md",
+  lineHeight: "normal",
+  fontWeight: "regular",
   color: "primary",
   children: "Sample Text",
 };
 
 export const SpanAsText = Template.bind({});
 SpanAsText.args = {
-  fontSize: "M",
-  lineHeight: "Normal",
-  fontWeight: "Regular",
+  fontSize: "md",
+  lineHeight: "normal",
+  fontWeight: "regular",
   color: "primary",
   asChild: true,
   children: <span>Sample Text</span>,

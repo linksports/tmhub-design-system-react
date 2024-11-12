@@ -12,7 +12,7 @@ const meta: Meta<typeof FilterChip> = {
   argTypes: {
     active: {
       control: "boolean",
-      description: "チップの背景色の設定",
+      description: "選択されているかどうか",
       table: {
         defaultValue: { summary: "false" },
       },

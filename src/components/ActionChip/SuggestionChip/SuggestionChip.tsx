@@ -14,10 +14,10 @@ const SuggestionChip: React.FC<SuggestionChipProps> = ({
       <button className={suggestionChip({ type })} onClick={onClick}>
         {Icon && Icon}
         <Text
-          lineHeight="None"
+          lineHeight="none"
           color="primary"
-          fontSize="M"
-          fontWeight="Regular"
+          fontSize="md"
+          fontWeight="regular"
         >
           {text}
         </Text>

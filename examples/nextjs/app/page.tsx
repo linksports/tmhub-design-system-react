@@ -43,25 +43,22 @@ export default function Home() {
       <ColoredIcons.Gift size="md" />
       <h2>Chip</h2>
       <h3>Not Filled</h3>
-      <Chip type="gray">Gray</Chip>
-      <Chip type="blue">Blue</Chip>
-      <Chip type="orange">Orange</Chip>
-      <Chip type="green">Green</Chip>
+      <Chip type="gray" text="Gray" />
+      <Chip type="blue" text="Blue" />
+      <Chip type="orange" text="Orange" />
+      <Chip type="green" text="Green" />
       <h3>Filled</h3>
-      <Chip type="gray" filled={true}>
-        Gray
-      </Chip>
-      <Chip type="blue" filled={true}>
-        Blue
-      </Chip>
-      <Chip type="orange" filled={true}>
-        Orange
-      </Chip>
-      <Chip type="green" filled={true}>
-        Green
-      </Chip>
+      <Chip type="gray" text="Gray" filled />
+      <Chip type="blue" text="Blue" filled />
+      <Chip type="orange" text="Orange" filled />
+      <Chip type="green" text="Green" filled />
       <h2>Text</h2>
-      <Text fontSize="M" lineHeight="Normal" fontWeight="Regular" color="alert">
+      <Text
+        fontSize="md"
+        lineHeight="normal"
+        fontWeight="regular"
+        color="alert"
+      >
         Sample Text
       </Text>
       <h2>ActionChip.FilterChip</h2>
@@ -91,7 +88,7 @@ export default function Home() {
         ]}
       />
       <h2>Heading</h2>
-      <Heading level="L" color="primary">
+      <Heading level="lg" color="primary">
         Sample Heading
       </Heading>
       <h2>Label</h2>
