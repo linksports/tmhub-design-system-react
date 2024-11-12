@@ -32,7 +32,11 @@ const responsiveProperties = defineProperties({
 });
 
 const condition_dark_mode = { "@media": "(prefers-color-scheme: dark)" };
-const condition_active = { selector: '&[data-state="active"]' };
+const condition_active = {
+  selector: '&[data-state="active"], &[data-state="active"]:hover',
+};
+const condition_hover = { selector: "&:hover" };
+const condition_pressed = { selector: "&:active,&:active:hover" };
 
 const colorProperties = defineProperties({
   conditions: {
@@ -40,12 +44,17 @@ const colorProperties = defineProperties({
     darkMode: condition_dark_mode,
     lightModeActive: condition_active,
     darkModeActive: { ...condition_dark_mode, ...condition_active },
+    lightModeHover: condition_hover,
+    darkModeHover: { ...condition_dark_mode, ...condition_hover },
+    lightModePressed: condition_pressed,
+    darkModePressed: { ...condition_dark_mode, ...condition_pressed },
   },
   defaultCondition: "lightMode",
   properties: {
     color: vars.color,
     backgroundColor: vars.color,
     borderColor: vars.color,
+    outlineColor: vars.color,
   },
 });
 

@@ -56,7 +56,9 @@
     "build-storybook": "storybook build",
     "lint": "yarn run eslint --fix",
     "typecheck": "yarn run tsc --noEmit",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c --bundleConfigAsCjs",
+    "generate-icons": "npx @svgr/cli --config-file config/generateIcons/.svgrrc --template ./config/generateIcons/template.tsx",
+    "generate-colored-icons": "npx @svgr/cli --config-file config/generateIcons/.svgrrc-colored-icons --template ./config/generateIcons/colored-icons-template.tsx"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",

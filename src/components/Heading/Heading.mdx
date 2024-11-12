@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+import * as HeadingStories from "./Heading.stories";
+import Heading from "./Heading";
+
+<Meta of={HeadingStories} />
+
+# Heading
+
+## asChild
+
+`Heading` コンポーネントはレンダリングされるとHTMLの `h1~h6` エレメントになる。もし何らかの理由で要素を `span` にしたいなどあれば `asChild` 属性を使う。
+
+```typescript
+<Heading asChild>
+  <span>Sample Heading</span>
+</Heading>
+```
+
+## Playground
+
+<Story />
+<Controls />

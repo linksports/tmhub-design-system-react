@@ -1,0 +1,77 @@
+import { Canvas, Meta, Story, Controls, Markdown } from "@storybook/blocks";
+import PropsTable from "../../../.storybook/propertiesTable";
+import * as TableStories from "./Table.stories";
+import Table from "./Table";
+
+<Meta of={TableStories} />
+
+# Table
+
+## Props
+
+### rows
+
+Tableに表示される行データの配列。
+
+### columns
+
+Tableの列の設定用データの配列。
+
+#### Column
+
+<PropsTable
+  props={[
+    ["key", "keyof T", "Row objectのkeyを指定"],
+    ["headerName", "string", "ヘッダー行の表示名"],
+    ["verticalWriting", "boolean", "ヘッダー行を縦書きにするかどうかのフラグ"],
+    ["minWidth", "string", "列の最小幅"],
+    ["maxWidth", "string", "列の最大幅"],
+    ["headTextAlign", `"left" | "center"`, "ヘッダー行のテキストの配置"],
+    ["rowTextAlign", `"left" | "center"`, "データ行のコンテンツの配置"],
+    [
+      "needsSort",
+      "boolean",
+      "ソートするかどうかのフラグ、trueの場合はヘッダー行の末尾にソートアイコンが付く",
+    ],
+    [
+      "onSort",
+      `(a: T, b: T, direction: "asc" | "desc") => number`,
+      "デフォルトのソート処理とは別に独自のソート処理を使用したい場合に指定。a行をb行の上に並べたい場合、onSortの返却値を0未満にする。",
+    ],
+
+]}
+/>
+
+### firstFixedColumnCount
+
+固定される列の数。最初のn列が固定されます。
+
+### lastFixedColumnCount
+
+固定される列の数。最後のn列が固定されます。
+
+## Example
+
+```typescript
+type TestRow = {
+  name: string;
+  age: number;
+};
+
+const rows: TestRow[] = [
+  { name: "TestName1", age: 20 },
+  { name: "TestName2", age: 25 },
+];
+
+const columns: Column<TestRow>[] = [
+  { key: "name", headerName: "Name" },
+  { key: "age", headerName: "Age" },
+];
+
+return <Table rows={rows} columns={columns} />
+```
+
+## Playground
+
+<Story />
+<Controls />
