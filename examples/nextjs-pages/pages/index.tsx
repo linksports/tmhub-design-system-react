@@ -12,6 +12,7 @@ import {
   Heading,
   Label,
   SegmentedControl,
+  TabBar,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -140,6 +141,21 @@ export default function Home() {
             Content #4
           </SegmentedControl.Content>
         </SegmentedControl.Root>
+        <h2>TabBar</h2>
+        <TabBar.Root defaultValue="tab1">
+          <TabBar.List>
+            <TabBar.Trigger value="tab1">Tab #1</TabBar.Trigger>
+            <TabBar.Trigger value="tab2">Tab #2</TabBar.Trigger>
+            <TabBar.Trigger value="tab3" disabled>
+              Tab #3(disabled)
+            </TabBar.Trigger>
+            <TabBar.Trigger value="tab4">Tab #4</TabBar.Trigger>
+          </TabBar.List>
+          <TabBar.Content value="tab1">Content #1</TabBar.Content>
+          <TabBar.Content value="tab2">Content #2</TabBar.Content>
+          <TabBar.Content value="tab3">Content #3</TabBar.Content>
+          <TabBar.Content value="tab4">Content #4</TabBar.Content>
+        </TabBar.Root>
       </Container>
     </>
   );

@@ -27,6 +27,7 @@ const Template: StoryFn<typeof SegmentedControl.Root> = (args) => (
       <SegmentedControl.Trigger value="tab3" disabled>
         Tab #3
       </SegmentedControl.Trigger>
+      <SegmentedControl.Trigger value="tab4">Tab #4</SegmentedControl.Trigger>
     </SegmentedControl.List>
     <SegmentedControl.Content value="tab1">
       <h3>Tab #1</h3>
@@ -61,6 +62,16 @@ const Template: StoryFn<typeof SegmentedControl.Root> = (args) => (
     </SegmentedControl.Content>
     <SegmentedControl.Content value="tab3">
       <h3>Tab #3</h3>
+      <p>
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+        below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus
+        Bonorum et Malorum by Cicero are also reproduced in their exact original
+        form, accompanied by English versions from the 1914 translation by H.
+        Rackham.
+      </p>
+    </SegmentedControl.Content>
+    <SegmentedControl.Content value="tab4">
+      <h3>Tab #4</h3>
       <p>
         The standard chunk of Lorem Ipsum used since the 1500s is reproduced
         below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus

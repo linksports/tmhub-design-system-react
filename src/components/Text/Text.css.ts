@@ -106,6 +106,7 @@ export const text = recipe({
           darkMode: "onDarkTextDark",
         },
       }),
+      unset: {},
     },
   },
 });
