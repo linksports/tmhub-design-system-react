@@ -96,6 +96,7 @@ export const headingRecipe = recipe({
           darkMode: "onDarkTextDark",
         },
       }),
+      unset: {},
     },
   },
   defaultVariants: {

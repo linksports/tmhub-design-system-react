@@ -36,8 +36,17 @@ export const segmentedControlTriggerRecipe = recipe({
   ],
   variants: {
     disabled: {
-      true: {},
+      true: sprinkles({
+        color: {
+          lightMode: "tertiaryDisabledTextLight",
+          darkMode: "tertiaryDisabledTextDark",
+        },
+      }),
       false: sprinkles({
+        color: {
+          lightMode: "primaryTextLight",
+          darkMode: "primaryTextDark",
+        },
         borderColor: {
           lightModeActive: "borderLight",
           darkModeActive: "borderDark",

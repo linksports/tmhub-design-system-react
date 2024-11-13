@@ -1,0 +1,73 @@
+import { Canvas, Meta, Story, Controls, Markdown } from "@storybook/blocks";
+import PropsTable from "../../../.storybook/propertiesTable";
+import * as TabBarStories from "./TabBar.stories";
+import TabBar from "./TabBar";
+
+<Meta of={TabBarStories} />
+
+# TabBar
+
+## API Reference
+
+### Root
+
+<PropsTable
+  props={[
+    ["defaultValue", "string", "初期表示されるタブの識別子"],
+    ["value", "string", "現在選択されているタブの識別子"],
+    [
+      "onValueChange",
+      "(value: string) => void",
+      "タブが変更された際のイベント",
+    ],
+  ]}
+/>
+
+### List
+
+<PropsTable
+  props={[
+    ["bordered", "boolean", "下部にボーダーを入れるかどうか(default=true)"],
+  ]}
+/>
+
+### Trigger
+
+<PropsTable
+  props={[
+    ["value*", "string", "タップした際に選択状態になるタブの識別子"],
+    ["disabled", "boolean", "無効状態"],
+  ]}
+/>
+
+### Content
+
+<PropsTable props={[["value*", "string", "タブの識別子"]]} />
+
+## Anatomy
+
+`TabBar.Trigger` をタップすると、対応する `value` の `TabBar.Content` が表示される。
+
+```typescript
+<TabBar.Root defaultValue="value1">
+  <TabBar.List bordered aria-label="コンテンツリスト">
+    <TabBar.Trigger value="value1">
+      Tab #1
+    </TabBar.Trigger>
+    <TabBar.Trigger value="value2">
+      Tab #2
+    </TabBar.Trigger>
+  </TabBar.List>
+  <TabBar.Content value="value1">
+    Content #1
+  </TabBar.Content>
+  <TabBar.Content value="value2">
+    Content #2
+  </TabBar.Content>
+</TabBar.Root>
+```
+
+## Playground
+
+<Story />
+<Controls />

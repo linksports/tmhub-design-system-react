@@ -23,6 +23,7 @@ export const colorValues = [
   "inverse",
   "inverseSecondary",
   "onDark",
+  "unset",
 ] as const;
 
 export type Props = {
