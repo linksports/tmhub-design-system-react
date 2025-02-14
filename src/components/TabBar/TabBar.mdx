@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story, Controls, Markdown } from "@storybook/blocks";
 import PropsTable from "../../../.storybook/propertiesTable";
 import * as TabBarStories from "./TabBar.stories";
-import TabBar from "./TabBar";
+import * as TabBar from "./TabBar";
 
 <Meta of={TabBarStories} />
 
@@ -28,6 +28,7 @@ import TabBar from "./TabBar";
 <PropsTable
   props={[
     ["bordered", "boolean", "下部にボーダーを入れるかどうか(default=true)"],
+    ["size", `"small" | "default"`, "タブの文字サイズ"],
   ]}
 />
 
@@ -50,7 +51,7 @@ import TabBar from "./TabBar";
 
 ```typescript
 <TabBar.Root defaultValue="value1">
-  <TabBar.List bordered aria-label="コンテンツリスト">
+  <TabBar.List bordered size="default" aria-label="コンテンツリスト">
     <TabBar.Trigger value="value1">
       Tab #1
     </TabBar.Trigger>
