@@ -1,3 +1,4 @@
+"use client";
 import * as TabBar from "@radix-ui/react-tabs";
 import type {
   TabBarProps,
@@ -14,11 +15,12 @@ import {
 } from "./TabBar.css";
 import Flex from "../Flex";
 import { Heading } from "..";
+import { createContext, useContext } from "react";
 
 /**
  * タブコントロール
  */
-const Root: React.FC<TabBarProps> = (props) => {
+export const Root: React.FC<TabBarProps> = (props) => {
   const { children, className, ...others } = props;
 
   return (
@@ -31,18 +33,23 @@ const Root: React.FC<TabBarProps> = (props) => {
   );
 };
 
-const List: React.FC<TabBarListProps> = (props) => {
-  const { bordered, children, ...others } = props;
+const TabBarSizeContext = createContext<"default" | "small">("default");
+
+export const List: React.FC<TabBarListProps> = (props) => {
+  const { bordered, size = "default", children, ...others } = props;
 
   return (
-    <TabBar.List className={tabBarListRecipe({ bordered })} {...others}>
-      {children}
-    </TabBar.List>
+    <TabBarSizeContext.Provider value={size}>
+      <TabBar.List className={tabBarListRecipe({ bordered, size })} {...others}>
+        {children}
+      </TabBar.List>
+    </TabBarSizeContext.Provider>
   );
 };
 
-const Trigger: React.FC<TabBarTriggerProps> = (props) => {
+export const Trigger: React.FC<TabBarTriggerProps> = (props) => {
   const { children, disabled, ...others } = props;
+  const size = useContext(TabBarSizeContext);
 
   return (
     <Flex asChild align="start" justify="center" pl={5} pr={5}>
@@ -51,7 +58,7 @@ const Trigger: React.FC<TabBarTriggerProps> = (props) => {
         className={tabBarTriggerRecipe({ disabled })}
         {...others}
       >
-        <Heading color="unset" level="lg">
+        <Heading color="unset" level={size === "default" ? "lg" : "md"}>
           {children}
         </Heading>
         <span className={tabBarTriggerActiveBorderRecipe()} />
@@ -60,7 +67,7 @@ const Trigger: React.FC<TabBarTriggerProps> = (props) => {
   );
 };
 
-const Content: React.FC<TabBarContentProps> = (props) => {
+export const Content: React.FC<TabBarContentProps> = (props) => {
   const { children, ...others } = props;
 
   return (
@@ -69,5 +76,3 @@ const Content: React.FC<TabBarContentProps> = (props) => {
     </TabBar.Content>
   );
 };
-
-export default { Root: Root, List: List, Trigger: Trigger, Content: Content };

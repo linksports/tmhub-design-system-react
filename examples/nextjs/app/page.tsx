@@ -135,7 +135,7 @@ export default function Home() {
       </SegmentedControl.Root>
       <h2>TabBar</h2>
       <TabBar.Root defaultValue="tab1">
-        <TabBar.List>
+        <TabBar.List bordered size="small">
           <TabBar.Trigger value="tab1">Tab #1</TabBar.Trigger>
           <TabBar.Trigger value="tab2">Tab #2</TabBar.Trigger>
           <TabBar.Trigger value="tab3" disabled>

@@ -14,7 +14,6 @@ export const tabBarListRecipe = recipe({
       flexShrink: 0,
       width: "100%",
       display: "flex",
-      height: "28px",
       justifyContent: "flex-start",
       boxSizing: "border-box",
       borderBottomWidth: "2px",
@@ -39,9 +38,14 @@ export const tabBarListRecipe = recipe({
         borderColor: "transparent",
       }),
     },
+    size: {
+      default: { height: "28px" },
+      small: { height: "24px" },
+    },
   },
   defaultVariants: {
     bordered: true,
+    size: "default",
   },
 });
 

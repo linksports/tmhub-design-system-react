@@ -9,7 +9,7 @@ export { default as Grid } from "./Grid";
 export { default as Label } from "./Label";
 export { default as Panel } from "./Panel";
 export { default as SegmentedControl } from "./SegmentedControl";
-export { default as TabBar } from "./TabBar";
+export * as TabBar from "./TabBar";
 export { default as Table } from "./Table";
 export { default as Tabs } from "./Tabs";
 export { default as Text } from "./Text";
