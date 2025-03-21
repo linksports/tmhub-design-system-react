@@ -4,9 +4,9 @@ import { TextProps } from "./Text.types";
 
 const Text: React.FC<TextProps> = ({
   asChild = false,
-  fontSize,
-  lineHeight,
-  fontWeight,
+  fontSize = "md",
+  lineHeight = "normal",
+  fontWeight = "regular",
   color,
   style,
   children,
