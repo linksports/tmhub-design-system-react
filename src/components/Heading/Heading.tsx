@@ -2,7 +2,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { headingRecipe } from "./Heading.css";
 import { HeadingProps, LevelHTagsMap } from "./Heading.types";
 
-const Text: React.FC<HeadingProps> = ({
+const Heading: React.FC<HeadingProps> = ({
   asChild = false,
   level,
   color,
@@ -23,4 +23,4 @@ const Text: React.FC<HeadingProps> = ({
   );
 };
 
-export default Text;
+export default Heading;

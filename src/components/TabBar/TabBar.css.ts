@@ -1,4 +1,5 @@
 import { recipe } from "@vanilla-extract/recipes";
+import { style, globalStyle } from "@vanilla-extract/css";
 import { sprinkles } from "../../tokens/sprinkles.css";
 
 export const tabBarRecipe = recipe({
@@ -7,6 +8,8 @@ export const tabBarRecipe = recipe({
     flexDirection: "column",
   },
 });
+
+export const tabBarTriggerStyle = style({});
 
 export const tabBarListRecipe = recipe({
   base: [
@@ -38,16 +41,49 @@ export const tabBarListRecipe = recipe({
         borderColor: "transparent",
       }),
     },
-    size: {
-      default: { height: "28px" },
-      small: { height: "24px" },
-    },
   },
   defaultVariants: {
     bordered: true,
+  },
+});
+
+export const tabBarListSizeRecipe = recipe({
+  variants: {
+    size: {
+      default: {
+        height: "28px",
+      },
+      small: {
+        height: "24px",
+      },
+    },
+  },
+  defaultVariants: {
     size: "default",
   },
 });
+
+globalStyle(
+  `${tabBarListSizeRecipe({ size: "default" }).replace(" ", "")} .${tabBarTriggerStyle}`,
+  {
+    fontSize: "19px",
+    fontWeight: 600,
+    lineHeight: 1.25,
+    fontFamily: "inherit",
+    margin: 0,
+  }
+);
+
+globalStyle(
+  `${tabBarListSizeRecipe({ size: "small" }).replace(" ", "")} .${tabBarTriggerStyle}`,
+  {
+    fontSize: "16px",
+    fontWeight: 600,
+    lineHeight: 1.25,
+    fontFamily: "inherit",
+    margin: 0,
+  }
+);
 
 export const tabBarTriggerRecipe = recipe({
   base: [
