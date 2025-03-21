@@ -15,6 +15,7 @@ import {
   TabBar,
   InputField,
   InputPassword,
+  TextField,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -168,6 +169,13 @@ export default function Home() {
 
         <h2>InputPassword</h2>
         <InputPassword label="Input Password" />
+
+        <h2>TextField</h2>
+        <TextField
+          label="Text Field Label"
+          placeholder="placeholder"
+          defaultValue="default"
+        />
       </Container>
     </>
   );
