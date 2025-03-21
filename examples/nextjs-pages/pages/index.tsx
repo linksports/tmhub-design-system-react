@@ -14,6 +14,7 @@ import {
   SegmentedControl,
   TabBar,
   InputField,
+  InputPassword,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -164,6 +165,9 @@ export default function Home() {
           placeholder="placeholder"
           defaultValue="default"
         />
+
+        <h2>InputPassword</h2>
+        <InputPassword label="Input Password" />
       </Container>
     </>
   );
