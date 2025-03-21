@@ -8,6 +8,7 @@ export { default as Heading } from "./Heading";
 export { default as Grid } from "./Grid";
 export { default as Label } from "./Label";
 export { default as Panel } from "./Panel";
+export { default as InputField } from "./InputField";
 export { default as SegmentedControl } from "./SegmentedControl";
 export * as TabBar from "./TabBar";
 export { default as Table } from "./Table";

@@ -12,6 +12,7 @@ import {
   Label,
   SegmentedControl,
   TabBar,
+  InputField,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -148,6 +149,13 @@ export default function Home() {
         <TabBar.Content value="tab3">Content #3</TabBar.Content>
         <TabBar.Content value="tab4">Content #4</TabBar.Content>
       </TabBar.Root>
+
+      <h2>InputField</h2>
+      <InputField
+        label="Input Field Label"
+        placeholder="placeholder"
+        defaultValue="default"
+      />
     </Container>
   );
 }

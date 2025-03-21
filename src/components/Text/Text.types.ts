@@ -30,9 +30,9 @@ export const colorValues = [
 ] as const;
 
 export type Props = {
-  fontSize: (typeof fontSizeValues)[number];
-  lineHeight: (typeof lineHeightValues)[number];
-  fontWeight: (typeof fontWeightValues)[number];
+  fontSize?: (typeof fontSizeValues)[number];
+  lineHeight?: (typeof lineHeightValues)[number];
+  fontWeight?: (typeof fontWeightValues)[number];
   color: (typeof colorValues)[number];
   children: React.ReactNode;
   style?: React.CSSProperties;

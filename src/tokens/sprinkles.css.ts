@@ -35,8 +35,10 @@ const condition_dark_mode = { "@media": "(prefers-color-scheme: dark)" };
 const condition_active = {
   selector: '&[data-state="active"], &[data-state="active"]:hover',
 };
+const condition_focus = { selector: "&:focus-within" };
 const condition_hover = { selector: "&:hover" };
 const condition_pressed = { selector: "&:active,&:active:hover" };
+const condition_placeholder = { selector: "&::placeholder" };
 
 const colorProperties = defineProperties({
   conditions: {
@@ -44,10 +46,14 @@ const colorProperties = defineProperties({
     darkMode: condition_dark_mode,
     lightModeActive: condition_active,
     darkModeActive: { ...condition_dark_mode, ...condition_active },
+    lightModeFocus: condition_focus,
+    darkModeFocus: { ...condition_dark_mode, ...condition_focus },
     lightModeHover: condition_hover,
     darkModeHover: { ...condition_dark_mode, ...condition_hover },
     lightModePressed: condition_pressed,
     darkModePressed: { ...condition_dark_mode, ...condition_pressed },
+    lightModePlaceholder: condition_placeholder,
+    darkModePlaceholder: { ...condition_dark_mode, ...condition_placeholder },
   },
   defaultCondition: "lightMode",
   properties: {
