@@ -14,6 +14,9 @@ export const icons = recipe({
       "2xl": { width: "80px", height: "80px" },
     },
     color: {
+      inherit: sprinkles({
+        color: "inherit",
+      }),
       primary: sprinkles({
         color: {
           lightMode: "primaryTextLight",
@@ -90,6 +93,6 @@ export const icons = recipe({
   },
   defaultVariants: {
     size: "md",
-    color: "primary",
+    color: "inherit",
   },
 });

@@ -2,6 +2,7 @@ import Head from "next/head";
 import {
   Container,
   Button,
+  CircleButton,
   Tabs,
   Icons,
   ColoredIcons,
@@ -30,12 +31,16 @@ export default function Home() {
       <Container>
         <h2>Button</h2>
         <h3>Size</h3>
-        <Button size="lg">Large</Button>
-        <Button size="md">Medium</Button>
+        <Button size="default">Default</Button>
+        <Button size="sm">Small</Button>
         <h3>Variant</h3>
-        <Button variant="filled">Filled</Button>
-        <Button variant="outlined">Outlined</Button>
+        <Button variant="primary">primary</Button>
+        <Button variant="secondary">secondary</Button>
         <Button variant="text">Text</Button>
+        <h3>Circle Button</h3>
+      <CircleButton variant="primary">p</CircleButton>
+      <CircleButton variant="secondary">s</CircleButton>
+      <CircleButton variant="text">t</CircleButton>
         <h2>Tabs</h2>
         <Tabs.Root defaultValue="tab1">
           <Tabs.List>

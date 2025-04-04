@@ -15,7 +15,7 @@ import {
   iconContainerRecipe,
 } from "./InputField.css";
 import Text from "../Text";
-import Button from "../Button";
+import { Button } from "../Button";
 
 const InputField: React.FC<InputFieldProps> = ({
   id,
