@@ -13,9 +13,9 @@ const InputPasswordField: React.FC<InputPasswordProps> = ({ ...props }) => {
       type={showsPassword ? "text" : "password"}
       trailingIcon={
         showsPassword ? (
-          <Icons.Iconography.VisibilityOn />
+          <Icons.Iconography.VisibilityOn color="primary" />
         ) : (
-          <Icons.Iconography.VisibilityOff />
+          <Icons.Iconography.VisibilityOff color="primary" />
         )
       }
       onTrailingIconClick={() => setShowsPassword(!showsPassword)}
