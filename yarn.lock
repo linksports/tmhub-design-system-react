@@ -7502,8 +7502,8 @@ __metadata:
     rollup-plugin-peer-deps-external: "npm:^2.2.4"
     storybook: "npm:^8.6.12"
     tslib: "npm:^2.6.3"
-    typescript: "npm:^5.8.2"
-    typescript-eslint: "npm:^8.29.0"
+    typescript: "npm:^5.5.4"
+    typescript-eslint: "npm:^8.0.0"
     vite: "npm:^6.2.5"
   peerDependencies:
     "@vanilla-extract/css": ^1.15.3
@@ -7693,7 +7693,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.29.0":
+"typescript-eslint@npm:^8.0.0":
   version: 8.29.0
   resolution: "typescript-eslint@npm:8.29.0"
   dependencies:
@@ -7707,7 +7707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.8.2":
+"typescript@npm:^5.5.4":
   version: 5.8.2
   resolution: "typescript@npm:5.8.2"
   bin:
@@ -7717,7 +7717,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.8.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.5.4#optional!builtin<compat/typescript>":
   version: 5.8.2
   resolution: "typescript@patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=379a07"
   bin:
