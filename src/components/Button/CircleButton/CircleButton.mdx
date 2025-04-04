@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+import * as CircleButtonStories from "./CircleButton.stories";
+import CircleButton from "./CircleButton";
+
+<Meta of={CircleButtonStories} />
+
+# CircleButton
+
+## asChild
+
+`CircleButton` コンポーネントはレンダリングされるとHTMLの `button` エレメントになる。もし何らかの理由で要素を `a` にしたいなどあれば `asChild` 属性を使う。
+
+```typescript
+<CircleButton asChild>
+  <a href="https://tmhub.jp" target="_blank">TeamHub</a>
+</CircleButton>
+```
+
+```typescript
+import Link from 'next/link';
+
+<CircleButton variant="primary" asChild>
+  <Link href="/">Home</Link>
+</CircleButton>
+```
+
+## Playground
+
+<Story />
+<Controls />

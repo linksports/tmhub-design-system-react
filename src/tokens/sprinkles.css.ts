@@ -38,6 +38,9 @@ const condition_active = {
 const condition_focus = { selector: "&:focus-within" };
 const condition_hover = { selector: "&:hover" };
 const condition_pressed = { selector: "&:active,&:active:hover" };
+const condition_disabled = {
+  selector: "&:disabled,&:active:disabled,&:active:hover:disabled",
+};
 const condition_placeholder = { selector: "&::placeholder" };
 
 const colorProperties = defineProperties({
@@ -52,6 +55,8 @@ const colorProperties = defineProperties({
     darkModeHover: { ...condition_dark_mode, ...condition_hover },
     lightModePressed: condition_pressed,
     darkModePressed: { ...condition_dark_mode, ...condition_pressed },
+    lightModeDisabled: condition_disabled,
+    darkModeDisabled: { ...condition_dark_mode, ...condition_disabled },
     lightModePlaceholder: condition_placeholder,
     darkModePlaceholder: { ...condition_dark_mode, ...condition_placeholder },
   },

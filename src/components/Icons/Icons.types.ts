@@ -10,6 +10,7 @@ export const iconSizeValues = [
 ] as const;
 
 export const colorValues = [
+  "inherit",
   "primary",
   "secondary",
   "tertiaryDisabled",

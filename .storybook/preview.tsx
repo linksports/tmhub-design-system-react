@@ -23,7 +23,7 @@ const preview: Preview = {
       themes: Object.keys(themeDefinitions).reduce((map, key) => {
         map[key] = key;
         return map;
-      }, {}) as const,
+      }, {}),
       defaultTheme: "Joynup",
     }),
   ],

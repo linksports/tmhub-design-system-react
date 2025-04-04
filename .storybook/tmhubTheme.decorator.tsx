@@ -1,9 +1,11 @@
-import { DecoratorHelpers } from '@storybook/addon-themes';
-import DesignProvider from '../src/components/DesignProvider';
-import Container from '../src/components/Container';
-import { themeDefinitions } from './themes';
+import React from "react";
+import { DecoratorHelpers } from "@storybook/addon-themes";
+import DesignProvider from "../src/components/DesignProvider";
+import Container from "../src/components/Container";
+import { themeDefinitions } from "./themes";
 
-const { initializeThemeState, pluckThemeFromContext, useThemeParameters } = DecoratorHelpers;
+const { initializeThemeState, pluckThemeFromContext, useThemeParameters } =
+  DecoratorHelpers;
 
 export const withTmhubTheme = ({ themes, defaultTheme }) => {
   initializeThemeState(Object.keys(themes), defaultTheme);

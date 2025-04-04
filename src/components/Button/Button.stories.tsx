@@ -17,7 +17,7 @@ const meta: Meta<typeof Button> = {
       description: "ボタンの外観設定",
       table: {
         type: { summary: variantValues.join("|") },
-        defaultValue: { summary: "filled" },
+        defaultValue: { summary: "primary" },
       },
     },
     size: {
@@ -26,7 +26,7 @@ const meta: Meta<typeof Button> = {
       description: "サイズ（主に横幅）",
       table: {
         type: { summary: sizeValues.join("|") },
-        defaultValue: { summary: "md" },
+        defaultValue: { summary: "default" },
       },
     },
     disabled: {
@@ -60,20 +60,20 @@ const Template: StoryFn<typeof Button> = (args) => <Button {...args}></Button>;
 /**
  * デフォルトボタン
  */
-export const FilledButton = Template.bind({});
-FilledButton.args = {
-  variant: "filled",
-  size: "md",
+export const PrimaryButton = Template.bind({});
+PrimaryButton.args = {
+  variant: "primary",
+  size: "default",
   children: "Click!",
 };
 
 /**
  * アウトラインボタン
  */
-export const OutlinedButton = Template.bind({});
-OutlinedButton.args = {
-  variant: "outlined",
-  size: "md",
+export const SecondaryButton = Template.bind({});
+SecondaryButton.args = {
+  variant: "secondary",
+  size: "default",
   children: "Click!",
 };
 
@@ -83,7 +83,21 @@ OutlinedButton.args = {
 export const TextButton = Template.bind({});
 TextButton.args = {
   variant: "text",
-  size: "md",
+  size: "default",
+  children: "Click!",
+};
+
+export const DangerButton = Template.bind({});
+DangerButton.args = {
+  variant: "danger",
+  size: "default",
+  children: "Click!",
+};
+
+export const DangerTextButton = Template.bind({});
+DangerTextButton.args = {
+  variant: "dangerText",
+  size: "default",
   children: "Click!",
 };
 

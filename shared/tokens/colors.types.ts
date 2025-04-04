@@ -21,6 +21,7 @@ export type Colors = {
   hyperlinksText: string;
   emphasisText: string;
   alertText: string;
+  alertTextDisabled: string;
   brandPrimaryText: string;
   brandPrimaryDisabledText: string;
   brandSecondaryText: string;
@@ -39,6 +40,12 @@ export type Colors = {
   backgroundBolder: string;
   backgroundBoldest: string;
   backgroundSuggest: string;
+  backgroundDanger: string;
+  backgroundDangerHover: string;
+  backgroundDangerDisabled: string;
+  backgroundDangerPressed: string;
+  backgroundDangerTextHover: string;
+  backgroundDangerTextPressed: string;
   backgroundAlert: string;
   backgroundAlertBolder: string;
   backgroundPrimary: string;
