@@ -16,7 +16,7 @@ const preview: Preview = {
     },
   },
   initialGlobals: {
-    theme: "joynup",
+    theme: "Joynup",
   },
   decorators: [
     withTmhubTheme({
