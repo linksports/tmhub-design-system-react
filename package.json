@@ -39,7 +39,7 @@
     "@vanilla-extract/vite-plugin": "^4.0.13",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "9.x",
-    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react": "^7.35.0",
     "globals": "^15.9.0",
     "rollup": "^4.22.4",
     "rollup-plugin-deps-external": "^0.2.1",
