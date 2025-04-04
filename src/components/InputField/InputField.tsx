@@ -15,7 +15,6 @@ import {
   iconContainerRecipe,
 } from "./InputField.css";
 import Text from "../Text";
-import { Button } from "../Button";
 
 const InputField: React.FC<InputFieldProps> = ({
   id,
@@ -80,13 +79,13 @@ const InputField: React.FC<InputFieldProps> = ({
             />
           </Text>
           {trailingIcon && (
-            <Button
+            <button
               disabled={props.disabled}
               onClick={onTrailingIconClick}
               className={iconContainerRecipe()}
             >
               {trailingIcon}
-            </Button>
+            </button>
           )}
         </label>
       </Flex>
