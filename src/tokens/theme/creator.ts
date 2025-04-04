@@ -2,7 +2,7 @@ import { createTheme } from "@vanilla-extract/css";
 import { color } from "../vars.css";
 import { Colors } from "../../../shared/tokens/colors.types";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+ 
 export function createThemeVars(lightToken: Colors, darkToken: Colors) {
   return createTheme(color, {
     // Light =====================================================
