@@ -17,6 +17,7 @@ import {
   InputField,
   InputPassword,
   TextField,
+  Dropdown,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -38,9 +39,9 @@ export default function Home() {
         <Button variant="secondary">secondary</Button>
         <Button variant="text">Text</Button>
         <h3>Circle Button</h3>
-      <CircleButton variant="primary">p</CircleButton>
-      <CircleButton variant="secondary">s</CircleButton>
-      <CircleButton variant="text">t</CircleButton>
+        <CircleButton variant="primary">p</CircleButton>
+        <CircleButton variant="secondary">s</CircleButton>
+        <CircleButton variant="text">t</CircleButton>
         <h2>Tabs</h2>
         <Tabs.Root defaultValue="tab1">
           <Tabs.List>
@@ -180,6 +181,19 @@ export default function Home() {
           label="Text Field Label"
           placeholder="placeholder"
           defaultValue="default"
+        />
+
+        <h2>Dropdown</h2>
+        <Dropdown
+          label="Label"
+          options={[
+            { label: "東京", value: "Tokyo", disabled: false },
+            { label: "大阪", value: "Osaka", disabled: false },
+            { label: "名古屋", value: "Nagoya", disabled: true },
+          ]}
+          onChange={(value: string) => {
+            alert(`Selected ${value}`);
+          }}
         />
       </Container>
     </>

@@ -35,7 +35,11 @@ const condition_dark_mode = { "@media": "(prefers-color-scheme: dark)" };
 const condition_active = {
   selector: '&[data-state="active"], &[data-state="active"]:hover',
 };
+const condition_item_checked = {
+  selector: '[data-state="checked"] > &, [data-state="checked"]:hover > &',
+};
 const condition_focus = { selector: "&:focus-within" };
+const condition_open = { selector: '&[data-state="open"]' };
 const condition_hover = { selector: "&:hover" };
 const condition_pressed = { selector: "&:active,&:active:hover" };
 const condition_disabled = {
@@ -51,6 +55,8 @@ const colorProperties = defineProperties({
     darkModeActive: { ...condition_dark_mode, ...condition_active },
     lightModeFocus: condition_focus,
     darkModeFocus: { ...condition_dark_mode, ...condition_focus },
+    lightModeOpen: condition_open,
+    darkModeOpen: { ...condition_dark_mode, ...condition_open },
     lightModeHover: condition_hover,
     darkModeHover: { ...condition_dark_mode, ...condition_hover },
     lightModePressed: condition_pressed,
@@ -59,6 +65,8 @@ const colorProperties = defineProperties({
     darkModeDisabled: { ...condition_dark_mode, ...condition_disabled },
     lightModePlaceholder: condition_placeholder,
     darkModePlaceholder: { ...condition_dark_mode, ...condition_placeholder },
+    lightModeItemChecked: condition_item_checked,
+    darkModeItemChecked: { ...condition_dark_mode, ...condition_item_checked },
   },
   defaultCondition: "lightMode",
   properties: {
@@ -69,6 +77,16 @@ const colorProperties = defineProperties({
   },
 });
 
-export const sprinkles = createSprinkles(responsiveProperties, colorProperties);
+const boxShadowProperties = defineProperties({
+  properties: {
+    boxShadow: vars.boxShadow,
+  },
+});
+
+export const sprinkles = createSprinkles(
+  responsiveProperties,
+  colorProperties,
+  boxShadowProperties
+);
 
 export type Sprinkles = Parameters<typeof sprinkles>[0];

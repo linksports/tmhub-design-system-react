@@ -16,6 +16,7 @@ import {
   InputField,
   InputPassword,
   TextField,
+  Dropdown,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -172,6 +173,16 @@ export default function Home() {
         label="Text Field Label"
         placeholder="placeholder"
         defaultValue="default"
+      />
+
+      <h2>Dropdown</h2>
+      <Dropdown
+        label="Label"
+        options={[
+          { label: "東京", value: "Tokyo", disabled: false },
+          { label: "大阪", value: "Osaka", disabled: false },
+          { label: "名古屋", value: "Nagoya", disabled: true },
+        ]}
       />
     </Container>
   );

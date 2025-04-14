@@ -19,6 +19,10 @@ const base = createGlobalTheme(".tmhub-design-system-root", {
     "7xl": `${spacing["7xl"]}px`,
     "8xl": `${spacing["8xl"]}px`,
   },
+  boxShadow: {
+    shadow1: "0px 4px 16px rgba(19, 51, 76, 0.18)",
+    shadow2: "0px 1px 2px rgba(19, 51, 76, 0.18)",
+  },
   container: {
     maxWidthXs: "448px",
     maxWidthSm: "688px",
