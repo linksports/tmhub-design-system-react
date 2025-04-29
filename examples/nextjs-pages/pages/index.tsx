@@ -18,6 +18,7 @@ import {
   InputPassword,
   TextField,
   Dropdown,
+  RadioGroup,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -194,6 +195,15 @@ export default function Home() {
           onChange={(value: string) => {
             alert(`Selected ${value}`);
           }}
+        />
+
+        <h2>RadioGroup</h2>
+        <RadioGroup
+          options={[
+            { label: "東京", value: "Tokyo", disabled: false },
+            { label: "大阪", value: "Osaka", disabled: false },
+            { label: "名古屋", value: "Nagoya", disabled: true },
+          ]}
         />
       </Container>
     </>
