@@ -19,6 +19,7 @@ import {
   TextField,
   Dropdown,
   RadioGroup,
+  Checkbox,
 } from "tmhub-design-system-react";
 
 export default function Home() {
@@ -205,6 +206,9 @@ export default function Home() {
             { label: "名古屋", value: "Nagoya", disabled: true },
           ]}
         />
+
+        <h2>Checkbox</h2>
+        <Checkbox label="Label" />
       </Container>
     </>
   );
