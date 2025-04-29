@@ -11,5 +11,4 @@ export type LabelProps = {
   bold?: boolean;
   Icon?: React.ReactElement;
   text: string;
-  onClick?: () => void;
 };

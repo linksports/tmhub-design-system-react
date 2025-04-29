@@ -35,6 +35,9 @@ const condition_dark_mode = { "@media": "(prefers-color-scheme: dark)" };
 const condition_active = {
   selector: '&[data-state="active"], &[data-state="active"]:hover',
 };
+const condition_checked = {
+  selector: '&[data-state="checked"],&[data-state="checked"]:hover',
+};
 const condition_item_checked = {
   selector: '[data-state="checked"] > &, [data-state="checked"]:hover > &',
 };
@@ -65,6 +68,8 @@ const colorProperties = defineProperties({
     darkModeDisabled: { ...condition_dark_mode, ...condition_disabled },
     lightModePlaceholder: condition_placeholder,
     darkModePlaceholder: { ...condition_dark_mode, ...condition_placeholder },
+    lightModeChecked: condition_checked,
+    darkModeChecked: { ...condition_dark_mode, ...condition_checked },
     lightModeItemChecked: condition_item_checked,
     darkModeItemChecked: { ...condition_dark_mode, ...condition_item_checked },
   },
