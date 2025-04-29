@@ -1,6 +1,7 @@
 export * as ActionChip from "./ActionChip";
 export { default as Box } from "./Box";
 export { Button, CircleButton } from "./Button";
+export { default as Checkbox } from "./Checkbox";
 export { default as Chip } from "./Chip";
 export { default as Container } from "./Container";
 export * as ColoredIcons from "./ColoredIcons";
