@@ -17,6 +17,7 @@ export { default as Panel } from "./Panel";
 export { default as RadioGroup } from "./RadioGroup";
 export { default as SegmentedControl } from "./SegmentedControl";
 export { default as TextField } from "./TextField";
+export { default as TextLink } from "./TextLink";
 export * as TabBar from "./TabBar";
 export { default as Table } from "./Table";
 export { default as Tabs } from "./Tabs";

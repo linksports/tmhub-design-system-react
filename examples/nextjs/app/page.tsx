@@ -16,10 +16,12 @@ import {
   InputField,
   InputPassword,
   TextField,
+  TextLink,
   Dropdown,
   RadioGroup,
   Checkbox,
 } from "tmhub-design-system-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -198,6 +200,11 @@ export default function Home() {
 
       <h2>Checkbox</h2>
       <Checkbox label="Label" />
+
+      <h2>TextLink</h2>
+      <TextLink as={Link} href="/test" external>
+        Click! TextLink
+      </TextLink>
     </Container>
   );
 }
