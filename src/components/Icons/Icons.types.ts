@@ -10,6 +10,7 @@ export const iconSizeValues = [
 ] as const;
 
 export const colorValues = [
+  "unset",
   "inherit",
   "primary",
   "secondary",
