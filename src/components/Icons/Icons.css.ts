@@ -89,6 +89,9 @@ export const icons = recipe({
           darkMode: "onDarkTextDark",
         },
       }),
+      unset: {
+        color: undefined,
+      },
     },
   },
   defaultVariants: {

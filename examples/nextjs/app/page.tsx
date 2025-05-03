@@ -20,6 +20,7 @@ import {
   Dropdown,
   RadioGroup,
   Checkbox,
+  ErrorSuccessScreen,
 } from "tmhub-design-system-react";
 import Link from "next/link";
 
@@ -205,6 +206,16 @@ export default function Home() {
       <TextLink as={Link} href="/test" external>
         Click! TextLink
       </TextLink>
+
+      <h2>ErrorSuccessScreen</h2>
+      <ErrorSuccessScreen
+        icon="Success"
+        title="タイトル"
+        description="説明"
+        button={{
+          children: "Button!",
+        }}
+      />
     </Container>
   );
 }
