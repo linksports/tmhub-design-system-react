@@ -1,0 +1,109 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+import * as DrawerStories from "./Drawer.stories";
+import * as Drawer from "./Drawer";
+import PropsTable from "../../../.storybook/propertiesTable";
+
+<Meta of={DrawerStories} />
+
+# Drawer
+
+## API Reference
+
+### Root
+
+<PropsTable
+  props={[
+    ["defaultOpen", "boolean", "初期開閉状態"],
+    ["value", "string", "現在選択されているタブの識別子"],
+    ["onOpenChange", "(open: boolean) => void", "Drawer開閉時のイベント"],
+  ]}
+/>
+
+### Overlay
+
+`Drawer`が開いているときに表示される Overlay
+
+### Trigger
+
+`Drawer`を開くための Trigger
+※ asChild 使用可能(詳細は Button Component に記載)
+
+### Content
+
+<PropsTable
+  props={[["sections", "SectionProps[]", "Drawerコンテンツの各Sectionの情報"]]}
+/>
+
+#### SectionProps
+
+<PropsTable
+  props={[
+    ["title", "string | undefined", "セクションタイトル"],
+    ["items", "MenuItemProps[]", "各Menuの情報"],
+  ]}
+/>
+
+#### MenuItemProps
+
+<PropsTable
+  props={[
+    ["label", "string", "ラベル"],
+    ["icon", "Icon", "アイコン"],
+    ["badge", "LabelProps(詳細はLabel Componentに記載)", "バッジ(Ex.New)"],
+    ["selected", "boolean", "選択状態"],
+    [
+      "as",
+      "React.ElementType",
+      "defaultでメニューは'a'要素でレンダリングされるがnext/link等を仕様したいときに使用",
+    ],
+  ]}
+/>
+
+## Example
+
+```typescript
+<Drawer.Root>
+  <Box style={{ height: "300px" }}>
+    <Drawer.Trigger style={{ cursor: "pointer" }}>
+      Drawer Trigger Click!
+    </Drawer.Trigger>
+  </Box>
+  <Drawer.Overlay />
+  <Drawer.Content
+    sections={[
+      {
+        title: "セクションタイトル",
+        items: [
+          {
+            label: "ホーム",
+            icon: "Home",
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            label: "管理者",
+            icon: "Admin",
+          },
+          {
+            label: "検索",
+            icon: "Search",
+            badge: {
+              text: "NEW",
+              bold: true,
+              type: "default",
+            },
+            selected: true,
+          },
+        ],
+      },
+    ]}
+  />
+</Drawer.Root>
+```
+
+## Playground
+
+<Story />
+<Controls />
