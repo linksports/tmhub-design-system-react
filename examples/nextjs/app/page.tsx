@@ -21,6 +21,7 @@ import {
   RadioGroup,
   Checkbox,
   ErrorSuccessScreen,
+  Divider,
 } from "tmhub-design-system-react";
 import Link from "next/link";
 
@@ -216,6 +217,9 @@ export default function Home() {
           children: "Button!",
         }}
       />
+
+      <h2>Divider</h2>
+      <Divider />
     </Container>
   );
 }

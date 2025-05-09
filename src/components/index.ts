@@ -6,6 +6,7 @@ export { default as Chip } from "./Chip";
 export { default as Container } from "./Container";
 export * as ColoredIcons from "./ColoredIcons";
 export { default as DesignProvider } from "./DesignProvider";
+export { default as Divider } from "./Divider";
 export { default as Dropdown } from "./Dropdown";
 export { default as ErrorSuccessScreen } from "./ErrorSuccessScreen";
 export { default as Flex } from "./Flex";
