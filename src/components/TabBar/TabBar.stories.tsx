@@ -115,5 +115,6 @@ Bordered.args = {
 export const NotBordered = Template.bind({});
 NotBordered.args = {
   defaultValue: "tab1",
+  bordered: false,
   size: "small",
 };
