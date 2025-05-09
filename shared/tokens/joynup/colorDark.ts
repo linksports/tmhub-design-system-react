@@ -59,6 +59,7 @@ export const colorDark: Colors = {
   backgroundNatureHover: addAlpha(primitiveColors.JuCyan200, "30%"),
   backgroundNaturePressed: addAlpha(primitiveColors.JuCyan200, "90%"),
   backgroundMenuHover: addAlpha(primitiveColors.JuCyan200, "10%"),
+  backgroundMenuPressed: addAlpha(primitiveColors.JuCyan200, "30%"),
   backgroundMenuSelected: addAlpha(primitiveColors.JuCyan200, "30%"),
   backgroundChipGiftItLater: addAlpha(primitiveColors.JuOrange300, "30%"),
   backgroundChipGift: addAlpha(primitiveColors.JuCyan200, "30%"),

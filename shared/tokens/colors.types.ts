@@ -56,6 +56,7 @@ export type Colors = {
   backgroundNatureHover: string;
   backgroundNaturePressed: string;
   backgroundMenuHover: string;
+  backgroundMenuPressed: string;
   backgroundMenuSelected: string;
   backgroundChipGiftItLater: string;
   backgroundChipGift: string;
