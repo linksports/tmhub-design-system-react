@@ -1,5 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { sprinkles } from "../../tokens/sprinkles.css";
+import { keyframes } from "@vanilla-extract/css";
 
 export const overlayRecipe = recipe({
   base: [
@@ -17,6 +18,15 @@ export const overlayRecipe = recipe({
   ],
 });
 
+const slideInFromLeft = keyframes({
+  from: {
+    transform: "translateX(-100%)",
+  },
+  to: {
+    transform: "translateX(0)",
+  },
+});
+
 export const contentRecipe = recipe({
   base: [
     {
@@ -24,7 +34,13 @@ export const contentRecipe = recipe({
       inset: 0,
       height: "100vh",
       maxWidth: "319px",
-      width: "100vw",
+      overflowY: "auto",
+      width: "calc(100vw - 56px)",
+      selectors: {
+        '&[data-state="open"]': {
+          animation: `${slideInFromLeft} 200ms ease-out forwards`,
+        },
+      },
     },
     sprinkles({
       backgroundColor: {

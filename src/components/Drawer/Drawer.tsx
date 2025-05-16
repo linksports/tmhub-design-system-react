@@ -17,10 +17,12 @@ import {
   sectionContainerRecipe,
   sectionTitleRecipe,
 } from "./Drawer.css";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const Trigger = Dialog.Trigger;
 
 const Root = Dialog.Root;
+const Portal = Dialog.Portal;
 
 const Overlay = () => <Dialog.Overlay className={overlayRecipe()} />;
 
@@ -29,6 +31,9 @@ const Content: React.FC<DrawerContentProps> = ({ sections, className }) => (
     <Dialog.Content
       className={[contentRecipe(), className].filter(Boolean).join(" ")}
     >
+      <Dialog.Title asChild>
+        <VisuallyHidden>Navigation Drawer</VisuallyHidden>
+      </Dialog.Title>
       <Flex
         align="start"
         justify="start"
@@ -50,7 +55,7 @@ const Content: React.FC<DrawerContentProps> = ({ sections, className }) => (
   </Flex>
 );
 
-export { Trigger, Root, Overlay, Content };
+export { Trigger, Root, Portal, Overlay, Content };
 
 const Section: React.FC<SectionProps> = ({ title, items }) => (
   <Flex align="stretch" direction="column" className={sectionContainerRecipe()}>
@@ -91,7 +96,14 @@ const MenuItem: React.FC<MenuItemProps> = ({
         >
           {label}
         </Text>
-        {badge && <Label {...badge} className={menuItemLabelRecipe()}></Label>}
+        {typeof badge === "string" && (
+          <Text color={"secondary"} className={menuItemLabelRecipe()}>
+            {badge}
+          </Text>
+        )}
+        {typeof badge === "object" && (
+          <Label {...badge} className={menuItemLabelRecipe()}></Label>
+        )}
       </Component>
     </Flex>
   );
