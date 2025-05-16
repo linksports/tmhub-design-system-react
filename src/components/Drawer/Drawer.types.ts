@@ -4,7 +4,7 @@ import { LabelProps } from "../Label/Label.types";
 export type MenuItemProps = {
   label: string;
   icon: keyof typeof Iconography;
-  badge?: LabelProps;
+  badge?: string | LabelProps;
   selected?: boolean;
   as?: React.ElementType;
 } & React.ComponentProps<"a">;
