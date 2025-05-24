@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { DesignProvider } from 'tmhub-design-system-react';
+import { DesignProvider } from "tmhub-design-system-react";
 
 export default function Document() {
   return (

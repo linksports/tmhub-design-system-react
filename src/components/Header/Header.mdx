@@ -1,0 +1,85 @@
+import { Canvas, Meta, Story, Controls } from "@storybook/blocks";
+import * as HeaderStories from "./Header.stories";
+import * as Header from "./Header";
+import PropsTable from "../../../.storybook/propertiesTable";
+
+<Meta of={HeaderStories} />
+
+# Header
+
+<PropsTable
+  props={[
+    ["logo", "React.ReactNode", "プロダクトのロゴ要素"],
+    [
+      "menuSections",
+      "SectionProps[]",
+      "ヘッダーのメニュー設定(詳細はDrawerに記載)",
+    ],
+    ["actionButton", "React.ReactNode", "アクションボタン"],
+    ["authButton", "React.ReactNode", "新規登録やユーザーボタンを設定"],
+    [
+      "contentNavigation",
+      "React.ReactNode",
+      "メインのヘッダーの下部に表示する要素を設定",
+    ],
+    ["position", "fixed" | "sticky", "Headerの固定の設定, default=sticky"],
+  ]}
+/>
+
+## Example
+
+```typescript
+<Header
+  logo={<img src={faker.image.url()} height={40} />}
+  position="sticky"
+  actionButton={
+    <CircleButton variant="secondary">
+      <Icons.Iconography.Search />
+    </CircleButton>
+  }
+  authButton={
+    <Button variant="text" size="sm">
+      新規登録
+    </Button>
+  }
+  contentNavigation={
+    <Flex gap={3} style={{ paddingLeft: "40px" }}>
+      <Icons.Iconography.Edit />
+      <Text color="primary">Step 1</Text>
+      <Text color="primary">{">"}</Text>
+      <Text color="primary">Step 2</Text>
+      <Text color="primary">{">"}</Text>
+      <Text color="primary">Step 3</Text>
+    </Flex>
+  }
+  menuSections={[
+    {
+      items: [
+        {
+          label: "Menu1",
+          icon: "Add",
+          href: "/test",
+        },
+        {
+          label: "Menu2",
+          icon: "Age",
+        },
+        {
+          label: "Menu3",
+          icon: "ArrowDown",
+          selected: true,
+        },
+        {
+          label: "Menu4",
+          icon: "Backspace",
+        },
+      ],
+    },
+  ]}
+/>
+```
+
+## Playground
+
+<Story />
+<Controls />

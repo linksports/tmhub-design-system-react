@@ -22,12 +22,40 @@ import {
   Checkbox,
   ErrorSuccessScreen,
   Divider,
+  Header,
 } from "tmhub-design-system-react";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <Container>
+    <Container size="full">
+      <Header
+        logo={<Icons.SportIcons.Baseball size="md" color="alert" />}
+        menuSections={[
+          {
+            items: [
+              {
+                label: "Menu1",
+                icon: "Add",
+                href: "/test",
+              },
+              {
+                label: "Menu2",
+                icon: "Age",
+              },
+              {
+                label: "Menu3",
+                icon: "ArrowDown",
+                selected: true,
+              },
+              {
+                label: "Menu4",
+                icon: "Backspace",
+              },
+            ],
+          },
+        ]}
+      />
       <h2>Button</h2>
       <h3>Size</h3>
       <Button size="default">Default</Button>

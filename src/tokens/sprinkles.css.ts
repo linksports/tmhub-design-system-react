@@ -1,18 +1,25 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
 import { vars } from "./vars.css";
 
-const condition_tablet = { "@media": "screen and (min-width: 768px)" };
-const condition_desktop = { "@media": "screen and (min-width: 1024px)" };
+const condition_sp = { "@media": "screen and (max-width: 960px)" };
+const condition_pc = { "@media": "screen and (min-width: 961px)" };
 
 const responsiveProperties = defineProperties({
   conditions: {
-    mobile: {},
-    tablet: condition_tablet,
-    desktop: condition_desktop,
+    none: {},
+    sp: condition_sp,
+    pc: condition_pc,
   },
-  defaultCondition: "mobile",
+  defaultCondition: "none",
   properties: {
-    display: ["none", "inline", "block", "inline-block", "flex"],
+    display: [
+      "none",
+      "inline",
+      "block",
+      "inline-block",
+      "flex",
+      "none !important",
+    ],
     paddingTop: vars.spacing,
     paddingBottom: vars.spacing,
     paddingLeft: vars.spacing,
@@ -27,7 +34,11 @@ const responsiveProperties = defineProperties({
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
+    paddingX: ["paddingLeft", "paddingRight"],
+    paddingY: ["paddingTop", "paddingBottom"],
     margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    marginX: ["marginLeft", "marginRight"],
+    marginY: ["marginTop", "marginBottom"],
   },
 });
 

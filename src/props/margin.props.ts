@@ -10,10 +10,12 @@ export type marginProps = {
   mr?: (typeof marginValues)[number];
   ml?: (typeof marginValues)[number];
   mb?: (typeof marginValues)[number];
+  mx?: (typeof marginValues)[number];
+  my?: (typeof marginValues)[number];
 };
 
 export const marginRecipes = {
-  p: {
+  m: {
     0: sprinkles({ margin: "none" }),
     1: sprinkles({ margin: "3xs" }),
     2: sprinkles({ margin: "2xs" }),
@@ -30,7 +32,7 @@ export const marginRecipes = {
     13: sprinkles({ margin: "7xl" }),
     14: sprinkles({ margin: "8xl" }),
   },
-  pt: {
+  mt: {
     0: sprinkles({ marginTop: "none" }),
     1: sprinkles({ marginTop: "3xs" }),
     2: sprinkles({ marginTop: "2xs" }),
@@ -47,7 +49,7 @@ export const marginRecipes = {
     13: sprinkles({ marginTop: "7xl" }),
     14: sprinkles({ marginTop: "8xl" }),
   },
-  pr: {
+  mr: {
     0: sprinkles({ marginRight: "none" }),
     1: sprinkles({ marginRight: "3xs" }),
     2: sprinkles({ marginRight: "2xs" }),
@@ -64,7 +66,7 @@ export const marginRecipes = {
     13: sprinkles({ marginRight: "7xl" }),
     14: sprinkles({ marginRight: "8xl" }),
   },
-  pl: {
+  ml: {
     0: sprinkles({ marginLeft: "none" }),
     1: sprinkles({ marginLeft: "3xs" }),
     2: sprinkles({ marginLeft: "2xs" }),
@@ -81,7 +83,7 @@ export const marginRecipes = {
     13: sprinkles({ marginLeft: "7xl" }),
     14: sprinkles({ marginLeft: "8xl" }),
   },
-  pb: {
+  mb: {
     0: sprinkles({ marginBottom: "none" }),
     1: sprinkles({ marginBottom: "3xs" }),
     2: sprinkles({ marginBottom: "2xs" }),
@@ -98,10 +100,44 @@ export const marginRecipes = {
     13: sprinkles({ marginBottom: "7xl" }),
     14: sprinkles({ marginBottom: "8xl" }),
   },
+  mx: {
+    0: sprinkles({ marginX: "none" }),
+    1: sprinkles({ marginX: "3xs" }),
+    2: sprinkles({ marginX: "2xs" }),
+    3: sprinkles({ marginX: "xs" }),
+    4: sprinkles({ marginX: "sm" }),
+    5: sprinkles({ marginX: "md" }),
+    6: sprinkles({ marginX: "lg" }),
+    7: sprinkles({ marginX: "xl" }),
+    8: sprinkles({ marginX: "2xl" }),
+    9: sprinkles({ marginX: "3xl" }),
+    10: sprinkles({ marginX: "4xl" }),
+    11: sprinkles({ marginX: "5xl" }),
+    12: sprinkles({ marginX: "6xl" }),
+    13: sprinkles({ marginX: "7xl" }),
+    14: sprinkles({ marginX: "8xl" }),
+  },
+  my: {
+    0: sprinkles({ marginY: "none" }),
+    1: sprinkles({ marginY: "3xs" }),
+    2: sprinkles({ marginY: "2xs" }),
+    3: sprinkles({ marginY: "xs" }),
+    4: sprinkles({ marginY: "sm" }),
+    5: sprinkles({ marginY: "md" }),
+    6: sprinkles({ marginY: "lg" }),
+    7: sprinkles({ marginY: "xl" }),
+    8: sprinkles({ marginY: "2xl" }),
+    9: sprinkles({ marginY: "3xl" }),
+    10: sprinkles({ marginY: "4xl" }),
+    11: sprinkles({ marginY: "5xl" }),
+    12: sprinkles({ marginY: "6xl" }),
+    13: sprinkles({ marginY: "7xl" }),
+    14: sprinkles({ marginY: "8xl" }),
+  },
 };
 
 export const marginArgTypes = {
-  p: {
+  m: {
     control: "select",
     options: marginValues,
     description: "四方の余白",
@@ -109,7 +145,7 @@ export const marginArgTypes = {
       type: { summary: marginValues.join("|") },
     },
   },
-  pt: {
+  mt: {
     control: "select",
     options: marginValues,
     description: "上の余白",
@@ -117,7 +153,7 @@ export const marginArgTypes = {
       type: { summary: marginValues.join("|") },
     },
   },
-  pr: {
+  mr: {
     control: "select",
     options: marginValues,
     description: "右の余白",
@@ -125,7 +161,7 @@ export const marginArgTypes = {
       type: { summary: marginValues.join("|") },
     },
   },
-  pl: {
+  ml: {
     control: "select",
     options: marginValues,
     description: "左の余白",
@@ -133,10 +169,26 @@ export const marginArgTypes = {
       type: { summary: marginValues.join("|") },
     },
   },
-  pb: {
+  mb: {
     control: "select",
     options: marginValues,
     description: "下の余白",
+    table: {
+      type: { summary: marginValues.join("|") },
+    },
+  },
+  mx: {
+    control: "select",
+    options: marginValues,
+    description: "左右の余白",
+    table: {
+      type: { summary: marginValues.join("|") },
+    },
+  },
+  my: {
+    control: "select",
+    options: marginValues,
+    description: "上下の余白",
     table: {
       type: { summary: marginValues.join("|") },
     },

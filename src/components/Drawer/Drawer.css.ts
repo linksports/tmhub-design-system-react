@@ -8,6 +8,7 @@ export const overlayRecipe = recipe({
       position: "fixed",
       inset: 0,
       backdropFilter: "blur(2px)",
+      zIndex: 2,
     },
     sprinkles({
       backgroundColor: {
@@ -41,6 +42,7 @@ export const contentRecipe = recipe({
           animation: `${slideInFromLeft} 200ms ease-out forwards`,
         },
       },
+      zIndex: 3,
     },
     sprinkles({
       backgroundColor: {
