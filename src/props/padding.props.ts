@@ -10,6 +10,8 @@ export type paddingProps = {
   pr?: (typeof paddingValues)[number];
   pl?: (typeof paddingValues)[number];
   pb?: (typeof paddingValues)[number];
+  px?: (typeof paddingValues)[number];
+  py?: (typeof paddingValues)[number];
 };
 
 export const paddingRecipes = {
@@ -98,6 +100,40 @@ export const paddingRecipes = {
     13: sprinkles({ paddingBottom: "7xl" }),
     14: sprinkles({ paddingBottom: "8xl" }),
   },
+  px: {
+    0: sprinkles({ paddingX: "none" }),
+    1: sprinkles({ paddingX: "3xs" }),
+    2: sprinkles({ paddingX: "2xs" }),
+    3: sprinkles({ paddingX: "xs" }),
+    4: sprinkles({ paddingX: "sm" }),
+    5: sprinkles({ paddingX: "md" }),
+    6: sprinkles({ paddingX: "lg" }),
+    7: sprinkles({ paddingX: "xl" }),
+    8: sprinkles({ paddingX: "2xl" }),
+    9: sprinkles({ paddingX: "3xl" }),
+    10: sprinkles({ paddingX: "4xl" }),
+    11: sprinkles({ paddingX: "5xl" }),
+    12: sprinkles({ paddingX: "6xl" }),
+    13: sprinkles({ paddingX: "7xl" }),
+    14: sprinkles({ paddingX: "8xl" }),
+  },
+  py: {
+    0: sprinkles({ paddingY: "none" }),
+    1: sprinkles({ paddingY: "3xs" }),
+    2: sprinkles({ paddingY: "2xs" }),
+    3: sprinkles({ paddingY: "xs" }),
+    4: sprinkles({ paddingY: "sm" }),
+    5: sprinkles({ paddingY: "md" }),
+    6: sprinkles({ paddingY: "lg" }),
+    7: sprinkles({ paddingY: "xl" }),
+    8: sprinkles({ paddingY: "2xl" }),
+    9: sprinkles({ paddingY: "3xl" }),
+    10: sprinkles({ paddingY: "4xl" }),
+    11: sprinkles({ paddingY: "5xl" }),
+    12: sprinkles({ paddingY: "6xl" }),
+    13: sprinkles({ paddingY: "7xl" }),
+    14: sprinkles({ paddingY: "8xl" }),
+  },
 };
 
 export const paddingArgTypes = {
@@ -137,6 +173,22 @@ export const paddingArgTypes = {
     control: "select",
     options: paddingValues,
     description: "下の余白",
+    table: {
+      type: { summary: paddingValues.join("|") },
+    },
+  },
+  px: {
+    control: "select",
+    options: paddingValues,
+    description: "左右の余白",
+    table: {
+      type: { summary: paddingValues.join("|") },
+    },
+  },
+  py: {
+    control: "select",
+    options: paddingValues,
+    description: "上下の余白",
     table: {
       type: { summary: paddingValues.join("|") },
     },

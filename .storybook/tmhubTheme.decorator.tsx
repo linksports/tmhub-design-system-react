@@ -17,7 +17,7 @@ export const withTmhubTheme = ({ themes, defaultTheme }) => {
 
     return (
       <DesignProvider theme={theme.theme} mode={theme.mode}>
-        <Container p={3}>
+        <Container p={3} size="full">
           <Story />
         </Container>
       </DesignProvider>
