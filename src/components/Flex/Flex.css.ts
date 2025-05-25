@@ -6,7 +6,6 @@ export const flex = recipe({
   base: {
     boxSizing: "border-box",
     display: "flex",
-    justifyContent: "flex-start",
   },
   variants: {
     direction: {
@@ -30,6 +29,7 @@ export const flex = recipe({
       end: { justifyContent: "flex-end" },
       between: { justifyContent: "space-between" },
       around: { justifyContent: "space-around" },
+      unset: {},
     },
     display: {
       flex: { display: "flex" },
@@ -43,5 +43,7 @@ export const flex = recipe({
     ...gapRecipes,
     ...paddingRecipes,
   },
-  defaultVariants: {},
+  defaultVariants: {
+    justify: "start",
+  },
 });

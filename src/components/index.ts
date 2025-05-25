@@ -11,6 +11,7 @@ export { default as Divider } from "./Divider";
 export { default as Dropdown } from "./Dropdown";
 export { default as ErrorSuccessScreen } from "./ErrorSuccessScreen";
 export { default as Flex } from "./Flex";
+export { default as Footer } from "./Footer";
 export { default as Grid } from "./Grid";
 export { default as Header } from "./Header";
 export { default as Heading } from "./Heading";

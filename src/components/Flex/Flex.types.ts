@@ -24,6 +24,7 @@ export const justifyValues = [
   "end",
   "between",
   "around",
+  "unset",
 ] as const;
 export const wrapValues = ["nowrap", "wrap", "wrap-reverse"] as const;
 export const displayValues = ["inline-flex", "flex"] as const;

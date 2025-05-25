@@ -24,6 +24,7 @@ import {
   ErrorSuccessScreen,
   Divider,
   Header,
+  Footer,
 } from "tmhub-design-system-react";
 import Link from "next/link";
 
@@ -259,6 +260,39 @@ export default function Home() {
 
         <h2>Divider</h2>
         <Divider />
+
+        <Footer
+          logo={<Icons.SportIcons.Baseball size="md" color="alert" />}
+          copyright="© Example Company 2025"
+          menus={[
+            {
+              children: "Menu1",
+              href: "/test",
+            },
+            {
+              external: true,
+              children: "Menu2 (External)",
+              href: "https://example.com",
+            },
+            {
+              children: "Menu3",
+              href: "/test",
+            },
+            {
+              external: true,
+              children: "Menu4 (External)",
+              href: "https://example.com",
+            },
+            {
+              children: "Menu5",
+              href: "/test",
+            },
+            {
+              children: "Menu6",
+            },
+          ]}
+          style={{ width: "100%" }}
+        />
       </Container>
     </>
   );
