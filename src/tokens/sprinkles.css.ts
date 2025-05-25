@@ -31,6 +31,9 @@ const responsiveProperties = defineProperties({
     gap: vars.spacing,
     columnGap: vars.spacing,
     rowGap: vars.spacing,
+    flexDirection: ["column", "column-reverse", "row", "row-reverse"],
+    alignItems: ["center", "flex-end", "flex-start", "stretch"],
+    justifyContent: ["center", "flex-end", "flex-start", "space-between"],
   },
   shorthands: {
     padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],

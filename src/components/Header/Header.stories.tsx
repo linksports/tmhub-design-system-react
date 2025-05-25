@@ -60,7 +60,7 @@ const menuSections: SectionProps[] = [
 export const Default = Template.bind({});
 Default.args = {
   menuSections,
-  logo: <img src={faker.image.url()} height={40} />,
+  logo: <img src={faker.image.url()} height={40} width={120} />,
   actionButton: (
     <CircleButton variant="secondary">
       <Icons.Iconography.Search />
@@ -88,7 +88,7 @@ Default.args = {
  */
 export const WithMoreThan5Menus = Template.bind({});
 WithMoreThan5Menus.args = {
-  logo: <img src={faker.image.url()} height={40} />,
+  logo: <img src={faker.image.url()} height={40} width={120} />,
   menuSections: [
     {
       items: [
@@ -136,7 +136,7 @@ WithMoreThan5Menus.args = {
 
 export const StickyHeader: StoryObj<typeof Header> = {
   args: {
-    logo: <img src={faker.image.url()} height={40} />,
+    logo: <img src={faker.image.url()} height={40} width={120} />,
     menuSections,
     position: "sticky",
   },
@@ -156,7 +156,7 @@ export const StickyHeader: StoryObj<typeof Header> = {
 
 export const FixedHeader: StoryObj<typeof Header> = {
   args: {
-    logo: <img src={faker.image.url()} height={40} />,
+    logo: <img src={faker.image.url()} height={40} width={120} />,
     menuSections,
     position: "fixed",
   },

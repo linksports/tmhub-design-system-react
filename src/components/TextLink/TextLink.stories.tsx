@@ -61,9 +61,6 @@ const Template: StoryFn<typeof TextLink> = (args) => (
   <TextLink {...args}></TextLink>
 );
 
-/**
- * デフォルトボタン
- */
 export const Default = Template.bind({});
 Default.args = {
   children: "Click!",
