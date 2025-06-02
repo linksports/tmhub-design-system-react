@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from "@storybook/react";
 import InputField from "./InputField";
-import { Icons } from "..";
+import { Iconography, SportIcons } from "../Icons";
 
 const meta: Meta<typeof InputField> = {
   component: InputField,
@@ -71,8 +71,8 @@ Default.args = {};
 
 export const WithIcons = Template.bind({});
 WithIcons.args = {
-  leadingIcon: <Icons.SportIcons.AmericanFootball />,
-  trailingIcon: <Icons.Iconography.Success />,
+  leadingIcon: <SportIcons.AmericanFootball />,
+  trailingIcon: <Iconography.Success />,
   onTrailingIconClick: () => {
     alert("Selected Trailing Icon");
   },

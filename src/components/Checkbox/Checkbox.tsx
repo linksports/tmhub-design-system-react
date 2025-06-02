@@ -9,7 +9,7 @@ import {
 } from "./Checkbox.css";
 import Text from "../Text";
 import Flex from "../Flex";
-import { Icons } from "..";
+import { Iconography } from "../Icons";
 
 const Checkbox: React.FC<CheckboxProps> = ({
   label,
@@ -28,7 +28,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         <div className={checkBoxBoxRecipe({ disabled })}>
           <Flex gap={3} asChild align="center">
             <RadixCheckbox.Indicator className={checkMarkRecipe({ disabled })}>
-              <Icons.Iconography.Check size="md" />
+              <Iconography.Check size="md" />
             </RadixCheckbox.Indicator>
           </Flex>
         </div>

@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from "@storybook/react";
 import Label from "./Label";
-import { Icons } from "..";
 import { typeValues } from "./Label.types";
+import { SportIcons } from "../Icons";
 
 const meta: Meta<typeof Label> = {
   component: Label,
@@ -58,12 +58,12 @@ export const LabelWithIcon = Template.bind({});
 LabelWithIcon.args = {
   bold: false,
   text: "Sample Text",
-  Icon: <Icons.SportIcons.Soccer size="xs" />,
+  Icon: <SportIcons.Soccer size="xs" />,
 };
 
 export const BoldLabelWithIcon = Template.bind({});
 BoldLabelWithIcon.args = {
   bold: true,
   text: "Sample Text",
-  Icon: <Icons.SportIcons.Soccer size="xs" color="inverse" />,
+  Icon: <SportIcons.Soccer size="xs" color="inverse" />,
 };

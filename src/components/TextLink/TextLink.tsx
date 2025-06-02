@@ -1,7 +1,7 @@
 import { TextLinkProps } from "./TextLink.types";
 import { iconRecipe, textLinkRecipe, textRecipe } from "./TextLink.css";
 import Text from "../Text/Text";
-import { Flex, Icons } from "..";
+import { Flex, Iconography } from "..";
 
 /**
  * ボタンコンポーネント
@@ -35,10 +35,7 @@ const TextLink: React.FC<TextLinkProps> = ({
 
         {external && (
           <Text fontSize={fontSize} color={color} asChild>
-            <Icons.Iconography.OpenInNew
-              color={color}
-              className={iconRecipe()}
-            />
+            <Iconography.OpenInNew color={color} className={iconRecipe()} />
           </Text>
         )}
       </Component>

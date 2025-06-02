@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from "@storybook/react";
 import FilterChip from "./FilterChip";
-import { ColoredIcons, Icons } from "../..";
+import { ColoredIcons, SportIcons } from "../..";
 
 const meta: Meta<typeof FilterChip> = {
   component: FilterChip,
@@ -69,6 +69,6 @@ export const ChipWithIcon = Template.bind({});
 ChipWithIcon.args = {
   active: false,
   text: "Sample Text",
-  Icon: <Icons.SportIcons.Soccer size="xs" />,
+  Icon: <SportIcons.Soccer size="xs" />,
   onClick,
 };

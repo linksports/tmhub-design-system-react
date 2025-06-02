@@ -9,7 +9,7 @@ import {
   tabContainerRecipe,
   topHeaderContainerRecipe,
 } from "./Header.css";
-import { Divider, Icons, TabBar } from "..";
+import { Divider, Iconography, TabBar } from "..";
 
 const Header: React.FC<HeaderProps> = ({
   menuSections,
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({
                     onlySp: menuItems.length <= 5,
                   })}
                 >
-                  <Icons.Iconography.Menu />
+                  <Iconography.Menu />
                 </Drawer.Trigger>
               )}
               {logo}

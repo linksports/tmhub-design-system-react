@@ -1,4 +1,5 @@
 export * as ActionChip from "./ActionChip";
+export { UserAvatar, TeamAvatar, OpponentAvatar } from "./Avatar";
 export { default as Box } from "./Box";
 export { Button, CircleButton } from "./Button";
 export { default as Checkbox } from "./Checkbox";
@@ -15,7 +16,12 @@ export { default as Footer } from "./Footer";
 export { default as Grid } from "./Grid";
 export { default as Header } from "./Header";
 export { default as Heading } from "./Heading";
-export * as Icons from "./Icons";
+export {
+  Iconography,
+  SportIcon,
+  SportIcons,
+  TeamnaviSportIcons,
+} from "./Icons";
 export { InputField, InputPassword } from "./InputField";
 export { default as Label } from "./Label";
 export { default as Panel } from "./Panel";

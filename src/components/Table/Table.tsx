@@ -19,8 +19,8 @@ import {
   TableProps,
 } from "./Table.types";
 import Flex from "../Flex";
-import { Icons } from "..";
 import { useState } from "react";
+import { Iconography } from "../Icons";
 
 const Table = <T extends Row>({
   columns,
@@ -128,10 +128,7 @@ const TableColumn = <T extends Row>({
               {column.headerName}
             </Text>
             {column.needsSort && (
-              <Icons.Iconography.Sort
-                className={thSortIconRecipe()}
-                size="xs"
-              />
+              <Iconography.Sort className={thSortIconRecipe()} size="xs" />
             )}
           </div>
           {rows.map((row, rowIndex) => (
