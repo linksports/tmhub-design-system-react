@@ -6,7 +6,7 @@ import Flex from "../Flex";
 import Text from "../Text";
 import { faker } from "@faker-js/faker";
 import { Button, CircleButton } from "../Button";
-import { Icons } from "..";
+import { Iconography } from "../Icons";
 
 const meta: Meta<typeof Header> = {
   component: Header,
@@ -63,7 +63,7 @@ Default.args = {
   logo: <img src={faker.image.url()} height={40} width={120} />,
   actionButton: (
     <CircleButton variant="secondary">
-      <Icons.Iconography.Search />
+      <Iconography.Search />
     </CircleButton>
   ),
   authButton: (
@@ -73,7 +73,7 @@ Default.args = {
   ),
   contentNavigation: (
     <Flex gap={3} style={{ paddingLeft: "40px" }}>
-      <Icons.Iconography.Edit />
+      <Iconography.Edit />
       <Text color="primary">Step 1</Text>
       <Text color="primary">{">"}</Text>
       <Text color="primary">Step 2</Text>

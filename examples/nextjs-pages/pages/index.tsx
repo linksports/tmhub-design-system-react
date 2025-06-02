@@ -4,7 +4,10 @@ import {
   Button,
   CircleButton,
   Tabs,
-  Icons,
+  Iconography,
+  SportIcons,
+  SportIcon,
+  TeamnaviSportIcons,
   ColoredIcons,
   Chip,
   Text,
@@ -25,6 +28,9 @@ import {
   Divider,
   Header,
   Footer,
+  UserAvatar,
+  TeamAvatar,
+  OpponentAvatar,
 } from "tmhub-design-system-react";
 import Link from "next/link";
 
@@ -39,7 +45,7 @@ export default function Home() {
       </Head>
       <Container size="full">
         <Header
-          logo={<Icons.SportIcons.Baseball size="md" color="alert" />}
+          logo={<SportIcons.Baseball size="md" color="alert" />}
           menuSections={[
             {
               items: [
@@ -89,9 +95,10 @@ export default function Home() {
           <Tabs.Content value="tab3">Content #3</Tabs.Content>
         </Tabs.Root>
         <h2>Icons</h2>
-        <Icons.Iconography.Add size="lg" color="primary" />
-        <Icons.SportIcons.Baseball size="md" color="alert" />
-        <Icons.TeamnaviSportIcons.Tennis size="sm" color="hyperlinks" />
+        <Iconography.Add size="lg" color="primary" />
+        <SportIcons.Baseball size="md" color="alert" />
+        <SportIcon sportId={6} size="md" color="alert" />
+        <TeamnaviSportIcons.Tennis size="sm" color="hyperlinks" />
         <h2>ColoredIcons</h2>
         <ColoredIcons.Gift size="md" />
         <h2>Chip</h2>
@@ -119,7 +126,7 @@ export default function Home() {
         <ActionChip.FilterChip
           active={true}
           text="Sample Text"
-          Icon={<Icons.SportIcons.Baseball size="xs" />}
+          Icon={<SportIcons.Baseball size="xs" />}
         />
 
         <h2>ActionChip.SuggestionChip</h2>
@@ -261,8 +268,18 @@ export default function Home() {
         <h2>Divider</h2>
         <Divider />
 
+        <h2>Avatar</h2>
+        <h3>UserAvatar</h3>
+        <UserAvatar />
+
+        <h3>TeamAvatar</h3>
+        <TeamAvatar name="team" />
+
+        <h3>OpponentAvatar</h3>
+        <OpponentAvatar type="team" sportId={6} />
+
         <Footer
-          logo={<Icons.SportIcons.Baseball size="md" color="alert" />}
+          logo={<SportIcons.Baseball size="md" color="alert" />}
           copyright="© Example Company 2025"
           menus={[
             {

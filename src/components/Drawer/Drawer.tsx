@@ -4,7 +4,7 @@ import {
   DrawerContentProps,
   SectionProps,
 } from "./Drawer.types";
-import { Box, Divider, Flex, Heading, Icons, Label, Text } from "..";
+import { Box, Divider, Flex, Heading, Iconography, Label, Text } from "..";
 import {
   closeButtonContainerRecipe,
   closeButtonRecipe,
@@ -41,7 +41,7 @@ const Content: React.FC<DrawerContentProps> = ({ sections, className }) => (
       >
         <Dialog.Close className={closeButtonRecipe()}>
           <Box asChild>
-            <Icons.Iconography.Close color="primary" size="md" />
+            <Iconography.Close color="primary" size="md" />
           </Box>
         </Dialog.Close>
       </Flex>
@@ -78,7 +78,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   as,
   ...props
 }) => {
-  const Icon = icon && Icons.Iconography[icon];
+  const Icon = icon && Iconography[icon];
   const Component = as ?? "a";
   return (
     <Flex

@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from "@storybook/react";
 import SuggestionChip from "./SuggestionChip";
 import { typeValues } from "./SuggestionChip.types";
-import { ColoredIcons, Icons } from "../..";
+import { ColoredIcons, SportIcons } from "../..";
 
 const meta: Meta<typeof SuggestionChip> = {
   component: SuggestionChip,
@@ -72,6 +72,6 @@ export const ChipWithIcon = Template.bind({});
 ChipWithIcon.args = {
   type: "blue",
   text: "Sample Text",
-  Icon: <Icons.SportIcons.Soccer size="xs" />,
+  Icon: <SportIcons.Soccer size="xs" />,
   onClick,
 };

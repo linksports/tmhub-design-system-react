@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from "@storybook/react";
 import Chip from "./Chip";
 import { typeValues } from "./Chip.types";
-import { Icons } from "..";
+import { SportIcons } from "../Icons";
 
 const meta: Meta<typeof Chip> = {
   component: Chip,
@@ -59,5 +59,5 @@ ChipWithIcon.args = {
   type: "gray",
   filled: true,
   text: "Sample Text",
-  Icon: <Icons.SportIcons.Soccer size="xs" />,
+  Icon: <SportIcons.Soccer size="xs" />,
 };

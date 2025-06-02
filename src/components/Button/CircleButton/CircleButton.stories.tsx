@@ -2,7 +2,7 @@ import { StoryFn, Meta } from "@storybook/react";
 import CircleButton from "./CircleButton";
 import { variantValues } from "../Button.types";
 import { asChildArgTypes } from "../../../props/asChild.props";
-import { Icons } from "../..";
+import { Iconography } from "../../Icons";
 
 const meta: Meta<typeof CircleButton> = {
   component: CircleButton,
@@ -57,7 +57,7 @@ const Template: StoryFn<typeof CircleButton> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   variant: "primary",
-  children: <Icons.Iconography.Edit />,
+  children: <Iconography.Edit />,
 };
 
 /**
@@ -66,7 +66,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: "secondary",
-  children: <Icons.Iconography.Edit />,
+  children: <Iconography.Edit />,
 };
 
 /**
@@ -75,17 +75,17 @@ Secondary.args = {
 export const Text = Template.bind({});
 Text.args = {
   variant: "text",
-  children: <Icons.Iconography.Edit />,
+  children: <Iconography.Edit />,
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   variant: "danger",
-  children: <Icons.Iconography.Edit />,
+  children: <Iconography.Edit />,
 };
 
 export const DangerText = Template.bind({});
 DangerText.args = {
   variant: "dangerText",
-  children: <Icons.Iconography.Edit />,
+  children: <Iconography.Edit />,
 };

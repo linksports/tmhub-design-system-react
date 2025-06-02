@@ -15,7 +15,7 @@ import {
   dropdownItemTextRecipe,
 } from "./Dropdown.css";
 import Text from "../Text";
-import { Icons } from "..";
+import { Iconography } from "../Icons";
 
 const Dropdown: React.FC<DropdownProps> = ({
   options,
@@ -55,7 +55,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             )}
 
             <Select.Value placeholder={placeholder} />
-            <Icons.Iconography.ArrowDropDown
+            <Iconography.ArrowDropDown
               className={dropdownTriggerIconRecipe()}
             />
           </Select.Trigger>

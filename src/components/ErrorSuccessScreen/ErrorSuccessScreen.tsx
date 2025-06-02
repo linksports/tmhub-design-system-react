@@ -1,4 +1,4 @@
-import { Button, Icons, Text } from "..";
+import { Button, Iconography, Text } from "..";
 import Flex from "../Flex";
 import { buttonRecipe, iconRecipe, textRecipe } from "./ErrorSuccessScreen.css";
 import { ErrorSuccessScreenProps } from "./ErrorSuccessScreen.types";
@@ -12,7 +12,7 @@ const ErrorSuccessScreen: React.FC<ErrorSuccessScreenProps> = ({
   className,
   ...props
 }) => {
-  const Icon = icon && Icons.Iconography[icon];
+  const Icon = icon && Iconography[icon];
   return (
     <Flex {...props} direction="column" align="center" className={className}>
       {Icon && <Icon color="unset" className={iconRecipe({ type })} />}

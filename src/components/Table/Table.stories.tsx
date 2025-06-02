@@ -1,7 +1,7 @@
 import Table from "./Table";
 import { Meta, StoryFn } from "@storybook/react";
 import { Column, Row } from "./Table.types";
-import { Flex, Icons, Text } from "..";
+import { Flex, Iconography, Text } from "..";
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -256,7 +256,7 @@ CustomSort.args = {
 
 const NonTextRow: Row[] = [
   {
-    icon: <Icons.Iconography.Add />,
+    icon: <Iconography.Add />,
     player: (
       <Flex gap={2} align="center">
         <Text
@@ -286,7 +286,7 @@ const NonTextRow: Row[] = [
     ),
   },
   {
-    icon: <Icons.Iconography.Card />,
+    icon: <Iconography.Card />,
     player: (
       <Flex gap={2} align="center">
         <Text
