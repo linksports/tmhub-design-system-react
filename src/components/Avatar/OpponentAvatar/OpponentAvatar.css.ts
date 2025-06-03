@@ -15,8 +15,8 @@ export const OpponentAvatarRecipe = recipe({
 export const SportIconRecipe = recipe({
   base: [
     {
-      width: "62.5%",
-      height: "62.5%",
+      width: "62.5% !important",
+      height: "62.5% !important",
     },
   ],
 });
