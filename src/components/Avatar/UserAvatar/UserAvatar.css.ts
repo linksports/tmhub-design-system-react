@@ -15,8 +15,8 @@ export const UserAvatarRecipe = recipe({
 export const SecretUserRecipe = recipe({
   base: [
     {
-      width: "62.5%",
-      height: "62.5%",
+      width: "62.5% !important",
+      height: "62.5% !important",
     },
   ],
 });
