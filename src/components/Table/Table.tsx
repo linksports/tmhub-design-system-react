@@ -1,188 +1,88 @@
 "use client";
-import Text from "../Text";
 import {
-  thRecipe,
   tableRecipe,
-  tdRecipe,
-  columnRecipe,
-  tdTextRecipe,
-  thSortIconRecipe,
-  firstFlexColumnsRecipe,
-  lastFlexColumnsRecipe,
-  tdTextWrapperRecipe,
+  containerRecipe,
+  scrollAreaRecipe,
+  tableStyle,
 } from "./Table.css";
-import {
-  Column,
-  directionValues,
-  Row,
-  TableColumnProps,
-  TableProps,
-} from "./Table.types";
-import Flex from "../Flex";
-import { useState } from "react";
-import { Iconography } from "../Icons";
+import { TableProps, TbodyProps, TheadProps, TrProps } from "./Table.types";
+import { useEffect, useRef, useState } from "react";
+import Box from "../Box";
+import { TableProvider } from "./TableContext/TableContext";
+import classNames from "classnames";
 
-const Table = <T extends Row>({
-  columns,
-  rows,
-  firstFixedColumnCount = 0,
-  lastFixedColumnCount = 0,
-}: TableProps<T>) => {
-  const [sortedRows, setSortedRows] = useState(rows);
-  const [sortConfig, setSortConfig] = useState<{
-    key: keyof T;
-    direction: (typeof directionValues)[number];
-  } | null>(null);
+export const Table: React.FC<TableProps> = ({
+  className,
+  children,
+  fixedColumn,
+  columnNum,
+  containerProps,
+  ...props
+}) => {
+  const leftCellRefs = useRef<(HTMLTableCellElement | null)[]>([]);
+  const [leftStickyOffsets, setLeftStickyOffsets] = useState<number[]>([]);
+  const rightCellRefs = useRef<(HTMLTableCellElement | null)[]>([]);
+  const [rightStickyOffsets, setRightStickyOffsets] = useState<number[]>([]);
+  const leftFixedColumnCount = fixedColumn?.left ?? 0;
+  const rightFixedColumnCount = fixedColumn?.right ?? 0;
 
-  const handleSort = (key: keyof T, columnSort: Column<T>["onSort"]) => {
-    let direction: (typeof directionValues)[number] = "asc";
-    if (
-      sortConfig &&
-      sortConfig.key === key &&
-      sortConfig.direction === "asc"
-    ) {
-      direction = "desc";
+  useEffect(() => {
+    const offsets: number[] = [];
+    let currentLeft = 0;
+    for (let i = 0; i < leftFixedColumnCount; i++) {
+      const width = leftCellRefs.current[i]?.offsetWidth || 0;
+      offsets.push(currentLeft);
+      currentLeft += width;
     }
+    setLeftStickyOffsets(offsets);
+  }, [leftCellRefs, leftFixedColumnCount]);
 
-    const sorted = [...rows].sort((a, b) => {
-      return columnSort
-        ? columnSort(a, b, direction)
-        : defaultSort(key, a, b, direction);
-    });
-
-    setSortConfig({ key: key, direction });
-    setSortedRows(sorted);
-  };
-
-  const firstFixedColumns: Column<T>[] = columns.slice(
-    0,
-    firstFixedColumnCount
-  );
-  const flowColumns: Column<T>[] = columns.slice(
-    firstFixedColumnCount,
-    columns.length - lastFixedColumnCount
-  );
-  const lastFixedColumns: Column<T>[] = columns.slice(
-    firstFixedColumnCount + flowColumns.length
-  );
+  useEffect(() => {
+    const offsets: number[] = [];
+    let currentRight = 0;
+    for (let i = rightFixedColumnCount - 1; i >= 0; i--) {
+      const width = rightCellRefs.current[i]?.offsetWidth || 0;
+      offsets.unshift(currentRight); // reverse order
+      currentRight += width;
+    }
+    setRightStickyOffsets(offsets);
+  }, [rightCellRefs, leftFixedColumnCount]);
 
   return (
-    <Flex direction="row" wrap="nowrap" className={tableRecipe()}>
-      <Flex className={firstFlexColumnsRecipe()}>
-        <TableColumn
-          columns={firstFixedColumns}
-          rows={sortedRows}
-          onSort={handleSort}
-        />
-      </Flex>
-      <TableColumn
-        columns={flowColumns}
-        rows={sortedRows}
-        onSort={handleSort}
-      />
-      <Flex className={lastFlexColumnsRecipe()}>
-        <TableColumn
-          columns={lastFixedColumns}
-          rows={sortedRows}
-          onSort={handleSort}
-        />
-      </Flex>
-    </Flex>
-  );
-};
-
-const TableColumn = <T extends Row>({
-  columns,
-  rows,
-  onSort,
-}: TableColumnProps<T>) => {
-  return (
-    <>
-      {columns.map((column) => (
-        <Flex
-          key={String(column.key)}
-          direction="column"
-          minWidth={column.minWidth}
-          maxWidth={column.maxWidth}
-          className={columnRecipe()}
-        >
-          <div
-            className={thRecipe({
-              align: column.headTextAlign,
-              verticalWriting: column.verticalWriting,
-              needsSort: column.needsSort,
-            })}
-            onClick={() => {
-              if (column.needsSort) {
-                onSort(column.key, column.onSort);
-              }
-            }}
+    <TableProvider
+      fixedColumn={fixedColumn}
+      refs={{
+        leftCellRefs,
+        rightCellRefs,
+      }}
+      columnNum={columnNum}
+      offsets={{ leftStickyOffsets, rightStickyOffsets }}
+    >
+      <Box
+        {...containerProps}
+        className={classNames(containerRecipe(), containerProps?.className)}
+      >
+        <Box className={scrollAreaRecipe()}>
+          <table
+            {...props}
+            className={classNames(tableRecipe(), tableStyle, className)}
           >
-            <Text
-              key={String(column.key)}
-              fontSize="md"
-              color="primary"
-              fontWeight="bold"
-              lineHeight="normal"
-            >
-              {column.headerName}
-            </Text>
-            {column.needsSort && (
-              <Iconography.Sort className={thSortIconRecipe()} size="xs" />
-            )}
-          </div>
-          {rows.map((row, rowIndex) => (
-            <Flex
-              key={rowIndex}
-              direction="column"
-              justify="center"
-              className={tdRecipe({
-                align: column.rowTextAlign,
-                isLastRow: rowIndex === rows.length - 1,
-              })}
-            >
-              {typeof row[column.key] != "object" ? (
-                <div
-                  className={tdTextWrapperRecipe({
-                    align: column.rowTextAlign,
-                  })}
-                >
-                  <Text
-                    fontSize="md"
-                    color="primary"
-                    fontWeight="regular"
-                    lineHeight="normal"
-                    className={tdTextRecipe()}
-                  >
-                    {row[column.key]}
-                  </Text>
-                </div>
-              ) : (
-                <>{row[column.key]}</>
-              )}
-            </Flex>
-          ))}
-        </Flex>
-      ))}
-    </>
+            {children}
+          </table>
+        </Box>
+      </Box>
+    </TableProvider>
   );
 };
 
-export default Table;
+export const Thead: React.FC<TheadProps> = ({ children, ...otherProps }) => (
+  <thead {...otherProps}>{children}</thead>
+);
 
-const defaultSort = <T extends Row>(
-  key: keyof T,
-  a: T,
-  b: T,
-  direction: (typeof directionValues)[number]
-) => {
-  const rowA = a[key];
-  const rowB = b[key];
-  if (rowA < rowB) {
-    return direction === "asc" ? -1 : 1;
-  }
-  if (rowA > rowB) {
-    return direction === "asc" ? 1 : -1;
-  }
-  return 0;
-};
+export const Tbody: React.FC<TbodyProps> = ({ children, ...otherProps }) => (
+  <tbody {...otherProps}>{children}</tbody>
+);
+
+export const Tr: React.FC<TrProps> = ({ children, ...otherProps }) => (
+  <tr {...otherProps}>{children}</tr>
+);

@@ -1,77 +1,86 @@
-import { Canvas, Meta, Story, Controls, Markdown } from "@storybook/blocks";
+import { Meta, Story, Canvas, Controls } from "@storybook/blocks";
 import PropsTable from "../../../.storybook/propertiesTable";
 import * as TableStories from "./Table.stories";
-import Table from "./Table";
 
 <Meta of={TableStories} />
 
 # Table
 
-## Props
+テーブルコンポーネント。構造は `<Table>`, `<Thead>`, `<Tbody>`, `<Tr>`, `<Th>`, `<Td>` のようにネストして利用します。
 
-### rows
+---
 
-Tableに表示される行データの配列。
+## API Reference
 
-### columns
-
-Tableの列の設定用データの配列。
-
-#### Column
+### `<Table>`
 
 <PropsTable
   props={[
-    ["key", "keyof T", "Row objectのkeyを指定"],
-    ["headerName", "string", "ヘッダー行の表示名"],
-    ["verticalWriting", "boolean", "ヘッダー行を縦書きにするかどうかのフラグ"],
-    ["minWidth", "string", "列の最小幅"],
-    ["maxWidth", "string", "列の最大幅"],
-    ["headTextAlign", `"left" | "center"`, "ヘッダー行のテキストの配置"],
-    ["rowTextAlign", `"left" | "center"`, "データ行のコンテンツの配置"],
+    ["columnNum*", "number", "列数（固定列計算に使用）"],
     [
-      "needsSort",
-      "boolean",
-      "ソートするかどうかのフラグ、trueの場合はヘッダー行の末尾にソートアイコンが付く",
+      "fixedColumn",
+      "{ left?: number; right?: number }",
+      "固定列（左・右）の数",
     ],
     [
-      "onSort",
-      `(a: T, b: T, direction: "asc" | "desc") => number`,
-      "デフォルトのソート処理とは別に独自のソート処理を使用したい場合に指定。a行をb行の上に並べたい場合、onSortの返却値を0未満にする。",
+      "...divProps",
+      'React.ComponentProps<"div">',
+      "外枠divに渡すprops（styleなど）",
     ],
-
-]}
+  ]}
 />
 
-### firstFixedColumnCount
+---
 
-固定される列の数。最初のn列が固定されます。
+### `<Th>`
 
-### lastFixedColumnCount
+<PropsTable
+  props={[
+    ["index*", "number", "列のインデックス"],
+    ["textAlign", '"left" | "center"', "テキストの横位置"],
+    ["verticalWriting", "boolean", "縦書き表示"],
+    ["onSort", '(direction?: "asc" | "desc") => void', "ソート実行関数"],
+    ["children", "string | number", "セル表示テキスト"],
+    ["...thProps", 'React.ComponentProps<"th">', "その他HTML th属性"],
+  ]}
+/>
 
-固定される列の数。最後のn列が固定されます。
+---
 
-## Example
+### `<Td>`
 
-```typescript
-type TestRow = {
-  name: string;
-  age: number;
-};
+<PropsTable
+  props={[
+    ["index*", "number", "列のインデックス"],
+    [
+      "textProps",
+      '{ textAlign?: "left" | "center"; verticalWriting?: boolean; ...pProps }',
+      "中の<p>要素に適用するProps",
+    ],
+    ["...tdProps", 'React.ComponentProps<"td">', "その他HTML td属性"],
+  ]}
+/>
 
-const rows: TestRow[] = [
-  { name: "TestName1", age: 20 },
-  { name: "TestName2", age: 25 },
-];
+---
 
-const columns: Column<TestRow>[] = [
-  { key: "name", headerName: "Name" },
-  { key: "age", headerName: "Age" },
-];
+## Playground（Basic）
 
-return <Table rows={rows} columns={columns} />
-```
+<Canvas of={TableStories.Default} />
 
-## Playground
+---
 
-<Story />
-<Controls />
+## Sort 対応
+
+<Canvas of={TableStories.SortTable} />
+
+---
+
+## 固定列
+
+<Canvas of={TableStories.FixedColumns} />
+
+---
+
+## 非テキスト行（アイコン + 複数要素）
+
+<Canvas of={TableStories.RowContainsNonText} />
