@@ -12,6 +12,11 @@ import {
   Text,
   ActionChip,
   Table,
+  Tbody,
+  Thead,
+  Tr,
+  Td,
+  Th,
   Heading,
   Label,
   SegmentedControl,
@@ -129,16 +134,39 @@ export default function Home() {
         Icon={<ColoredIcons.Gift size="md" />}
       />
       <h2>Table</h2>
-      <Table
-        rows={[
-          { name: "TestName1", age: 20 },
-          { name: "TestName2", age: 25 },
-        ]}
-        columns={[
-          { key: "name", headerName: "Name" },
-          { key: "age", headerName: "Age" },
-        ]}
-      />
+      <Table columnNum={2}>
+        <Thead>
+          <Tr>
+            {[
+              { key: "name", headerName: "Name" },
+              { key: "age", headerName: "Age" },
+            ].map((col, i) => (
+              <Th key={String(col.key)} index={i}>
+                {col.headerName}
+              </Th>
+            ))}
+          </Tr>
+        </Thead>
+        <Tbody>
+          {[
+            { name: "TestName1", age: 20 },
+            { name: "TestName2", age: 25 },
+          ].map((row, rowIndex) => (
+            <Tr key={rowIndex}>
+              {(
+                [
+                  { key: "name", headerName: "Name" },
+                  { key: "age", headerName: "Age" },
+                ] as const
+              ).map((col, colIndex) => (
+                <Td key={String(col.key)} index={colIndex}>
+                  {String(row[col.key])}
+                </Td>
+              ))}
+            </Tr>
+          ))}
+        </Tbody>
+      </Table>
       <h2>Heading</h2>
       <Heading level="lg" color="primary">
         Sample Heading

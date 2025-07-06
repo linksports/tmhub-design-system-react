@@ -1,155 +1,45 @@
-import Table from "./Table";
-import { Meta, StoryFn } from "@storybook/react";
-import { Column, Row } from "./Table.types";
+import { Meta, StoryObj } from "@storybook/react";
+import { Table, Thead, Tbody, Tr, Th, Td } from "./";
 import { Flex, Iconography, Text } from "..";
+import { faker } from "@faker-js/faker";
+import { useState } from "react";
+import { tdTextAlignValues } from "./Td/Td.types";
+import { thTextAlignValues } from "./Th/Th.types";
 
-const meta: Meta<typeof Table> = {
-  component: Table,
-  title: "Components/Table",
-  argTypes: {
-    columns: {
-      description: "Tableの列の設定用データの配列。",
-      table: {
-        type: {
-          summary: "Column<T>[]",
-          detail: `
+const directionValues = ["asc", "desc"] as const;
+
+type Row = Record<string, NonNullable<React.ReactNode>>;
+
 type Column<T> = {
   key: keyof T;
   headerName: string;
   verticalWriting?: boolean;
   minWidth?: string;
   maxWidth?: string;
-  headTextAlign?: "left" | "center" | "right";
-  rowTextAlign?: "left" | "center" | "right";
-  needsSort?: boolean;  
-  onSort?: (rows: T[], direction: "asc" | "desc") => boolean; 
-};
-          `,
-        },
-      },
-      control: {
-        type: "object",
-      },
-    },
-    rows: {
-      description: "Tableに表示される行データの配列。",
-      table: {
-        type: {
-          summary: "Row[]",
-        },
-      },
-    },
-    firstFixedColumnCount: {
-      description: "固定される列の数。最初のn列が固定されます。",
-      table: {
-        type: {
-          summary: "number",
-        },
-      },
-      control: {
-        type: "number",
-      },
-    },
-    lastFixedColumnCount: {
-      description: "固定される列の数。最後のn列が固定されます。",
-      table: {
-        type: {
-          summary: "number",
-        },
-      },
-      control: {
-        type: "number",
-      },
-    },
-  },
+  headTextAlign?: (typeof thTextAlignValues)[number];
+  rowTextAlign?: (typeof tdTextAlignValues)[number];
+  needsSort?: boolean;
+  onSort?: (a: T, b: T, direction: (typeof directionValues)[number]) => number;
 };
 
+const meta: Meta<typeof Table> = {
+  component: Table,
+  title: "Components/Table",
+  tags: ["autodocs"],
+};
 export default meta;
 
-const Template: StoryFn<typeof Table> = (args) => <Table {...args} />;
-
-const rows = [
-  {
-    name: "John Doe",
-    age: 28,
-    email: "john.doe@example.com",
-    address: "123 Main St",
-    phone: "555-1234",
-    company: "Acme Inc.",
-  },
-  {
-    name: "Jane Smith",
-    age: 34,
-    email: "jane.smith@example.com",
-    address: "456 Elm St",
-    phone: "555-5678",
-    company: "Widgets LLC",
-  },
-  {
-    name: "Alice Johnson",
-    age: 29,
-    email: "alice.johnson@example.com",
-    address: "789 Oak St",
-    phone: "555-8765",
-    company: "Tech Co.",
-  },
-  {
-    name: "Bob Brown",
-    age: 45,
-    email: "bob.brown@example.com",
-    address: "321 Maple St",
-    phone: "555-4321",
-    company: "Innovatech",
-  },
-  {
-    name: "Charlie Davis",
-    age: 50,
-    email: "charlie.davis@example.com",
-    address: "654 Pine St",
-    phone: "555-2345",
-    company: "Creative Solutions",
-  },
-  {
-    name: "David Wilson",
-    age: 23,
-    email: "david.wilson@example.com",
-    address: "987 Cedar St",
-    phone: "555-9876",
-    company: "Future Enterprises",
-  },
-  {
-    name: "Eve Green",
-    age: 31,
-    email: "eve.green@example.com",
-    address: "432 Birch St",
-    phone: "555-3456",
-    company: "Eco Solutions",
-  },
-  {
-    name: "Frank White",
-    age: 37,
-    email: "frank.white@example.com",
-    address: "765 Fir St",
-    phone: "555-6543",
-    company: "Health Corp",
-  },
-  {
-    name: "Grace Black",
-    age: 27,
-    email: "grace.black@example.com",
-    address: "111 Spruce St",
-    phone: "555-1111",
-    company: "Finance LLC",
-  },
-  {
-    name: "Hank Blue",
-    age: 42,
-    email: "hank.blue@example.com",
-    address: "222 Willow St",
-    phone: "555-2222",
-    company: "Construction Inc.",
-  },
-];
+const rows: Row[] = Array.from({ length: 15 }).map(() => ({
+  name: faker.person.fullName(),
+  age: faker.number.int({ min: 1, max: 100 }),
+  email: faker.internet.email(),
+  address: faker.location.streetAddress(),
+  phone: faker.phone.number(),
+  catchPhrase: faker.company.catchPhrase(),
+  buzzNoun: faker.company.buzzNoun(),
+  buzzPhrase: faker.company.buzzPhrase(),
+  company: faker.company.name(),
+}));
 
 const columns: Column<Row>[] = [
   {
@@ -177,6 +67,9 @@ const columns: Column<Row>[] = [
   },
   { key: "address", headerName: "Address" },
   { key: "phone", headerName: "Phone" },
+  { key: "catchPhrase", headerName: "CatchPhrase" },
+  { key: "buzzNoun", headerName: "BuzzNoun" },
+  { key: "buzzPhrase", headerName: "BuzzPhrase" },
   {
     key: "company",
     headerName: "Company",
@@ -184,87 +77,170 @@ const columns: Column<Row>[] = [
   },
 ];
 
-export const Basic = Template.bind({});
-Basic.args = {
-  columns: columns,
-  rows,
+export const Default: StoryObj<typeof Table> = {
+  name: "Default",
+  render: () => (
+    <Table columnNum={columns.length}>
+      <Thead>
+        <Tr>
+          {columns.map((col, i) => (
+            <Th
+              key={String(col.key)}
+              index={i}
+              textAlign={col.headTextAlign}
+              verticalWriting={col.verticalWriting}
+              style={{
+                minWidth: col.minWidth,
+                maxWidth: col.maxWidth,
+              }}
+            >
+              {col.headerName}
+            </Th>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {rows.map((row, rowIndex) => (
+          <Tr key={rowIndex}>
+            {columns.map((col, colIndex) => (
+              <Td
+                key={String(col.key)}
+                index={colIndex}
+                textProps={{ textAlign: col.rowTextAlign }}
+                style={{
+                  minWidth: col.minWidth,
+                  maxWidth: col.maxWidth,
+                }}
+              >
+                {row[col.key]}
+              </Td>
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  ),
 };
 
-export const FixedColumns = Template.bind({});
-FixedColumns.args = {
-  columns: columns,
-  rows,
-  firstFixedColumnCount: 1,
-  lastFixedColumnCount: 1,
+export const SortTable: StoryObj<typeof Table> = {
+  render: () => {
+    const [sortedRows, setSortedRows] = useState([...rows]);
+    const [sortConfig, setSortConfig] = useState<{
+      order?: "asc" | "desc";
+      orderBy?: string;
+    }>({});
+
+    const onSort = (prevOrder: "asc" | "desc", orderBy: string) => {
+      const nextRows = [...sortedRows];
+      const nextOrder = prevOrder === "desc" ? "asc" : "desc";
+      nextRows.sort((a, b) => {
+        const rowA = a[orderBy];
+        const rowB = b[orderBy];
+        if (rowA < rowB) {
+          return nextOrder === "asc" ? -1 : 1;
+        }
+        if (rowA > rowB) {
+          return nextOrder === "asc" ? 1 : -1;
+        }
+        return 0;
+      });
+      setSortedRows(nextRows);
+      setSortConfig({
+        order: nextOrder,
+        orderBy,
+      });
+    };
+
+    return (
+      <Table columnNum={columns.length}>
+        <Thead>
+          <Tr>
+            {columns.map((col, i) => (
+              <Th
+                key={String(col.key)}
+                index={i}
+                textAlign={col.headTextAlign}
+                needsSortLabel={col.needsSort}
+                verticalWriting={col.verticalWriting}
+                style={{
+                  minWidth: col.minWidth,
+                  maxWidth: col.maxWidth,
+                }}
+                onClick={() => {
+                  if (col.needsSort) {
+                    onSort(sortConfig.order ?? "desc", col.key);
+                  }
+                }}
+              >
+                {col.headerName}
+              </Th>
+            ))}
+          </Tr>
+        </Thead>
+        <Tbody>
+          {sortedRows.map((row, rowIndex) => (
+            <Tr key={rowIndex}>
+              {columns.map((col, colIndex) => (
+                <Td
+                  key={String(col.key)}
+                  index={colIndex}
+                  textProps={{
+                    textAlign: col.rowTextAlign,
+                    verticalWriting: col.key === "age" && col.verticalWriting,
+                  }}
+                  style={{
+                    minWidth: col.minWidth,
+                    maxWidth: col.maxWidth,
+                  }}
+                >
+                  {row[col.key]}
+                </Td>
+              ))}
+            </Tr>
+          ))}
+        </Tbody>
+      </Table>
+    );
+  },
 };
 
-const customSortRows = [
-  {
-    name: "上位に表示A",
-    age: 28,
-    email: "john.doe@example.com",
-    address: "123 Main St",
-    phone: "555-1234",
-    company: "Acme Inc.",
-  },
-  ...rows,
-  {
-    name: "上位に表示B",
-    age: 28,
-    email: "john.doe@example.com",
-    address: "123 Main St",
-    phone: "555-1234",
-    company: "Acme Inc.",
-  },
-  {
-    name: "上位に表示C",
-    age: 28,
-    email: "john.doe@example.com",
-    address: "123 Main St",
-    phone: "555-1234",
-    company: "Acme Inc.",
-  },
-];
-
-// NameのSortをカスタム
-const customSortColumns = [...columns];
-customSortColumns[0] = {
-  ...customSortColumns[0],
-  onSort: (a, b, dir) => {
-    let sum = 0;
-    const rowA = String(a["name"]);
-    const rowB = String(b["name"]);
-    if (rowA.startsWith("上位に表示")) sum -= 2;
-    if (rowB.startsWith("上位に表示")) sum += 2;
-
-    if (rowA < rowB) {
-      return dir === "asc" ? --sum : ++sum;
-    }
-    if (rowA > rowB) {
-      return dir === "asc" ? ++sum : --sum;
-    }
-
-    return sum;
-  },
+export const FixedColumns: StoryObj<typeof Table> = {
+  render: () => (
+    <Table columnNum={columns.length} fixedColumn={{ left: 2, right: 1 }}>
+      <Thead>
+        <Tr>
+          {columns.map((col, i) => (
+            <Th key={String(col.key)} index={i} textAlign={col.headTextAlign}>
+              {col.headerName}
+            </Th>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {rows.map((row, rowIndex) => (
+          <Tr key={rowIndex}>
+            {columns.map((col, colIndex) => (
+              <Td
+                key={String(col.key)}
+                index={colIndex}
+                textProps={{ textAlign: col.rowTextAlign }}
+              >
+                {row[col.key]}
+              </Td>
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  ),
 };
 
-export const CustomSort = Template.bind({});
-CustomSort.args = {
-  rows: customSortRows,
-  columns: customSortColumns,
-};
-
-const NonTextRow: Row[] = [
+const nonTextRow: Row[] = [
   {
     icon: <Iconography.Add />,
     player: (
-      <Flex gap={2} align="center">
-        <Text
-          color="hyperlinks"
-          fontSize="md"
-          fontWeight="regular"
-          lineHeight="normal"
-        >
+      <Flex gap={2} align="center" direction="column">
+        <Text color="hyperlinks" fontSize="md">
           K.Chikamoto
         </Text>
         <span
@@ -274,12 +250,7 @@ const NonTextRow: Row[] = [
             width: "0px",
           }}
         />
-        <Text
-          color="primary"
-          fontSize="md"
-          fontWeight="regular"
-          lineHeight="normal"
-        >
+        <Text color="primary" fontSize="md">
           CF
         </Text>
       </Flex>
@@ -289,12 +260,7 @@ const NonTextRow: Row[] = [
     icon: <Iconography.Card />,
     player: (
       <Flex gap={2} align="center">
-        <Text
-          color="hyperlinks"
-          fontSize="md"
-          fontWeight="regular"
-          lineHeight="normal"
-        >
+        <Text color="hyperlinks" fontSize="md">
           T.Nakano
         </Text>
         <span
@@ -304,12 +270,7 @@ const NonTextRow: Row[] = [
             width: "0px",
           }}
         />
-        <Text
-          color="primary"
-          fontSize="md"
-          fontWeight="regular"
-          lineHeight="normal"
-        >
+        <Text color="primary" fontSize="md">
           2B
         </Text>
       </Flex>
@@ -317,7 +278,7 @@ const NonTextRow: Row[] = [
   },
 ];
 
-const NonTextColumns: Column<Row>[] = [
+const nonTextColumns: Column<Row>[] = [
   {
     key: "icon",
     headerName: "Icon",
@@ -332,8 +293,29 @@ const NonTextColumns: Column<Row>[] = [
   },
 ];
 
-export const RowContainsNonText = Template.bind({});
-RowContainsNonText.args = {
-  columns: NonTextColumns,
-  rows: NonTextRow,
+export const RowContainsNonText: StoryObj<typeof Table> = {
+  render: () => (
+    <Table columnNum={nonTextColumns.length}>
+      <Thead>
+        <Tr>
+          {nonTextColumns.map((col, i) => (
+            <Th key={String(col.key)} index={i} textAlign={col.headTextAlign}>
+              {col.headerName}
+            </Th>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {nonTextRow.map((row, rowIndex) => (
+          <Tr key={rowIndex}>
+            {nonTextColumns.map((col, colIndex) => (
+              <Td key={String(col.key)} index={colIndex}>
+                {row[col.key]}
+              </Td>
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  ),
 };

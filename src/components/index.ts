@@ -30,6 +30,6 @@ export { default as SegmentedControl } from "./SegmentedControl";
 export { default as TextField } from "./TextField";
 export { default as TextLink } from "./TextLink";
 export * as TabBar from "./TabBar";
-export { default as Table } from "./Table";
+export { Table, Tbody, Td, Th, Thead, Tr } from "./Table";
 export { default as Tabs } from "./Tabs";
 export { default as Text } from "./Text";
