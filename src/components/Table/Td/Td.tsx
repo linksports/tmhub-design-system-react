@@ -22,7 +22,7 @@ export const Td: React.FC<TdProps> = ({
   ...otherProps
 }) => {
   const { offsets, fixedColumn, columnNum } = useTableContext();
-  const { isLeft, isRight, stickyOffset } = useTd({
+  const { isLeft, isRight, isLastFixedColumn, stickyOffset } = useTd({
     index,
     fixedColumn,
     offsets,
@@ -37,7 +37,11 @@ export const Td: React.FC<TdProps> = ({
         ...(isLeft || isRight
           ? [
               stickyColumnsRecipe(),
-              isLeft ? leftShadowRecipe() : rightShadowRecipe(),
+              ...(isLastFixedColumn
+                ? isLeft
+                  ? [leftShadowRecipe()]
+                  : [rightShadowRecipe()]
+                : []),
             ]
           : []),
         className
@@ -90,6 +94,7 @@ export const useTd = ({
 }: TdHooksProps): {
   isLeft?: boolean;
   isRight?: boolean;
+  isLastFixedColumn?: boolean;
   stickyOffset?: number;
 } => {
   if (!fixedColumn) return {};
@@ -101,6 +106,7 @@ export const useTd = ({
   if (isLeft) {
     return {
       isLeft,
+      isLastFixedColumn: left - 1 === index,
       stickyOffset: offsets.leftStickyOffsets[index],
     };
   }
@@ -109,6 +115,7 @@ export const useTd = ({
     const rightIndex = index - (columnNum - right);
     return {
       isRight,
+      isLastFixedColumn: rightIndex === 0,
       stickyOffset: offsets.rightStickyOffsets[rightIndex],
     };
   }

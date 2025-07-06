@@ -25,7 +25,7 @@ export const Th: React.FC<ThProps> = ({
   ...otherProps
 }) => {
   const { offsets, refs, fixedColumn, columnNum } = useTableContext();
-  const { ref, isLeft, isRight, stickyOffset } = useTh({
+  const { ref, isLeft, isRight, isLastFixedColumn, stickyOffset } = useTh({
     index,
     refs,
     fixedColumn,
@@ -44,7 +44,11 @@ export const Th: React.FC<ThProps> = ({
         ...(isLeft || isRight
           ? [
               stickyColumnsRecipe(),
-              isLeft ? leftShadowRecipe() : rightShadowRecipe(),
+              ...(isLastFixedColumn
+                ? isLeft
+                  ? [leftShadowRecipe()]
+                  : [rightShadowRecipe()]
+                : []),
             ]
           : []),
         className
@@ -97,6 +101,7 @@ export const useTh = ({
   ref?: React.Ref<HTMLTableCellElement>;
   isLeft?: boolean;
   isRight?: boolean;
+  isLastFixedColumn?: boolean;
   stickyOffset?: number;
 } => {
   if (!fixedColumn) return {};
@@ -111,6 +116,7 @@ export const useTh = ({
         refs.leftCellRefs.current[index] = el;
       },
       isLeft,
+      isLastFixedColumn: left - 1 === index,
       stickyOffset: offsets.leftStickyOffsets[index],
     };
   }
@@ -122,6 +128,7 @@ export const useTh = ({
         refs.rightCellRefs.current[rightIndex] = el;
       },
       isRight,
+      isLastFixedColumn: rightIndex === 0,
       stickyOffset: offsets.rightStickyOffsets[rightIndex],
     };
   }
