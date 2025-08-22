@@ -1,8 +1,5 @@
 import { RefObject } from "react";
 
-export const textAlignValues = ["left", "center", "right"] as const;
-export const directionValues = ["asc", "desc"] as const;
-
 export type OffsetContext = {
   leftStickyOffsets: number[];
   rightStickyOffsets: number[];

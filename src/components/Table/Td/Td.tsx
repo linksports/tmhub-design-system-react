@@ -66,11 +66,12 @@ export const Td: React.FC<TdProps> = ({
           justify="unset"
         >
           <Text
+            {...textProps}
             fontSize="md"
             color="primary"
             fontWeight="regular"
             lineHeight="normal"
-            className={classNames(tdTextRecipe())}
+            className={classNames(tdTextRecipe(), textProps?.className)}
           >
             {children}
           </Text>
