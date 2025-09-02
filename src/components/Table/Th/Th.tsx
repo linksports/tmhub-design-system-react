@@ -113,7 +113,9 @@ export const useTh = ({
   if (isLeft) {
     return {
       ref: (el) => {
-        refs.leftCellRefs.current[index] = el;
+        if( refs.leftCellRefs.current) {
+          refs.leftCellRefs.current[index] = el;
+        }
       },
       isLeft,
       isLastFixedColumn: left - 1 === index,
@@ -125,7 +127,9 @@ export const useTh = ({
     const rightIndex = index - (columnNum - right);
     return {
       ref: (el) => {
-        refs.rightCellRefs.current[rightIndex] = el;
+        if (refs.rightCellRefs.current) {
+          refs.rightCellRefs.current[rightIndex] = el;
+        }
       },
       isRight,
       isLastFixedColumn: rightIndex === 0,
